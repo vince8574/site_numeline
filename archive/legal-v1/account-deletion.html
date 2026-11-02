@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Account Deletion - Numeline</title>
+  <style>
+    :root {
+      --bg: #f4f6f8;
+      --panel: #ffffff;
+      --text: #1f2a2a;
+      --muted: #5c6a6a;
+      --accent: #0a1f1f;
+      --accent-soft: #e6f0ee;
+      --border: #d6dede;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", serif;
+      color: var(--text);
+      background: linear-gradient(180deg, #f4f6f8 0%, #e9eff1 100%);
+      line-height: 1.7;
+    }
+
+    main {
+      max-width: 880px;
+      margin: 40px auto;
+      padding: 32px;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      box-shadow: 0 12px 32px rgba(20, 40, 40, 0.12);
+      animation: fadeIn 0.45s ease-out;
+    }
+
+    header {
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 16px;
+      margin-bottom: 24px;
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: 28px;
+      color: var(--accent);
+    }
+
+    h2 {
+      margin: 28px 0 12px;
+      font-size: 20px;
+      color: var(--accent);
+    }
+
+    p {
+      margin: 0 0 12px;
+    }
+
+    ul {
+      padding-left: 20px;
+      margin: 0 0 16px;
+    }
+
+    li {
+      margin: 6px 0;
+    }
+
+    a {
+      color: var(--accent);
+    }
+
+    .note {
+      background: var(--accent-soft);
+      border-left: 4px solid var(--accent);
+      padding: 12px 14px;
+      border-radius: 10px;
+      margin: 16px 0;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(8px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 720px) {
+      main {
+        margin: 16px;
+        padding: 20px;
+      }
+
+      h1 {
+        font-size: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Account & Data Deletion</h1>
+      <p>If you want to delete your Numeline account and associated data, follow the steps below.</p>
+    </header>
+
+    <h2>How to request deletion</h2>
+    <ol>
+      <li>Send an email to <a href="mailto:vgaillard85@gmail.com?subject=Account%20deletion%20request">vgaillard85@gmail.com</a> from the email address you use in the app.</li>
+      <li>Subject: <strong>Account deletion request</strong></li>
+      <li>Include: your full name (optional), the email used to sign in, and a short confirmation that you want your account deleted.</li>
+    </ol>
+
+    <div class="note">
+      <p>If you signed in with Google, please use the same Google email in your request.</p>
+    </div>
+
+    <h2>What will be deleted</h2>
+    <ul>
+      <li>Your account and authentication profile.</li>
+      <li>Scanned products and history linked to your account.</li>
+      <li>Subscriptions/entitlements stored on our servers.</li>
+    </ul>
+
+    <p>Local data stored on your device (caches, preferences) is removed by clearing the app data or uninstalling the app.</p>
+
+    <h2>Processing time</h2>
+    <p>We process deletion requests as quickly as possible and within 30 days. You will receive a confirmation email once it is completed.</p>
+  </main>
+</body>
+</html>
