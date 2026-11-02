@@ -3,3 +3,8 @@ __pycache__/
 .DS_Store
 Thumbs.db
 .vercel
+
+# Fichiers locaux, jamais publiés (brouillons, modèles d’e-mail avec données personnelles)
+/public/email-template-restaurant.html
+/public/fr/blog/entretien-mathilde-hignet-rappels-alimentaires.html
+/public/blog/img/entretien-hignet.jpg
