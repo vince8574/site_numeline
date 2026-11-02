@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <script src="/favicon-anim.js" defer></script>
+  <script src="/nav-toggle.js" defer></script>
+  <title>Notre histoire &mdash; De la cuisine à Numeline</title>
+  <meta name="description" content="Née d'années passées en cuisine face aux rappels de produits, Numeline permet de vérifier un numéro de lot en quelques secondes." />
+  <link rel="canonical" href="https://numeline.com/fr/notre-histoire" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Numeline" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:title" content="De la cuisine à Numeline : rendre les rappels alimentaires enfin simples" />
+  <meta property="og:description" content="Pourquoi est-ce aussi compliqué de savoir si le produit que l'on a entre les mains est réellement concerné par un rappel ? De cette question est née Numeline." />
+  <meta property="og:url" content="https://numeline.com/fr/notre-histoire" />
+  <meta property="og:image" content="https://numeline.com/blog/img/vincent-gaillard.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="De la cuisine à Numeline : rendre les rappels alimentaires enfin simples" />
+  <meta name="twitter:image" content="https://numeline.com/blog/img/vincent-gaillard.jpg" />
+  <meta name="twitter:description" content="Née en cuisine, face aux rappels de produits. Notre histoire, et l'espace presse de Numeline." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/blog/blog.css" />
+
+  <style>
+    /* Citation mise en exergue : la question qui a fait naître le projet. */
+    .pull {
+      margin: 30px 0;
+      padding: 4px 0 4px 22px;
+      border-left: 4px solid var(--accent, #0bae86);
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 21px;
+      line-height: 1.45;
+      font-style: italic;
+    }
+    /* Fiche presse.
+       ATTENTION a la specificite : blog.css definit
+         .article table td:last-child { text-align: right; white-space: nowrap; }
+       une regle ecrite pour les tableaux de CHIFFRES. Ici la derniere colonne
+       contient des phrases : le nowrap les forcait sur une seule ligne et faisait
+       deborder la page horizontalement. Un simple `.facts td` (0,1,1) perdait
+       contre `.article table td:last-child` (0,2,2) ; on requalifie donc chaque
+       selecteur avec `.article table.facts` et on annule explicitement les deux
+       proprietes fautives. */
+    .article table.facts { width: 100%; table-layout: fixed; margin: 18px 0; }
+    .article table.facts th,
+    .article table.facts td,
+    .article table.facts th:last-child,
+    .article table.facts td:last-child {
+      text-align: left;
+      white-space: normal;
+      vertical-align: top;
+      padding: 9px 14px 9px 0;
+      font-size: 15px;
+      line-height: 1.5;
+      overflow-wrap: break-word;
+      word-break: break-word;
+      hyphens: auto;
+    }
+    .article table.facts th { width: 32%; font-weight: 600; border-bottom-width: 1px; }
+    /* Empilement sous 700px : a deux colonnes les libelles deviennent illisibles
+       bien avant. */
+    @media (max-width: 700px) {
+      .article table.facts,
+      .article table.facts tbody,
+      .article table.facts tr,
+      .article table.facts th,
+      .article table.facts td { display: block; width: auto; }
+      .article table.facts th { padding: 0 0 2px; border: 0; color: #0bae86; }
+      .article table.facts td { padding: 0 0 14px; }
+      .pull { font-size: 19px; padding-left: 16px; }
+    }
+    /* Les URL de boutiques sont longues et insecables. */
+    .presslinks { padding-left: 20px; }
+    .presslinks li { margin-bottom: 8px; overflow-wrap: anywhere; }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "name": "De la cuisine à Numeline : rendre les rappels alimentaires enfin simples",
+    "description": "L'histoire de Numeline, née de l'expérience des rappels de produits en cuisine professionnelle, et l'espace presse.",
+    "inLanguage": "fr-FR",
+    "url": "https://numeline.com/fr/notre-histoire",
+    "publisher": { "@type": "Organization", "name": "Numeline", "url": "https://numeline.com", "email": "contact@numeline.com" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://numeline.com/fr/" },
+      { "@type": "ListItem", "position": 2, "name": "Notre histoire" }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <div class="page">
+    <header class="topbar">
+      <a class="brand" href="/fr/"><img class="brand-mark" src="/logo-mark.png" alt="" width="36" height="36" />Numeline</a>
+      <nav class="nav">
+        <a href="/fr/blog/">Blog</a>
+        <a href="/fr/">Accueil</a>
+        <a href="/fr/rappels-alimentaires">Rappels en cours</a>
+        <a href="/fr/contact">Contact</a>
+      </nav>
+    </header>
+
+    <a class="backlink" href="/fr/">&larr; Retour à l&rsquo;accueil</a>
+
+    <article class="article">
+      <div class="eyebrow">Notre histoire</div>
+      <h1>De la cuisine à Numeline : rendre les rappels alimentaires enfin simples</h1>
+      <div class="article-meta">
+        <span class="tag">À propos</span>
+        <span class="tag">Presse</span>
+        Par <strong>Vincent Gaillard</strong>, fondateur de Numeline
+      </div>
+
+      <figure class="article-figure">
+        <img src="/blog/img/vincent-gaillard.jpg" alt="Vincent Gaillard en cuisine professionnelle, et aujourd&rsquo;hui devant son ordinateur" width="1200" height="960" />
+        <figcaption>Vincent Gaillard, fondateur de Numeline : hier en cuisine, aujourd&rsquo;hui derrière l&rsquo;application.</figcaption>
+      </figure>
+
+      <p class="lead">Pendant des années, j&rsquo;ai travaillé dans la cuisine. Et pendant toutes ces années, j&rsquo;ai été confronté à une réalité très concrète du métier : les rappels de produits alimentaires.</p>
+
+      <p>Lorsqu&rsquo;un produit est rappelé, il ne suffit pas de savoir que « cette marque » ou « ce produit » est concerné. Il faut pouvoir identifier précisément le produit, retrouver son numéro de lot, vérifier l&rsquo;information et agir rapidement.</p>
+
+      <p>J&rsquo;ai vécu cette problématique à plusieurs reprises dans mon quotidien professionnel. Et une question a fini par me rester en tête :</p>
+
+      <p class="pull">Pourquoi est-ce aussi compliqué de savoir si le produit que l&rsquo;on a entre les mains est réellement concerné par un rappel ?</p>
+
+      <p>C&rsquo;est de cette expérience qu&rsquo;est née Numeline.</p>
+
+      <p>L&rsquo;idée était simple : rendre au consommateur un outil qui permette de vérifier facilement ses produits alimentaires. Avec Numeline, il suffit de scanner le numéro de lot d&rsquo;un produit. L&rsquo;application vérifie alors les informations de rappel disponibles auprès des sources officielles et permet de savoir si le produit est concerné.</p>
+
+      <h2>Au-delà du rappel</h2>
+
+      <p>Mais Numeline ne s&rsquo;est pas arrêtée à cette première idée. Le projet s&rsquo;est développé autour d&rsquo;une ambition plus large : aider chacun à mieux connaître les produits qu&rsquo;il achète et qu&rsquo;il consomme, notamment lorsqu&rsquo;il existe des problématiques d&rsquo;allergènes ou de régimes alimentaires particuliers.</p>
+
+      <h2>Puis nous avons décidé d&rsquo;aller plus loin</h2>
+
+      <p>Numeline est désormais disponible aux États-Unis. Parce que la question des rappels alimentaires ne s&rsquo;arrête évidemment pas aux frontières françaises.</p>
+
+      <p>Et cette aventure nous a déjà conduits jusqu&rsquo;à Los Angeles, où Numeline a été présentée à Rich DeMuro pour <em>Rich on Tech</em>, dans les studios de KTLA 5 à Hollywood. <span style="opacity:.75">(Le passage n&rsquo;a pas encore été diffusé à l&rsquo;antenne.)</span></p>
+
+      <h2>Notre objectif</h2>
+
+      <p>Aujourd&rsquo;hui, notre objectif est simple : faire de Numeline un réflexe aussi naturel que regarder l&rsquo;étiquette d&rsquo;un produit.</p>
+
+      <p>Parce qu&rsquo;un rappel alimentaire est une information importante. Et chacun devrait pouvoir vérifier simplement si le produit qu&rsquo;il a dans son placard, son réfrigérateur ou entre les mains est concerné.</p>
+
+      <hr />
+
+      <h2>Espace presse</h2>
+
+      <p>Les éléments ci-dessous peuvent être repris librement. Pour une interview, une démonstration de l&rsquo;application ou des visuels en haute définition, écrivez-nous : nous répondons rapidement.</p>
+
+      <table class="facts">
+        <tr><th>En une phrase</th><td>Numeline permet de vérifier, en scannant un numéro de lot, si un produit alimentaire fait l&rsquo;objet d&rsquo;un rappel officiel.</td></tr>
+        <tr><th>Sources de données</th><td>RappelConso pour la France. Pour les États-Unis, la <abbr title="Food and Drug Administration">FDA</abbr> et le service d&rsquo;inspection du ministère de l&rsquo;Agriculture (<abbr title="Food Safety and Inspection Service">FSIS</abbr>). Fiches produit et allergènes : la base ouverte Open Food Facts.</td></tr>
+        <tr><th>Autres fonctions</th><td>Détection d&rsquo;allergènes et de régimes alimentaires par profil, configurable pour chaque membre du foyer. Alerte si un produit déjà scanné fait l&rsquo;objet d&rsquo;un rappel ultérieur.</td></tr>
+        <tr><th>Disponibilité</th><td>France et États-Unis, sur iOS et Android. Gratuit au téléchargement.</td></tr>
+        <tr><th>Indépendance</th><td>Numeline est une application indépendante. Elle n&rsquo;est ni affiliée ni soutenue par la DGCCRF, la FDA, l&rsquo;USDA ou une quelconque autorité publique, et ne les représente pas.</td></tr>
+        <tr><th>Éditeur</th><td>Olympe et odin — SIRET 91457466000025</td></tr>
+        <tr><th>Fondateur</th><td>Vincent Gaillard</td></tr>
+        <tr><th>Contact presse</th><td><a href="mailto:contact@numeline.com">contact@numeline.com</a></td></tr>
+      </table>
+
+      <h3>Liens</h3>
+      <ul class="presslinks">
+        <li>Site : <a href="https://numeline.com/fr/">numeline.com/fr</a> — version américaine : <a href="https://numeline.com/">numeline.com</a></li>
+        <li>Blog et analyses de rappels : <a href="/fr/blog/">numeline.com/fr/blog</a></li>
+        <li>App Store : <a href="https://apps.apple.com/fr/app/numelinefr/id6772080722" target="_blank" rel="noopener">Numeline</a> — Google Play : <a href="https://play.google.com/store/apps/details?id=com.numeline.app" target="_blank" rel="noopener">com.numeline.app</a></li>
+      </ul>
+
+      <div class="cta-app">
+        <h3>Essayer Numeline</h3>
+        <p>Scannez un numéro de lot et sachez immédiatement si le produit est rappelé. Gratuit sur iOS et Android.</p>
+        <div class="cta-buttons">
+          <a class="cta-btn" href="https://apps.apple.com/fr/app/numelinefr/id6772080722" target="_blank" rel="noopener" aria-label="Télécharger dans l&rsquo;App Store">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+            <span><span class="b-sub">Télécharger dans l&rsquo;</span><span class="b-main">App Store</span></span>
+          </a>
+          <a class="cta-btn" href="https://play.google.com/store/apps/details?id=com.numeline.app" target="_blank" rel="noopener" aria-label="Disponible sur Google Play">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.609 1.814 13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893 2.302 2.302-10.937 6.295 8.635-8.597zm3.699-5.309 2.486 1.432a1 1 0 0 1 0 1.73l-2.66 1.531-2.596-2.63 2.77-2.063zM5.864 2.598 16.802 8.9 14.5 11.197 5.864 2.598z"/></svg>
+            <span><span class="b-sub">Disponible sur</span><span class="b-main">Google Play</span></span>
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <footer class="footer">
+      <div>Numeline — Le radar des rappels alimentaires</div>
+      <div><a href="/fr/blog/">Nos articles</a></div>
+    </footer>
+  </div>
+</body>
+</html>

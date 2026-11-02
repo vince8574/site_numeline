@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <title>Pricing - Numeline</title>
+  <meta name="description" content="Numeline subscription plans and scan packs. Choose the plan that fits your business — food trucks, restaurants, schools and more." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #0a1f1f;
+      --ink-soft: #2b3a3a;
+      --muted: #5f6e6e;
+      --surface: #ffffff;
+      --surface-alt: #eef5f3;
+      --accent: #0bae86;
+      --accent-dark: #0a1f1f;
+      --line: #d5dfdd;
+      --shadow: rgba(10, 31, 31, 0.16);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      color: var(--ink-soft);
+      font-family: "Space Grotesk", "Segoe UI", sans-serif;
+      background:
+        radial-gradient(1200px 600px at 20% -10%, #d8f1ea 0%, transparent 60%),
+        radial-gradient(900px 500px at 100% 10%, #f4ead8 0%, transparent 55%),
+        linear-gradient(180deg, #f7faf9 0%, #eef3f2 100%);
+      min-height: 100vh;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .page {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 24px 24px 56px;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 8px 0 24px;
+    }
+
+    .brand {
+      font-family: "Fraunces", "Times New Roman", serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--accent-dark);
+      letter-spacing: 0.3px;
+    }
+    /* Logo main + pomme devant le nom, comme l'icône de l'app. */
+    .topbar .brand { display: inline-flex; align-items: center; gap: 10px; }
+    .brand-mark { width: 36px; height: 36px; border-radius: 9px; flex-shrink: 0; box-shadow: 0 2px 6px rgba(10, 31, 31, 0.18); }
+
+    .nav {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .nav a {
+      padding: 6px 10px;
+      border-radius: 999px;
+      transition: background 0.2s ease;
+    }
+
+    .nav a:hover {
+      background: rgba(10, 31, 31, 0.08);
+    }
+
+    .hero {
+      text-align: center;
+      padding: 24px 0 40px;
+    }
+
+    .eyebrow {
+      text-transform: uppercase;
+      font-size: 12px;
+      letter-spacing: 1.8px;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    h1 {
+      margin: 0 0 16px;
+      font-family: "Fraunces", "Times New Roman", serif;
+      font-size: 42px;
+      color: var(--accent-dark);
+      line-height: 1.05;
+    }
+
+    .lead {
+      font-size: 17px;
+      line-height: 1.6;
+      color: var(--muted);
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      font-family: "Fraunces", "Times New Roman", serif;
+      font-size: 26px;
+      color: var(--accent-dark);
+      margin: 0 0 8px;
+    }
+
+    .section-helper {
+      color: var(--muted);
+      font-size: 15px;
+      margin: 0 0 24px;
+    }
+
+    .billing-toggle {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 4px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      margin: 0 0 24px;
+      box-shadow: 0 4px 12px rgba(10, 31, 31, 0.05);
+    }
+
+    .billing-toggle-option {
+      border: none;
+      background: transparent;
+      padding: 10px 18px;
+      border-radius: 999px;
+      font-family: inherit;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--muted);
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .billing-toggle-option.active {
+      background: var(--accent-dark);
+      color: #ffffff;
+    }
+
+    .billing-toggle-savings {
+      background: var(--accent);
+      color: #ffffff;
+      padding: 2px 8px;
+      border-radius: 999px;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.4px;
+      text-transform: uppercase;
+    }
+
+    .billing-toggle-option.active .billing-toggle-savings {
+      background: #ffffff;
+      color: var(--accent);
+    }
+
+    .plans-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
+      margin-bottom: 56px;
+    }
+
+    .plan-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 24px;
+      box-shadow: 0 10px 24px rgba(10, 31, 31, 0.08);
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      position: relative;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .plan-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 36px rgba(10, 31, 31, 0.12);
+    }
+
+    .plan-name {
+      font-family: "Fraunces", "Times New Roman", serif;
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--accent-dark);
+      margin: 0;
+      line-height: 1.1;
+    }
+
+    .plan-price {
+      display: flex;
+      align-items: baseline;
+      gap: 6px;
+      margin: 4px 0 0;
+    }
+
+    .plan-price-billed {
+      font-size: 12px;
+      color: var(--muted);
+      margin: 2px 0 8px;
+      min-height: 16px;
+    }
+
+    .plan-price-amount {
+      font-family: "Fraunces", "Times New Roman", serif;
+      font-size: 36px;
+      font-weight: 700;
+      color: var(--accent-dark);
+      line-height: 1;
+    }
+
+    .plan-price-period {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .plan-tagline {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.45;
+      margin: 0 0 4px;
+    }
+
+    .plan-features {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      font-size: 14px;
+    }
+
+    .plan-features li {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      line-height: 1.45;
+    }
+
+    .plan-features li::before {
+      content: "";
+      width: 16px;
+      height: 16px;
+      flex-shrink: 0;
+      margin-top: 2px;
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230bae86' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><polyline points='20 6 9 17 4 12'/></svg>");
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+    }
+
+    .packs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-bottom: 40px;
+    }
+
+    .pack-card {
+      background: var(--surface-alt);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      text-align: center;
+    }
+
+    .pack-name {
+      font-family: "Fraunces", "Times New Roman", serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--accent-dark);
+      margin: 0;
+    }
+
+    .pack-quantity {
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+
+    .pack-price {
+      font-family: "Fraunces", "Times New Roman", serif;
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--accent);
+      line-height: 1;
+    }
+
+    .info-box {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 24px 28px;
+      margin-bottom: 40px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      box-shadow: 0 10px 24px rgba(10, 31, 31, 0.05);
+    }
+
+    .info-box h3 {
+      font-family: "Fraunces", "Times New Roman", serif;
+      font-size: 16px;
+      color: var(--accent-dark);
+      margin: 0 0 6px;
+    }
+
+    .info-box p {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    .cta-join {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 32px;
+      margin-top: 16px;
+      text-align: center;
+      box-shadow: 0 10px 24px rgba(10, 31, 31, 0.08);
+    }
+
+    .cta-join h2 {
+      font-family: "Fraunces", "Times New Roman", serif;
+      font-size: 24px;
+      color: var(--accent-dark);
+      margin: 0 0 10px;
+    }
+
+    .cta-join p {
+      color: var(--muted);
+      margin: 0 0 18px;
+      font-size: 14px;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .store-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 11px 18px;
+      border-radius: 12px;
+      background: var(--accent-dark);
+      color: #ffffff;
+      text-decoration: none;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+      line-height: 1;
+    }
+
+    .store-badge:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px rgba(10, 31, 31, 0.28);
+    }
+
+    .store-badge.android {
+      background: #01875f;
+    }
+
+    .store-badge svg {
+      width: 22px;
+      height: 22px;
+      flex-shrink: 0;
+    }
+
+    .store-badge-text {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      text-align: left;
+    }
+
+    .store-badge-sub {
+      font-size: 10px;
+      font-weight: 400;
+      opacity: 0.8;
+    }
+
+    .store-badge-main {
+      font-size: 15px;
+      font-weight: 700;
+    }
+
+    .footer {
+      margin-top: 56px;
+      padding-top: 24px;
+      border-top: 1px solid var(--line);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      justify-content: space-between;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    @media (max-width: 600px) {
+      .topbar { flex-direction: column; align-items: flex-start; }
+      .nav { gap: 10px; }
+      h1 { font-size: 32px; }
+      .page { padding: 16px 16px 40px; }
+    }
+  </style>
+  <script src="/nav-toggle.js" defer></script>
+  <script src="/favicon-anim.js" defer></script>
+</head>
+<body>
+  <div class="page">
+    <header class="topbar">
+      <a class="brand" href="/"><img class="brand-mark" src="/logo-mark.png" alt="" width="36" height="36" />Numeline</a>
+      <nav class="nav">
+        <a href="/#features">Features</a>
+        <a href="/#trust">Trust</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="subscribers.html">Partners</a>
+        <a href="privacy-policy.html">Privacy</a>
+        <a href="terms-of-service.html">Terms</a>
+        <a href="/food-recalls">Food recalls</a>
+        <a href="/contact">Contact</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="eyebrow">Pricing</div>
+      <h1>Plans for every kitchen</h1>
+      <p class="lead">
+        From food trucks to school canteens, choose the plan that matches your scan volume and team size.
+        All subscriptions include recall alerts and can be cancelled anytime.
+      </p>
+    </section>
+
+    <section>
+      <h2 class="section-title">Subscription plans</h2>
+      <p class="section-helper">Recurring billing through Google Play and the App Store. Cancel anytime from your store account.</p>
+
+      <div class="billing-toggle" role="tablist" aria-label="Billing period">
+        <button type="button" class="billing-toggle-option" data-period="monthly" role="tab" aria-selected="false">Monthly</button>
+        <button type="button" class="billing-toggle-option active" data-period="yearly" role="tab" aria-selected="true">
+          Yearly
+          <span class="billing-toggle-savings">2 months free</span>
+        </button>
+      </div>
+
+      <div class="plans-grid">
+        <div class="plan-card">
+          <h3 class="plan-name">Starter</h3>
+          <div class="plan-price">
+            <span class="plan-price-amount" data-monthly="$9.99" data-yearly="$99.90">$99.90</span>
+            <span class="plan-price-period" data-monthly="/ month" data-yearly="/ year">/ year</span>
+          </div>
+          <p class="plan-price-billed" data-yearly="Equivalent to $8.33/month"></p>
+          <p class="plan-tagline">Try the essentials with a low commitment.</p>
+          <ul class="plan-features">
+            <li>100 scans included</li>
+            <li>30-day history</li>
+            <li>Recall alerts</li>
+          </ul>
+        </div>
+
+        <div class="plan-card">
+          <h3 class="plan-name">Plus</h3>
+          <div class="plan-price">
+            <span class="plan-price-amount" data-monthly="$19.99" data-yearly="$199.99">$199.99</span>
+            <span class="plan-price-period" data-monthly="/ month" data-yearly="/ year">/ year</span>
+          </div>
+          <p class="plan-price-billed" data-yearly="Equivalent to $16.67/month"></p>
+          <p class="plan-tagline">For solo operators and small food trucks.</p>
+          <ul class="plan-features">
+            <li>500 scans included</li>
+            <li>30-day history</li>
+            <li>Recall alerts</li>
+          </ul>
+        </div>
+
+        <div class="plan-card">
+          <h3 class="plan-name">Pro</h3>
+          <div class="plan-price">
+            <span class="plan-price-amount" data-monthly="$29.99" data-yearly="$299.99">$299.99</span>
+            <span class="plan-price-period" data-monthly="/ month" data-yearly="/ year">/ year</span>
+          </div>
+          <p class="plan-price-billed" data-yearly="Equivalent to $25.00/month"></p>
+          <p class="plan-tagline">More volume, exports, and a longer history.</p>
+          <ul class="plan-features">
+            <li>1,000 scans included</li>
+            <li>90-day history</li>
+            <li>PDF / CSV export</li>
+            <li>Recall alerts</li>
+          </ul>
+        </div>
+
+        <div class="plan-card">
+          <h3 class="plan-name">Scale</h3>
+          <div class="plan-price">
+            <span class="plan-price-amount" data-monthly="$39.99" data-yearly="$399.99">$399.99</span>
+            <span class="plan-price-period" data-monthly="/ month" data-yearly="/ year">/ year</span>
+          </div>
+          <p class="plan-price-billed" data-yearly="Equivalent to $33.33/month"></p>
+          <p class="plan-tagline">Built for restaurants with a small staff.</p>
+          <ul class="plan-features">
+            <li>1,500 scans included</li>
+            <li>Alerts + 6-month history</li>
+            <li>PDF / Excel export</li>
+            <li>Multi-employee (up to 3)</li>
+          </ul>
+        </div>
+
+        <div class="plan-card">
+          <h3 class="plan-name">Ultimate</h3>
+          <div class="plan-price">
+            <span class="plan-price-amount" data-monthly="$59.99" data-yearly="$599.99">$599.99</span>
+            <span class="plan-price-period" data-monthly="/ month" data-yearly="/ year">/ year</span>
+          </div>
+          <p class="plan-price-billed" data-yearly="Equivalent to $50.00/month"></p>
+          <p class="plan-tagline">Designed for schools, daycares and group catering.</p>
+          <ul class="plan-features">
+            <li>2,000 scans included</li>
+            <li>Alerts + 1-year history</li>
+            <li>Regulatory format PDF / CSV</li>
+            <li>Multi-employee (up to 10)</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">Scan packs</h2>
+      <p class="section-helper">Already on a subscription? Add extra scans on demand with a one-time purchase — no auto-renewal.</p>
+
+      <div class="packs-grid">
+        <div class="pack-card">
+          <h3 class="pack-name">Small Pack</h3>
+          <div class="pack-quantity">10 scans</div>
+          <div class="pack-price">$2.49</div>
+        </div>
+        <div class="pack-card">
+          <h3 class="pack-name">Medium Pack</h3>
+          <div class="pack-quantity">50 scans</div>
+          <div class="pack-price">$7.99</div>
+        </div>
+        <div class="pack-card">
+          <h3 class="pack-name">Large Pack</h3>
+          <div class="pack-quantity">100 scans</div>
+          <div class="pack-price">$14.99</div>
+        </div>
+        <div class="pack-card">
+          <h3 class="pack-name">XL Pack</h3>
+          <div class="pack-quantity">210 scans</div>
+          <div class="pack-price">$27.99</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="info-box">
+      <div>
+        <h3>Cancel anytime</h3>
+        <p>All plans are monthly with no commitment. Manage or cancel from your Google Play or App Store subscriptions.</p>
+      </div>
+      <div>
+        <h3>Local taxes</h3>
+        <p>Prices are shown in USD. Local currency and applicable taxes are computed by Google Play and the App Store at checkout.</p>
+      </div>
+      <div>
+        <h3>Family of plans</h3>
+        <p>Upgrade or downgrade between plans whenever your scan volume or team size changes.</p>
+      </div>
+    </section>
+
+    <section class="cta-join">
+      <h2>Ready to start scanning?</h2>
+      <p>Download Numeline and pick your plan from the in-app subscription screen.</p>
+      <div class="cta-buttons">
+        <a class="store-badge android" href="https://play.google.com/store/apps/details?id=com.eatsafe.app" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3.609 1.814 13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893 2.302 2.302-10.937 6.295 8.635-8.597zm3.699-5.309 2.486 1.432a1 1 0 0 1 0 1.73l-2.66 1.531-2.596-2.63 2.77-2.063zM5.864 2.598 16.802 8.9 14.5 11.197 5.864 2.598z"/></svg>
+          <div class="store-badge-text">
+            <span class="store-badge-sub">Get it on</span>
+            <span class="store-badge-main">Google Play</span>
+          </div>
+        </a>
+        <a class="store-badge" href="https://apps.apple.com/app/id6758400953" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+          <div class="store-badge-text">
+            <span class="store-badge-sub">Download on the</span>
+            <span class="store-badge-main">App Store</span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div>Numeline - Food Recall Scanner</div>
+      <div>Contact: contact@numeline.com</div>
+      <div>Olympe et odin - France</div>
+    </footer>
+  </div>
+
+  <script>
+    (function () {
+      var toggle = document.querySelector('.billing-toggle');
+      if (!toggle) return;
+      var options = toggle.querySelectorAll('.billing-toggle-option');
+      var amounts = document.querySelectorAll('.plan-price-amount');
+      var periods = document.querySelectorAll('.plan-price-period');
+      var billedLines = document.querySelectorAll('.plan-price-billed');
+
+      function setPeriod(period) {
+        options.forEach(function (opt) {
+          var active = opt.dataset.period === period;
+          opt.classList.toggle('active', active);
+          opt.setAttribute('aria-selected', active ? 'true' : 'false');
+        });
+        amounts.forEach(function (el) {
+          var v = el.dataset[period];
+          if (v) el.textContent = v;
+        });
+        periods.forEach(function (el) {
+          var v = el.dataset[period];
+          if (v) el.textContent = v;
+        });
+        billedLines.forEach(function (el) {
+          el.textContent = period === 'yearly' ? (el.dataset.yearly || '') : '';
+        });
+      }
+
+      options.forEach(function (opt) {
+        opt.addEventListener('click', function () {
+          setPeriod(opt.dataset.period);
+        });
+      });
+
+      // Initialize on the default (yearly) state to populate the "billed" line
+      setPeriod('yearly');
+    })();
+  </script>
+</body>
+</html>

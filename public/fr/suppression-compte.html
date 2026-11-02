@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <title>Supprimer mon compte - Numeline</title>
+  <meta name="description" content="Comment supprimer votre compte Numeline et vos données : directement dans l'application, ou avec le formulaire de demande de suppression." />
+  <link rel="canonical" href="https://numeline.com/fr/suppression-compte" />
+  <link rel="stylesheet" href="/legal-pages.css" />
+  <script src="/web-form.js" defer></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/site-chrome.css" />
+  <script src="/nav-toggle.js" defer></script>
+  <script src="/favicon-anim.js" defer></script>
+</head>
+<body>
+  <header class="topbar site-top">
+    <a class="brand" href="/fr/"><img class="brand-mark" src="/logo-mark.png" alt="" width="36" height="36" />Numeline</a>
+    <nav class="nav">
+      <a href="/fr/">Accueil</a>
+      <a href="/fr/blog/">Blog</a>
+      <a href="/fr/notre-histoire">Notre histoire</a>
+      <a href="/fr/rappels-alimentaires">Rappels en cours</a>
+      <a href="/fr/contact">Contact</a>
+      <a href="/">🌐 English</a>
+    </nav>
+  </header>
+  <main>
+    <header>
+      <h1>Supprimer mon compte et mes données</h1>
+      <p>Vous pouvez supprimer votre compte Numeline et les données associées à tout moment.</p>
+    </header>
+
+    <h2>Le plus rapide : depuis l'application</h2>
+    <ol>
+      <li>Ouvrez Numeline et connectez-vous.</li>
+      <li>Allez dans l'onglet <strong>Paramètres</strong>.</li>
+      <li>Touchez <strong>Supprimer mon compte</strong>, puis confirmez.</li>
+    </ol>
+    <p>La suppression est immédiate. Si l'application vous demande de vous reconnecter, faites-le puis recommencez : c'est une mesure de sécurité.</p>
+
+    <h2>Sans accès à l'application : le formulaire</h2>
+    <p>Indiquez l'adresse e-mail utilisée pour vous connecter à l'application. Si vous vous connectez avec Google ou Apple, indiquez l'adresse de ce compte.</p>
+
+    <form class="wf" data-web-form="deletion" data-lang="fr" novalidate>
+      <div>
+        <label for="d-email">Adresse e-mail du compte</label>
+        <input id="d-email" name="email" type="email" autocomplete="email" inputmode="email" required maxlength="160" />
+      </div>
+      <div>
+        <label for="d-name">Nom <span class="opt">(facultatif)</span></label>
+        <input id="d-name" name="name" type="text" autocomplete="name" maxlength="120" />
+      </div>
+      <div>
+        <label for="d-message">Précisions <span class="opt">(facultatif)</span></label>
+        <textarea id="d-message" name="message" maxlength="4000"></textarea>
+      </div>
+      <div class="hp" aria-hidden="true">
+        <label for="d-website">Ne pas remplir</label>
+        <input id="d-website" name="website" type="text" tabindex="-1" autocomplete="off" />
+      </div>
+      <label class="check" for="d-consent">
+        <input id="d-consent" name="consent" type="checkbox" required />
+        <span>Je confirme vouloir supprimer définitivement mon compte Numeline et les données associées.</span>
+      </label>
+      <div class="wf-captcha"></div>
+      <button type="submit">Envoyer la demande</button>
+      <p class="wf-status" role="status" aria-live="polite" tabindex="-1"></p>
+    </form>
+
+    <div class="note">
+      <p>Vous recevrez un accusé de réception par e-mail. La suppression est effectuée sous <strong>30 jours au plus</strong>, et une confirmation vous est envoyée une fois terminée.</p>
+    </div>
+
+    <h2>Ce qui est supprimé</h2>
+    <ul>
+      <li>Votre compte et votre profil de connexion.</li>
+      <li>Les produits scannés et l'historique liés à votre compte.</li>
+      <li>Vos profils alimentaires (allergènes, régimes) et vos badges.</li>
+      <li>Les informations d'abonnement conservées sur nos serveurs.</li>
+    </ul>
+    <p>Les abonnements souscrits via l'App Store ou Google Play se résilient dans votre compte Apple ou Google : la suppression du compte Numeline ne les arrête pas automatiquement. Les données stockées sur votre téléphone (cache, préférences) sont effacées en désinstallant l'application.</p>
+    <p>Pour toute autre question, utilisez notre <a href="/fr/contact">formulaire de contact</a>.</p>
+
+  </main>
+  <footer class="site-foot">
+    <div>Numeline — Détecteur de rappels alimentaires</div>
+    <div class="site-foot-links"><a href="/fr/politique-de-confidentialite">Confidentialité</a><a href="/fr/conditions-utilisation">Conditions d'utilisation</a><a href="/fr/mentions-legales">Mentions légales</a><a href="/fr/suppression-compte">Supprimer mon compte</a><a href="/fr/contact">Contact</a></div>
+    <div><a href="mailto:contact@numeline.com">contact@numeline.com</a></div>
+  </footer>
+</body>
+</html>

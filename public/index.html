@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <meta name="google-site-verification" content="4o49DhqMoUZ0r9ZPXLFt0urJJBksNnpUrQVsg_UjSK8" />
+  <script src="/favicon-anim.js" defer></script>
+  <script src="/nav-toggle.js" defer></script>
+  <title>Numeline — Scan Food Products & Check FDA/USDA Recalls</title>
+  <meta name="description" content="Numeline, the food recall app: scan a product's lot number and check it against official FDA and USDA recalls. Allergen alerts too. Free on iOS and Android." />
+  <link rel="canonical" href="https://numeline.com/" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <link rel="alternate" hreflang="en" href="https://numeline.com/" />
+  <link rel="alternate" hreflang="fr" href="https://numeline.com/fr/" />
+  <link rel="alternate" hreflang="x-default" href="https://numeline.com/" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Numeline" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:locale:alternate" content="fr_FR" />
+  <meta property="og:title" content="Numeline — Scan Food Products & Check FDA/USDA Recalls" />
+  <meta property="og:description" content="Scan a product's lot number and instantly check it against official FDA and USDA recalls. Alerts, allergen detection, privacy-first." />
+  <meta property="og:url" content="https://numeline.com/" />
+  <meta property="og:image" content="https://numeline.com/feature-graphic-1024x500.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Numeline — Scan Food Products & Check FDA/USDA Recalls" />
+  <meta name="twitter:description" content="Scan a lot number, check official FDA & USDA recalls. Alerts and allergen detection." />
+  <meta name="twitter:image" content="https://numeline.com/feature-graphic-1024x500.png" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://numeline.com/#org",
+        "name": "Numeline",
+        "url": "https://numeline.com/",
+        "logo": "https://numeline.com/feature-graphic-1024x500.png"
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://numeline.com/#website",
+        "url": "https://numeline.com/",
+        "name": "Numeline",
+        "inLanguage": "en-US",
+        "publisher": { "@id": "https://numeline.com/#org" }
+      },
+      {
+        "@type": "MobileApplication",
+        "name": "Numeline",
+        "operatingSystem": "iOS, Android",
+        "applicationCategory": "LifestyleApplication",
+        "description": "Scan a food product's lot number and check it against official FDA and USDA recalls, with allergen detection.",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "installUrl": "https://apps.apple.com/app/id6758400953",
+        "publisher": { "@id": "https://numeline.com/#org" }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #0a1f1f;
+      --ink-soft: #2b3a3a;
+      --muted: #5f6e6e;
+      --surface: #ffffff;
+      --surface-alt: #eef5f3;
+      --accent: #0bae86;
+      --accent-dark: #0a1f1f;
+      --line: #d5dfdd;
+      --shadow: rgba(10, 31, 31, 0.16);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    /* Responsive safeguard: grid items default to min-width:auto, so an image
+       wider than its track would impose its intrinsic size and overflow the
+       page. Caps images and lets the tracks shrink. */
+    img { max-width: 100%; height: auto; }
+    .hero > *, .cards > *, .legal-grid > * { min-width: 0; }
+
+    body {
+      margin: 0;
+      color: var(--ink-soft);
+      font-family: "Space Grotesk", "Segoe UI", sans-serif;
+      background:
+        radial-gradient(1200px 600px at 20% -10%, #d8f1ea 0%, transparent 60%),
+        radial-gradient(900px 500px at 100% 10%, #f4ead8 0%, transparent 55%),
+        linear-gradient(180deg, #f7faf9 0%, #eef3f2 100%);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 24px 24px 56px;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 8px 0 24px;
+    }
+
+    /* En-tête fixe : reste visible en haut pendant le défilement. Le fond est
+       prolongé sur toute la largeur de la fenêtre (box-shadow + clip-path). */
+    .topbar {
+      position: sticky; top: 0; z-index: 50;
+      padding: 12px 0; margin-bottom: 16px;
+      background: rgba(247, 250, 249, 0.92);
+      box-shadow: 0 0 0 100vmax rgba(247, 250, 249, 0.92);
+      clip-path: inset(0 -100vmax);
+      -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line);
+    }
+    html { scroll-padding-top: 84px; }
+
+    .brand {
+      font-family: "Fraunces", "Times New Roman", serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--accent-dark);
+      letter-spacing: 0.3px;
+    }
+    /* Logo main + pomme devant le nom, comme l'icône de l'app. */
+    .topbar .brand { display: inline-flex; align-items: center; gap: 10px; }
+    .brand-mark { width: 36px; height: 36px; border-radius: 9px; flex-shrink: 0; box-shadow: 0 2px 6px rgba(10, 31, 31, 0.18); }
+
+    .nav {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .nav a {
+      padding: 6px 10px;
+      border-radius: 999px;
+      transition: background 0.2s ease;
+    }
+
+    .nav a:hover {
+      background: rgba(10, 31, 31, 0.08);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 32px;
+      align-items: center;
+      margin-top: 20px;
+    }
+
+    .eyebrow {
+      text-transform: uppercase;
+      font-size: 12px;
+      letter-spacing: 1.8px;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    h1 {
+      margin: 0 0 16px;
+      font-family: "Fraunces", "Times New Roman", serif;
+      font-size: 42px;
+      color: var(--accent-dark);
+      line-height: 1.05;
+    }
+
+    .lead {
+      font-size: 18px;
+      line-height: 1.6;
+      margin-bottom: 22px;
+    }
+
+    .cta {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 16px;
+    }
+
+    .btn {
+      padding: 10px 18px;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 14px;
+      border: 1px solid transparent;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn.primary {
+      background: var(--accent-dark);
+      color: #ffffff;
+      box-shadow: 0 10px 20px rgba(10, 31, 31, 0.2);
+    }
+
+    .btn.ghost {
+      border-color: var(--line);
+      background: #ffffff;
+      color: var(--accent-dark);
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 12px 24px rgba(10, 31, 31, 0.2);
+    }
+
+    .hero-meta {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .hero-visual {
+      background: #ffffff;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 16px;
+      box-shadow: 0 18px 32px var(--shadow);
+    }
+
+    .hero-visual img {
+      width: 100%;
+      display: block;
+      border-radius: 12px;
+    }
+
+    .caption {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 10px;
+    }
+
+    .section {
+      margin-top: 56px;
+    }
+
+    .section h2 {
+      font-family: "Fraunces", "Times New Roman", serif;
+      font-size: 28px;
+      color: var(--accent-dark);
+      margin-bottom: 10px;
+    }
+
+    .section p {
+      margin: 0 0 20px;
+      color: var(--muted);
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 18px;
+      box-shadow: 0 10px 24px rgba(10, 31, 31, 0.08);
+      min-height: 160px;
+    }
+
+    .card h3 {
+      margin: 0 0 10px;
+      font-size: 18px;
+      color: var(--accent-dark);
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.5;
+      font-size: 14px;
+    }
+
+    .legal-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+    }
+
+    .legal-card {
+      border-radius: 16px;
+      border: 1px solid var(--line);
+      background: var(--surface-alt);
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .legal-card a {
+      color: var(--accent-dark);
+      font-weight: 600;
+    }
+
+    .footer {
+      margin-top: 56px;
+      padding-top: 24px;
+      border-top: 1px solid var(--line);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      justify-content: space-between;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .fade-up {
+      animation: fadeUp 0.7s ease both;
+      animation-delay: var(--delay, 0s);
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(12px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Store badge buttons — hero */
+    .store-badges {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 14px;
+    }
+
+    .store-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 11px 18px;
+      border-radius: 12px;
+      background: var(--accent-dark);
+      color: #ffffff;
+      text-decoration: none;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+      line-height: 1;
+    }
+
+    .store-badge:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px rgba(10, 31, 31, 0.28);
+    }
+
+    .store-badge.android {
+      background: #01875f;
+    }
+
+    .store-badge svg {
+      width: 22px;
+      height: 22px;
+      flex-shrink: 0;
+    }
+
+    .store-badge-text {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .store-badge-sub {
+      font-size: 10px;
+      font-weight: 400;
+      opacity: 0.8;
+    }
+
+    .store-badge-main {
+      font-size: 15px;
+      font-weight: 700;
+    }
+
+    /* Store badge buttons — nav (compact) */
+    .nav-badges {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      flex-shrink: 0;
+    }
+
+    .nav-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 13px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+      color: #ffffff;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .nav-badge:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 8px 20px rgba(10, 31, 31, 0.22);
+    }
+
+    .nav-badge.android {
+      background: #01875f;
+    }
+
+    .nav-badge.ios {
+      background: var(--accent-dark);
+    }
+
+    .nav-badge svg {
+      width: 15px;
+      height: 15px;
+      flex-shrink: 0;
+    }
+
+    .video-wrap {
+      display: flex;
+      justify-content: center;
+      margin-top: 8px;
+    }
+
+    .video-frame {
+      position: relative;
+      width: 100%;
+      max-width: 320px;
+      aspect-ratio: 9 / 16;
+      border-radius: 22px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      box-shadow: 0 18px 40px var(--shadow);
+      background: #000;
+    }
+
+    .video-frame iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .badge-new {
+      display: inline-block;
+      margin-left: 8px;
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.4px;
+      vertical-align: middle;
+    }
+
+    .highlight {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-left: 4px solid #e8a33d;
+      border-radius: 16px;
+      padding: 22px 24px;
+      box-shadow: 0 10px 24px rgba(10, 31, 31, 0.08);
+    }
+
+    .highlight h3 {
+      margin: 0 0 10px;
+      font-size: 19px;
+      color: var(--accent-dark);
+    }
+
+    .highlight p {
+      margin: 0 0 10px;
+      line-height: 1.6;
+    }
+
+    .highlight p:last-child { margin-bottom: 0; }
+
+    .shots {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 18px;
+      margin-top: 8px;
+    }
+
+    .shot { text-align: center; }
+
+    .shot img {
+      width: 100%;
+      max-width: 210px;
+      display: block;
+      margin: 0 auto 10px;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      box-shadow: 0 12px 26px var(--shadow);
+    }
+
+    .shot span {
+      font-size: 13px;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        font-size: 34px;
+      }
+    }
+
+    /* `has-toggle` est posée par nav-toggle.js UNIQUEMENT quand le menu ne
+       tient pas sur une ligne — hors media query, car le besoin dépend du
+       nombre de liens (dix ici, plus deux badges) et non de la largeur. */
+    .topbar.has-toggle .nav {
+      display: none; order: 5; width: 100%;
+      flex-direction: column; gap: 0; margin-top: 12px;
+    }
+    .topbar.has-toggle.nav-open .nav { display: flex; animation: navSlideIn 0.22s ease both; }
+    .topbar.has-toggle .nav a { border-radius: 0; border-bottom: 1px solid var(--line); padding: 12px 10px; }
+    .topbar.has-toggle .nav-toggle { display: flex; }
+
+    .nav-toggle {
+      display: none;
+      flex-direction: column; justify-content: center; gap: 5px;
+      width: 42px; height: 38px; padding: 9px;
+      background: #fff; border: 1px solid var(--line); border-radius: 10px; cursor: pointer;
+    }
+    .nav-toggle span { display: block; height: 2px; width: 100%; background: var(--accent-dark); border-radius: 2px; transition: transform 0.28s cubic-bezier(0.4,0,0.2,1), opacity 0.16s ease; }
+    .topbar.nav-open .nav-toggle span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .topbar.nav-open .nav-toggle span:nth-child(2) { opacity: 0; transform: scaleX(0.3); }
+    .topbar.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .nav-toggle:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+    @keyframes navSlideIn { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: translateY(0); } }
+    @media (prefers-reduced-motion: reduce) { .nav-toggle span { transition: none; } .topbar.nav-open .nav { animation: none; } }
+
+    @media (max-width: 600px) {
+      .topbar {
+        flex-wrap: wrap;
+        align-items: center;
+      }
+
+
+
+      .nav a {
+        padding: 12px 10px;
+        border-radius: 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .nav-badges {
+        display: none;
+      }
+
+      .page {
+        padding: 16px 16px 40px;
+      }
+    }
+
+    /* Bandeau presse. Mention FACTUELLE d'un passage média : ni logo de la
+       chaîne, ni formulation laissant croire à une recommandation de KTLA ou
+       de son journaliste — nommer l'émission et l'invité est légitime, se
+       prévaloir de leur caution ne le serait pas.
+       Quand le segment sera diffusé : passer .press-card en <a href="...">,
+       remplacer le libellé « Bientôt » et ajouter la date de diffusion. */
+    .press-strip { margin-top: 26px; }
+    /* Carte « Dossier de presse » : téléchargement des PDF. */
+    .press-kit-links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 12px; }
+    .press-kit-links a {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 10px 16px; border-radius: 999px; font-size: 14px; font-weight: 600;
+      border: 1px solid var(--line); background: #ffffff; color: var(--accent-dark);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .press-kit-links a.primary { background: var(--accent-dark); border-color: var(--accent-dark); color: #ffffff; }
+    .press-kit-links a:hover { transform: translateY(-1px); box-shadow: 0 6px 14px rgba(10, 31, 31, 0.14); }
+    .press-kit-links svg { width: 16px; height: 16px; flex-shrink: 0; }
+    .press-note a { text-decoration: underline; text-underline-offset: 2px; }
+    .press-card {
+      display: flex;
+      flex-wrap: wrap;
+      /* center, pas baseline : la planche de photos se centre en face du
+         paragraphe au lieu de pendre depuis la ligne de base du texte. */
+      align-items: center;
+      gap: 12px 22px;
+      padding: 16px 20px;
+      border: 1px solid var(--line);
+      border-left: 4px solid var(--accent);
+      border-radius: 14px;
+      background: var(--surface-alt);
+    }
+    .press-flag {
+      text-transform: uppercase;
+      font-size: 11px;
+      letter-spacing: 1.6px;
+      font-weight: 700;
+      color: var(--accent);
+      white-space: nowrap;
+    }
+    .press-text {
+      margin: 0;
+      color: var(--ink-soft);
+      font-size: 15px;
+      line-height: 1.55;
+    }
+    /* Le bandeau porte desormais les photos du tournage : texte a gauche,
+       planche de trois vignettes a droite, empilees sous 760px. */
+    .press-body { flex: 1 1 340px; min-width: 0; }
+    .press-shots { display: flex; gap: 10px; flex: 0 0 auto; }
+    .press-shots img {
+      /* Taille fluide plutot qu'une valeur figee : les vignettes grandissent
+         avec l'ecran au lieu de rester en timbre-poste sur un grand moniteur.
+         Les sources font 480x640, donc meme a 148px on reste tres en dessous
+         de leur definition. */
+      width: clamp(118px, 11vw, 148px);
+      height: auto;
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+      border-radius: 10px;
+      display: block;
+      background: var(--surface);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.13);
+    }
+    /* 880px et non 760 : la carte passe a la ligne vers 790px. Entre les deux,
+       les vignettes restaient au petit format sous le texte avec un large vide
+       a droite. Au-dessous de ce seuil elles se partagent toute la largeur. */
+    @media (max-width: 880px) {
+      /* Les trois vignettes se partagent la largeur : sans flex:1 1 0 elles
+         prenaient chacune 100% et debordaient hors de l'ecran. */
+      /* Plafond : sans lui, un ecran de 870px donnait des vignettes de
+         252px et un bandeau de ~500px de haut. Sous 480px de large le
+         plafond n'a aucun effet, le rendu telephone reste identique. */
+      .press-shots { width: 100%; flex: 1 1 100%; max-width: 460px; }
+      .press-shots img { flex: 1 1 0; min-width: 0; width: auto; height: auto; aspect-ratio: 3 / 4; }
+    }
+    .press-text strong { color: var(--ink); font-weight: 600; }
+    .press-note { display: block; margin-top: 4px; font-size: 13px; color: var(--muted); }
+    @media (max-width: 640px) {
+      .press-card { padding: 14px 16px; }
+      .press-text { font-size: 14px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="topbar">
+      <div class="brand"><img class="brand-mark" src="/logo-mark.png" alt="" width="36" height="36" />Numeline</div>
+      <nav class="nav">
+        <a href="/blog/">Blog</a>
+        <a href="#demo">Demo</a>
+        <a href="#features">Features</a>
+        <a href="#app">The app</a>
+        <a href="#trust">Trust</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="subscribers.html">Partners</a>
+        <a href="privacy-policy.html">Privacy</a>
+        <a href="terms-of-service.html">Terms</a>
+        <a href="account-deletion.html">Delete account</a>
+        <a href="/food-recalls">Food recalls</a>
+        <a href="/contact">Contact</a>
+      </nav>
+      <div class="nav-badges">
+        <a class="nav-badge android" href="https://play.google.com/store/apps/details?id=com.eatsafe.app" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3.609 1.814 13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893 2.302 2.302-10.937 6.295 8.635-8.597zm3.699-5.309 2.486 1.432a1 1 0 0 1 0 1.73l-2.66 1.531-2.596-2.63 2.77-2.063zM5.864 2.598 16.802 8.9 14.5 11.197 5.864 2.598z"/></svg>
+          Google Play
+        </a>
+        <a class="nav-badge ios" href="https://apps.apple.com/app/id6758400953" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+          App Store
+        </a>
+      </div>
+    </header>
+
+    <main class="hero">
+      <div class="hero-copy fade-up" style="--delay: 0.05s;">
+        <div class="eyebrow">Food recall radar</div>
+        <h1>Scan. Know. Act.</h1>
+        <p class="lead">
+          Numeline helps you scan food products, verify recall status, and receive alerts when a lot is flagged.
+          Built for speed, clarity, and privacy-first scanning.
+        </p>
+        <div class="store-badges">
+          <a class="store-badge android" href="https://play.google.com/store/apps/details?id=com.eatsafe.app" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3.609 1.814 13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893 2.302 2.302-10.937 6.295 8.635-8.597zm3.699-5.309 2.486 1.432a1 1 0 0 1 0 1.73l-2.66 1.531-2.596-2.63 2.77-2.063zM5.864 2.598 16.802 8.9 14.5 11.197 5.864 2.598z"/></svg>
+            <div class="store-badge-text">
+              <span class="store-badge-sub">Get it on</span>
+              <span class="store-badge-main">Google Play</span>
+            </div>
+          </a>
+          <a class="store-badge ios" href="https://apps.apple.com/app/id6758400953" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+            <div class="store-badge-text">
+              <span class="store-badge-sub">Download on the</span>
+              <span class="store-badge-main">App Store</span>
+            </div>
+          </a>
+        </div>
+        <div class="cta">
+          <a class="btn ghost" href="privacy-policy.html">Privacy policy</a>
+          <a class="btn ghost" href="terms-of-service.html">Terms of service</a>
+          <a class="btn ghost" href="account-deletion.html">Delete account</a>
+        </div>
+        <div class="hero-meta">Operated by Olympe et odin (SIRET 91457466000025)</div>
+      </div>
+      <div class="hero-visual fade-up" style="--delay: 0.15s;">
+        <img src="feature-graphic-1024x500.png" alt="Numeline feature graphic" />
+        <div class="caption">Feature graphic used for the store listing.</div>
+      </div>
+    </main>
+
+    <div class="press-strip fade-up" style="--delay: 0.16s;">
+      <div class="press-card">
+        <div class="press-body">
+          <span class="press-flag">Television</span>
+          <p class="press-text">
+            Numeline&rsquo;s founder sat down with <strong>Rich DeMuro</strong> for <strong>Rich on Tech</strong>,
+            filmed at the KTLA 5 studios in Hollywood, Los Angeles.
+            <span class="press-note">Photographs from the recording. The segment has not aired yet &mdash; we will link it here once it is online.</span>
+          </p>
+        </div>
+        <div class="press-shots">
+          <img src="/blog/img/ktla-camion.jpg" alt="KTLA 5 Live broadcast truck outside the Hollywood studios" width="480" height="640" loading="lazy" />
+          <img src="/blog/img/ktla-plateau.jpg" alt="Numeline&rsquo;s founder on the Rich on Tech set at KTLA 5" width="480" height="640" loading="lazy" />
+          <img src="/blog/img/ktla-interview.jpg" alt="Numeline&rsquo;s founder showing a product to Rich DeMuro on set" width="480" height="640" loading="lazy" />
+        </div>
+      </div>
+      <div class="press-card">
+        <div class="press-body">
+          <span class="press-flag">Press kit</span>
+          <p class="press-text">
+            Journalists: our press kit includes an overview of Numeline, app screenshots, and contact details.
+            <span class="press-note">PDF, 6&nbsp;pages. For any request, use our <a href="/contact">contact form</a>.</span>
+          </p>
+          <div class="press-kit-links">
+            <a class="primary" href="/presse/numeline-press-kit-us.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>Press kit (EN, 2.5&nbsp;MB)</a>
+            <a href="/presse/dossier-de-presse-numeline.pdf" download hreflang="fr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>Dossier de presse (FR, 2.8&nbsp;MB)</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <section id="demo" class="section fade-up" style="--delay: 0.18s;">
+      <h2>Numeline in action</h2>
+      <p>A short walkthrough — from scanning the lot number to an instant answer.</p>
+      <div class="video-wrap">
+        <div class="video-frame">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/AObdQe4dQ8s"
+            title="Numeline demo"
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="section fade-up" style="--delay: 0.2s;">
+      <h2>Made for confident decisions</h2>
+      <p>Scan, match, and stay informed with a workflow designed to minimize friction.</p>
+      <div class="cards">
+        <div class="card">
+          <h3>Lot numbers</h3>
+          <p>Photograph the lot code: it is read for you and checked, by brand and lot, against official FDA and USDA recalls.</p>
+        </div>
+        <div class="card">
+          <h3>Recall alerts</h3>
+          <p>Get notified when a scanned product matches an official recall — monitoring continues even when the app is closed.</p>
+        </div>
+        <div class="card">
+          <h3>Faster FDA detection<span class="badge-new">NEW</span></h3>
+          <p>We also monitor FDA recall press releases, which are often published days before the enforcement database is updated.</p>
+        </div>
+        <div class="card">
+          <h3>Celiac mode<span class="badge-new">NEW</span></h3>
+          <p>Strict gluten avoidance including traces: a product is flagged even on a simple "may contain" statement.</p>
+        </div>
+        <div class="card">
+          <h3>Thousands of ingredients<span class="badge-new">NEW</span></h3>
+          <p>Search a catalog of thousands of ingredients to avoid, or add your own foods to your profile.</p>
+        </div>
+        <div class="card">
+          <h3>Pregnancy mode<span class="badge-new">NEW</span></h3>
+          <p>Flags raw milk, deli meat, raw fish, meat and eggs, sprouts, high-mercury fish, liver, and caffeine.</p>
+        </div>
+        <div class="card">
+          <h3>Privacy first</h3>
+          <p>Images are processed and deleted after analysis. Only the brand and lot number are kept. Payments stay in the store.</p>
+        </div>
+        <div class="card">
+          <h3>Team ready</h3>
+          <p>Share recall visibility across teams with organization features, role controls, and PDF, CSV, or XLSX exports.</p>
+        </div>
+      </div>
+
+      <div class="highlight" style="margin-top: 22px;">
+        <h3>When a recall has no lot number<span class="badge-new">NEW</span></h3>
+        <p>
+          The FDA and USDA sometimes announce a recall without publishing any lot codes — the affected
+          items are identified only by a table of "Best if Used By" dates, or by a linked PDF.
+        </p>
+        <p>
+          Rather than reporting that nothing was found, Numeline flags a <strong>possible recall</strong>
+          when the brand and product type match what you scanned, and shows you the identification details
+          that were actually published, so you can check your own item against them.
+        </p>
+        <p>
+          A possible recall is never shown as a confirmed one: without a lot number, nothing proves your
+          specific item is affected. The official notice is always one tap away.
+        </p>
+      </div>
+    </section>
+
+    <section id="app" class="section fade-up" style="--delay: 0.26s;">
+      <h2>Inside the app</h2>
+      <p>Two steps at the counter: scan the barcode, then the lot number. Numeline identifies the product, checks every profile you set up, and matches the lot against official recalls.</p>
+      <div class="shots">
+        <div class="shot">
+          <img src="/images/us-home.jpeg" alt="Numeline home screen with scan statistics" loading="lazy" />
+          <span>Your scans at a glance</span>
+        </div>
+        <div class="shot">
+          <img src="/images/us-scan-diet-check.jpeg" alt="Detected brand with a per-profile dietary check" loading="lazy" />
+          <span>Who can eat it</span>
+        </div>
+        <div class="shot">
+          <img src="/images/us-confirm-lot.jpeg" alt="Lot number confirmation with recall status" loading="lazy" />
+          <span>Confirm the lot</span>
+        </div>
+        <div class="shot">
+          <img src="/images/us-result.jpeg" alt="Result screen showing no recall found" loading="lazy" />
+          <span>The answer</span>
+        </div>
+      </div>
+      <div class="highlight" style="margin-top: 22px; border-left-color: var(--accent);">
+        <h3>Every profile checked, on every scan</h3>
+        <p>
+          Set up a profile for each person and Numeline tells you who a product suits and who it
+          doesn't — here, gummy sweets flagged as possibly containing pork and gelatin for one
+          profile, while two others are clear.
+        </p>
+        <p>
+          Ingredient data comes from Open Food Facts and is declarative, so it can be incomplete.
+          Numeline flags what it finds and tells you when an origin needs checking; always read the
+          label. A "no recall found" result means no matching recall was in the official databases
+          at that moment — it is not a guarantee that the product is safe.
+        </p>
+      </div>
+    </section>
+
+    <section id="trust" class="section fade-up" style="--delay: 0.3s;">
+      <h2>Trusted data sources</h2>
+      <p>Recall intelligence is built on official public data sources.</p>
+      <div class="cards">
+        <div class="card">
+          <h3>FDA</h3>
+          <p>Food and Drug Administration recall listings.</p>
+        </div>
+        <div class="card">
+          <h3>USDA</h3>
+          <p>Food Safety and Inspection Service recall listings.</p>
+        </div>
+        <div class="card">
+          <h3>Open Food Facts</h3>
+          <p>Product lookup for barcode identification.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="partners" class="section fade-up" style="--delay: 0.32s;">
+      <h2>Meet our partners</h2>
+      <p>Discover businesses that use Numeline to protect their customers from food recalls.</p>
+      <div class="cards">
+        <div class="card">
+          <h3>Browse partners</h3>
+          <p>Explore our growing directory of food trucks, restaurants, schools and more that publish their profile on Numeline.</p>
+          <p style="margin-top:14px"><a href="subscribers.html" style="color:var(--accent);font-weight:600">See all partners →</a></p>
+        </div>
+        <div class="card">
+          <h3>Join the directory</h3>
+          <p>Every Numeline user can publish a public profile — logo, address, phone, email and website — to reach our community.</p>
+          <p style="margin-top:14px"><a href="download.html" style="color:var(--accent);font-weight:600">Get the app →</a></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section fade-up" style="--delay: 0.35s;">
+      <h2>Legal and support</h2>
+      <p>All required legal pages are available for the app listing.</p>
+      <div class="legal-grid">
+        <div class="legal-card">
+          <div>Privacy Policy</div>
+          <a href="privacy-policy.html">Read the privacy policy</a>
+        </div>
+        <div class="legal-card">
+          <div>Terms of Service</div>
+          <a href="terms-of-service.html">Read the terms of service</a>
+        </div>
+        <div class="legal-card">
+          <div>Contact</div>
+          <a href="/contact">Write to us using the form</a>
+        </div>
+        <div class="legal-card">
+          <div>Account deletion</div>
+          <a href="account-deletion.html">Request account deletion</a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div>Numeline - Food Recall Scanner</div>
+      <div>Privacy: contact@numeline.com</div>
+      <div>Olympe et odin - France</div>
+    </footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,76 @@
+/* En-tête et pied de page du site pour les pages « document » (contact,
+   suppression de compte, pages légales), qui ont leur propre feuille de style.
+   Tout est préfixé .site-top / .site-foot : ces pages stylent les éléments
+   `header`, `footer` et `a` de façon générique, la classe doit l'emporter. */
+.site-top, .site-foot {
+  --sc-ink: #0a1f1f;
+  --sc-muted: #5f6e6e;
+  --sc-line: #d5dfdd;
+  --sc-bg: rgba(247, 250, 249, 0.92);
+  font-family: "Space Grotesk", "Segoe UI", system-ui, sans-serif;
+  line-height: 1.4;
+}
+
+/* En-tête fixe, comme sur le reste du site. */
+.site-top {
+  position: sticky; top: 0; z-index: 50;
+  display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+  max-width: 1120px; margin: 0 auto 0; padding: 12px 24px;
+  background: var(--sc-bg);
+  box-shadow: 0 0 0 100vmax var(--sc-bg);
+  clip-path: inset(0 -100vmax);
+  -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--sc-line);
+}
+.site-top .brand {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-family: "Fraunces", "Times New Roman", serif;
+  font-size: 22px; font-weight: 700; letter-spacing: 0.3px;
+  color: var(--sc-ink); text-decoration: none;
+}
+.site-top .brand-mark { width: 36px; height: 36px; border-radius: 9px; flex-shrink: 0; box-shadow: 0 2px 6px rgba(10, 31, 31, 0.18); }
+.site-top .nav { display: flex; gap: 8px; flex-wrap: wrap; font-size: 14px; }
+.site-top .nav a {
+  padding: 6px 10px; border-radius: 999px;
+  color: var(--sc-muted); text-decoration: none;
+  transition: background 0.2s ease;
+}
+.site-top .nav a:hover { background: rgba(10, 31, 31, 0.08); }
+.site-top .nav a[aria-current="page"] { color: var(--sc-ink); font-weight: 600; background: rgba(10, 31, 31, 0.06); }
+
+/* Menu replié (nav-toggle.js pose has-toggle quand les liens ne tiennent pas). */
+.site-top.has-toggle .nav { display: none; order: 5; width: 100%; flex-direction: column; gap: 0; margin-top: 8px; }
+.site-top.has-toggle.nav-open .nav { display: flex; }
+.site-top.has-toggle .nav a { border-radius: 0; border-bottom: 1px solid var(--sc-line); padding: 12px 8px; }
+.site-top .nav-toggle {
+  display: none; flex-direction: column; justify-content: center; gap: 5px;
+  width: 42px; height: 38px; padding: 9px;
+  background: #ffffff; border: 1px solid var(--sc-line); border-radius: 10px; cursor: pointer;
+}
+.site-top.has-toggle .nav-toggle { display: flex; }
+.site-top .nav-toggle span {
+  display: block; height: 2px; width: 100%; background: var(--sc-ink); border-radius: 2px;
+  transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.16s ease;
+}
+.site-top.nav-open .nav-toggle span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.site-top.nav-open .nav-toggle span:nth-child(2) { opacity: 0; transform: scaleX(0.3); }
+.site-top.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+@media (prefers-reduced-motion: reduce) { .site-top .nav-toggle span { transition: none; } }
+
+.site-foot {
+  max-width: 880px; margin: 0 auto; padding: 8px 32px 40px;
+  display: flex; flex-wrap: wrap; gap: 10px 24px; justify-content: space-between;
+  color: var(--sc-muted); font-size: 13px;
+  border: 0;
+}
+.site-foot a { color: var(--sc-muted); text-decoration: none; }
+.site-foot a:hover { color: var(--sc-ink); text-decoration: underline; }
+.site-foot .site-foot-links { display: flex; flex-wrap: wrap; gap: 6px 14px; }
+
+@media (max-width: 600px) {
+  .site-top { padding: 10px 16px; }
+  .site-foot { padding: 8px 16px 32px; flex-direction: column; }
+}
+
+/* Le dégradé du body s'arrête à la hauteur du contenu : même teinte en dessous. */
+html { background: #e9eff1; }

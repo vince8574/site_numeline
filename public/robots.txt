@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /email-template.html
+Disallow: /email-template-press.html
+Disallow: /email-template-restaurant.html
+Disallow: /email-template-tracy.html
+
+Sitemap: https://numeline.com/sitemap.xml

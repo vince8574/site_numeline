@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <title>Partners - Numeline</title>
+  <meta name="description" content="Discover the businesses that use Numeline to keep their customers safe from food recalls." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #0a1f1f;
+      --ink-soft: #2b3a3a;
+      --muted: #5f6e6e;
+      --surface: #ffffff;
+      --surface-alt: #eef5f3;
+      --accent: #0bae86;
+      --accent-dark: #0a1f1f;
+      --line: #d5dfdd;
+      --shadow: rgba(10, 31, 31, 0.16);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      color: var(--ink-soft);
+      font-family: "Space Grotesk", "Segoe UI", sans-serif;
+      background:
+        radial-gradient(1200px 600px at 20% -10%, #d8f1ea 0%, transparent 60%),
+        radial-gradient(900px 500px at 100% 10%, #f4ead8 0%, transparent 55%),
+        linear-gradient(180deg, #f7faf9 0%, #eef3f2 100%);
+      min-height: 100vh;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .page {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 24px 24px 56px;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 8px 0 24px;
+    }
+
+    .brand {
+      font-family: "Fraunces", "Times New Roman", serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--accent-dark);
+      letter-spacing: 0.3px;
+    }
+    /* Logo main + pomme devant le nom, comme l'icône de l'app. */
+    .topbar .brand { display: inline-flex; align-items: center; gap: 10px; }
+    .brand-mark { width: 36px; height: 36px; border-radius: 9px; flex-shrink: 0; box-shadow: 0 2px 6px rgba(10, 31, 31, 0.18); }
+
+    .nav {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .nav a {
+      padding: 6px 10px;
+      border-radius: 999px;
+      transition: background 0.2s ease;
+    }
+
+    .nav a:hover {
+      background: rgba(10, 31, 31, 0.08);
+    }
+
+    .hero {
+      text-align: center;
+      padding: 24px 0 40px;
+    }
+
+    .eyebrow {
+      text-transform: uppercase;
+      font-size: 12px;
+      letter-spacing: 1.8px;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    h1 {
+      margin: 0 0 16px;
+      font-family: "Fraunces", "Times New Roman", serif;
+      font-size: 42px;
+      color: var(--accent-dark);
+      line-height: 1.05;
+    }
+
+    .lead {
+      font-size: 17px;
+      line-height: 1.6;
+      color: var(--muted);
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px;
+      margin-top: 16px;
+    }
+
+    .partner-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 24px;
+      box-shadow: 0 10px 24px rgba(10, 31, 31, 0.08);
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .partner-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 36px rgba(10, 31, 31, 0.12);
+    }
+
+    .logo-wrap {
+      height: 90px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--surface-alt);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .logo-wrap img {
+      max-width: 85%;
+      max-height: 80%;
+      object-fit: contain;
+    }
+
+    .logo-placeholder {
+      font-family: "Fraunces", serif;
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    .partner-name {
+      font-family: "Fraunces", "Times New Roman", serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--accent-dark);
+      margin: 0;
+      line-height: 1.2;
+    }
+
+    .partner-info {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .partner-info-row {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+    }
+
+    .partner-info-row svg {
+      width: 16px;
+      height: 16px;
+      flex-shrink: 0;
+      margin-top: 2px;
+      color: var(--accent);
+    }
+
+    .partner-info-row a {
+      color: var(--accent-dark);
+      font-weight: 500;
+      word-break: break-word;
+    }
+
+    .partner-info-row a:hover {
+      color: var(--accent);
+    }
+
+    .status {
+      text-align: center;
+      padding: 80px 20px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .status-spinner {
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      border: 3px solid rgba(11, 174, 134, 0.2);
+      border-top-color: var(--accent);
+      border-radius: 50%;
+      animation: spin 0.9s linear infinite;
+      margin-bottom: 12px;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    .footer {
+      margin-top: 56px;
+      padding-top: 24px;
+      border-top: 1px solid var(--line);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      justify-content: space-between;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .cta-join {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 28px;
+      margin-top: 40px;
+      text-align: center;
+      box-shadow: 0 10px 24px rgba(10, 31, 31, 0.08);
+    }
+
+    .cta-join h2 {
+      font-family: "Fraunces", "Times New Roman", serif;
+      font-size: 24px;
+      color: var(--accent-dark);
+      margin: 0 0 10px;
+    }
+
+    .cta-join p {
+      color: var(--muted);
+      margin: 0 0 16px;
+      font-size: 14px;
+    }
+
+    .cta-join .btn {
+      display: inline-block;
+      padding: 11px 22px;
+      border-radius: 999px;
+      background: var(--accent-dark);
+      color: #ffffff;
+      font-weight: 600;
+      font-size: 14px;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .cta-join .btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 10px 20px rgba(10, 31, 31, 0.2);
+    }
+
+    @media (max-width: 600px) {
+      .topbar { flex-direction: column; align-items: flex-start; }
+      .nav { gap: 10px; }
+      h1 { font-size: 32px; }
+      .page { padding: 16px 16px 40px; }
+    }
+  </style>
+  <script src="/nav-toggle.js" defer></script>
+  <script src="/favicon-anim.js" defer></script>
+</head>
+<body>
+  <div class="page">
+    <header class="topbar">
+      <a class="brand" href="/"><img class="brand-mark" src="/logo-mark.png" alt="" width="36" height="36" />Numeline</a>
+      <nav class="nav">
+        <a href="/#features">Features</a>
+        <a href="/#trust">Trust</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="subscribers.html">Partners</a>
+        <a href="privacy-policy.html">Privacy</a>
+        <a href="terms-of-service.html">Terms</a>
+        <a href="/food-recalls">Food recalls</a>
+        <a href="/contact">Contact</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="eyebrow">Our partners</div>
+      <h1>Businesses that care</h1>
+      <p class="lead">
+        These businesses use Numeline to protect their customers from food recalls.
+        Discover them and support those close to you.
+      </p>
+    </section>
+
+    <section id="partners">
+      <div class="status" id="status">
+        <div class="status-spinner"></div>
+        <div>Loading partners...</div>
+      </div>
+      <div class="grid" id="grid" style="display:none"></div>
+    </section>
+
+    <section class="cta-join">
+      <h2>Want to appear here?</h2>
+      <p>Download Numeline, create an account, and publish your public profile from the settings.</p>
+      <a class="btn" href="download.html">Get the app</a>
+    </section>
+
+    <footer class="footer">
+      <div>Numeline - Food Recall Scanner</div>
+      <div>Contact: contact@numeline.com</div>
+      <div>Olympe et odin - France</div>
+    </footer>
+  </div>
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+    import { getFirestore, collection, query, where, getDocs } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyDaEWd6i6iv_7IVyvum-yZox-fm842KoDE",
+      authDomain: "eatsok-6d19f.firebaseapp.com",
+      projectId: "eatsok-6d19f",
+      storageBucket: "eatsok-6d19f.firebasestorage.app",
+      messagingSenderId: "577892941568"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    const statusEl = document.getElementById("status");
+    const gridEl = document.getElementById("grid");
+
+    const iconPin = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>';
+    const iconPhone = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>';
+    const iconMail = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>';
+    const iconWeb = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>';
+
+    function escapeHtml(str) {
+      return String(str || "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+    }
+
+    function normalizeUrl(url) {
+      if (!url) return "";
+      const trimmed = url.trim();
+      if (/^https?:\/\//i.test(trimmed)) return trimmed;
+      return "https://" + trimmed;
+    }
+
+    function renderPartner(data) {
+      const name = escapeHtml(data.companyName || "Partner");
+      const logo = data.logoUrl
+        ? '<img src="' + escapeHtml(data.logoUrl) + '" alt="' + name + ' logo" onerror="this.outerHTML=\'<div class=&quot;logo-placeholder&quot;>' + name.charAt(0) + '</div>\'" />'
+        : '<div class="logo-placeholder">' + name.charAt(0) + '</div>';
+
+      const rows = [];
+      if (data.address) {
+        rows.push('<div class="partner-info-row">' + iconPin + '<span>' + escapeHtml(data.address) + '</span></div>');
+      }
+      if (data.phone) {
+        rows.push('<div class="partner-info-row">' + iconPhone + '<a href="tel:' + escapeHtml(data.phone) + '">' + escapeHtml(data.phone) + '</a></div>');
+      }
+      if (data.email) {
+        rows.push('<div class="partner-info-row">' + iconMail + '<a href="mailto:' + escapeHtml(data.email) + '">' + escapeHtml(data.email) + '</a></div>');
+      }
+      if (data.website) {
+        const url = normalizeUrl(data.website);
+        rows.push('<div class="partner-info-row">' + iconWeb + '<a href="' + escapeHtml(url) + '" target="_blank" rel="noopener">' + escapeHtml(data.website) + '</a></div>');
+      }
+
+      return (
+        '<article class="partner-card">' +
+          '<div class="logo-wrap">' + logo + '</div>' +
+          '<h3 class="partner-name">' + name + '</h3>' +
+          '<div class="partner-info">' + rows.join("") + '</div>' +
+        '</article>'
+      );
+    }
+
+    async function loadPartners() {
+      try {
+        const q = query(collection(db, "publicProfiles"), where("published", "==", true));
+        const snap = await getDocs(q);
+        if (snap.empty) {
+          statusEl.innerHTML = '<div>No partners published yet. Be the first to join!</div>';
+          return;
+        }
+        const partners = [];
+        snap.forEach((doc) => partners.push(doc.data()));
+        partners.sort((a, b) => (a.companyName || "").localeCompare(b.companyName || ""));
+        gridEl.innerHTML = partners.map(renderPartner).join("");
+        statusEl.style.display = "none";
+        gridEl.style.display = "grid";
+      } catch (err) {
+        console.error(err);
+        statusEl.innerHTML = '<div>Unable to load partners. Please try again later.</div>';
+      }
+    }
+
+    loadPartners();
+  </script>
+</body>
+</html>

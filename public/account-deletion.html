@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <title>Account Deletion - Numeline</title>
+  <meta name="description" content="How to delete your Numeline account and data: directly in the app, or with the account deletion request form." />
+  <link rel="canonical" href="https://numeline.com/account-deletion" />
+  <link rel="stylesheet" href="/legal-pages.css" />
+  <script src="/web-form.js" defer></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/site-chrome.css" />
+  <script src="/nav-toggle.js" defer></script>
+  <script src="/favicon-anim.js" defer></script>
+</head>
+<body>
+  <header class="topbar site-top">
+    <a class="brand" href="/"><img class="brand-mark" src="/logo-mark.png" alt="" width="36" height="36" />Numeline</a>
+    <nav class="nav">
+      <a href="/">Home</a>
+      <a href="/blog/">Blog</a>
+      <a href="/pricing.html">Pricing</a>
+      <a href="/food-recalls">Food recalls</a>
+      <a href="/contact">Contact</a>
+      <a href="/fr/">🌐 Français</a>
+    </nav>
+  </header>
+  <main>
+    <header>
+      <h1>Account &amp; Data Deletion</h1>
+      <p>You can delete your Numeline account and the data associated with it at any time.</p>
+    </header>
+
+    <h2>Fastest: in the app</h2>
+    <ol>
+      <li>Open Numeline and sign in.</li>
+      <li>Go to the <strong>Settings</strong> tab.</li>
+      <li>Tap <strong>Delete Account</strong> and confirm.</li>
+    </ol>
+    <p>The deletion is immediate. If the app asks you to sign in again, do so and try again: it is a security measure.</p>
+
+    <h2>No access to the app: request form</h2>
+    <p>Enter the email address you use to sign in to the app. If you sign in with Google or Apple, enter the address of that account.</p>
+
+    <form class="wf" data-web-form="deletion" data-lang="en" novalidate>
+      <div>
+        <label for="d-email">Account email address</label>
+        <input id="d-email" name="email" type="email" autocomplete="email" inputmode="email" required maxlength="160" />
+      </div>
+      <div>
+        <label for="d-name">Name <span class="opt">(optional)</span></label>
+        <input id="d-name" name="name" type="text" autocomplete="name" maxlength="120" />
+      </div>
+      <div>
+        <label for="d-message">Details <span class="opt">(optional)</span></label>
+        <textarea id="d-message" name="message" maxlength="4000"></textarea>
+      </div>
+      <div class="hp" aria-hidden="true">
+        <label for="d-website">Leave empty</label>
+        <input id="d-website" name="website" type="text" tabindex="-1" autocomplete="off" />
+      </div>
+      <label class="check" for="d-consent">
+        <input id="d-consent" name="consent" type="checkbox" required />
+        <span>I confirm that I want to permanently delete my Numeline account and the associated data.</span>
+      </label>
+      <div class="wf-captcha"></div>
+      <button type="submit">Send request</button>
+      <p class="wf-status" role="status" aria-live="polite" tabindex="-1"></p>
+    </form>
+
+    <div class="note">
+      <p>You will receive an acknowledgement by email. Deletion is completed within <strong>30 days at most</strong>, and you will receive a confirmation once it is done.</p>
+    </div>
+
+    <h2>What will be deleted</h2>
+    <ul>
+      <li>Your account and authentication profile.</li>
+      <li>Scanned products and history linked to your account.</li>
+      <li>Your dietary profiles (allergens, diets) and badges.</li>
+      <li>Subscription information stored on our servers.</li>
+    </ul>
+    <p>Subscriptions purchased through the App Store or Google Play are cancelled in your Apple or Google account: deleting your Numeline account does not stop them automatically. Data stored on your phone (cache, preferences) is removed by uninstalling the app.</p>
+    <p>For any other question, use our <a href="/contact">contact form</a>.</p>
+
+  </main>
+  <footer class="site-foot">
+    <div>Numeline — Food recall radar</div>
+    <div class="site-foot-links"><a href="/privacy-policy">Privacy</a><a href="/terms-of-service">Terms of service</a><a href="/account-deletion">Delete account</a><a href="/contact">Contact</a></div>
+    <div><a href="mailto:contact@numeline.com">contact@numeline.com</a></div>
+  </footer>
+</body>
+</html>

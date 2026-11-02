@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <title>Contact - Numeline</title>
+  <meta name="description" content="Contact the Numeline team: app questions, recall data issues, subscriptions, business, press." />
+  <link rel="canonical" href="https://numeline.com/contact" />
+  <link rel="stylesheet" href="/legal-pages.css" />
+  <script src="/web-form.js" defer></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/site-chrome.css" />
+  <script src="/nav-toggle.js" defer></script>
+  <script src="/favicon-anim.js" defer></script>
+</head>
+<body>
+  <header class="topbar site-top">
+    <a class="brand" href="/"><img class="brand-mark" src="/logo-mark.png" alt="" width="36" height="36" />Numeline</a>
+    <nav class="nav">
+      <a href="/">Home</a>
+      <a href="/blog/">Blog</a>
+      <a href="/pricing.html">Pricing</a>
+      <a href="/food-recalls">Food recalls</a>
+      <a href="/contact" aria-current="page">Contact</a>
+      <a href="/fr/">🌐 Français</a>
+    </nav>
+  </header>
+  <main>
+    <header>
+      <h1>Contact us</h1>
+      <p>A question about the app, a recall, your subscription, or a business request? Write to us and we will reply to the email address you provide.</p>
+    </header>
+
+    <form class="wf" data-web-form="contact" data-lang="en" novalidate>
+      <div>
+        <label for="c-name">Name</label>
+        <input id="c-name" name="name" type="text" autocomplete="name" required maxlength="120" />
+      </div>
+      <div>
+        <label for="c-email">Email address</label>
+        <input id="c-email" name="email" type="email" autocomplete="email" inputmode="email" required maxlength="160" />
+      </div>
+      <div>
+        <label for="c-subject">Subject</label>
+        <select id="c-subject" name="subject" required>
+          <option value="">Choose a subject</option>
+          <option>Question about the app</option>
+          <option>Report a recall data issue</option>
+          <option>Subscription and billing</option>
+          <option>Business (restaurants, stores, schools)</option>
+          <option>Press and partnerships</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div>
+        <label for="c-message">Message</label>
+        <textarea id="c-message" name="message" required minlength="10" maxlength="4000"></textarea>
+      </div>
+      <div class="hp" aria-hidden="true">
+        <label for="c-website">Leave empty</label>
+        <input id="c-website" name="website" type="text" tabindex="-1" autocomplete="off" />
+      </div>
+      <label class="check" for="c-consent">
+        <input id="c-consent" name="consent" type="checkbox" required />
+        <span>I agree that Numeline may use this information to answer my request, as described in the <a href="/privacy-policy">privacy policy</a>.</span>
+      </label>
+      <div class="wf-captcha"></div>
+      <button type="submit">Send</button>
+      <p class="wf-status" role="status" aria-live="polite" tabindex="-1"></p>
+    </form>
+
+    <div class="note">
+      <p>Want to delete your account? Use the <a href="/account-deletion">dedicated page</a>.</p>
+    </div>
+
+  </main>
+  <footer class="site-foot">
+    <div>Numeline — Food recall radar</div>
+    <div class="site-foot-links"><a href="/privacy-policy">Privacy</a><a href="/terms-of-service">Terms of service</a><a href="/account-deletion">Delete account</a><a href="/contact">Contact</a></div>
+    <div><a href="mailto:contact@numeline.com">contact@numeline.com</a></div>
+  </footer>
+</body>
+</html>

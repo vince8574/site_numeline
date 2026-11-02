@@ -1,0 +1,94 @@
+/* Pages légales, contact et suppression de compte (FR et EN). */
+:root {
+  --bg: #f4f6f8;
+  --panel: #ffffff;
+  --text: #1f2a2a;
+  --muted: #5c6a6a;
+  --accent: #0a1f1f;
+  --accent-soft: #e6f0ee;
+  --border: #d6dede;
+  --ok: #0b7a55;
+  --err: #b42318;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", serif;
+  color: var(--text);
+  background: linear-gradient(180deg, #f4f6f8 0%, #e9eff1 100%);
+  line-height: 1.7;
+}
+main {
+  max-width: 880px;
+  margin: 40px auto;
+  padding: 32px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  box-shadow: 0 12px 32px rgba(20, 40, 40, 0.12);
+}
+header { border-bottom: 1px solid var(--border); padding-bottom: 16px; margin-bottom: 24px; }
+h1 { margin: 0 0 8px; font-size: 28px; color: var(--accent); }
+h2 { margin: 28px 0 12px; font-size: 20px; color: var(--accent); }
+h3 { margin: 20px 0 8px; font-size: 17px; color: var(--accent); }
+p { margin: 0 0 12px; }
+ul, ol { padding-left: 20px; margin: 0 0 16px; }
+li { margin: 6px 0; }
+a { color: var(--accent); }
+hr { border: 0; border-top: 1px solid var(--border); margin: 24px 0; }
+.muted { color: var(--muted); font-size: 15px; }
+.back { margin: 0 0 12px; font-size: 15px; }
+.note {
+  background: var(--accent-soft);
+  border-left: 4px solid var(--accent);
+  padding: 12px 14px;
+  border-radius: 10px;
+  margin: 16px 0;
+}
+.legal-links { border-top: 1px solid var(--border); margin-top: 32px; padding-top: 16px; font-size: 14px; color: var(--muted); }
+
+/* Formulaires */
+.wf { display: grid; gap: 14px; margin-top: 8px; }
+.wf label { display: block; font-weight: 600; margin-bottom: 4px; }
+.wf .opt { font-weight: 400; color: var(--muted); }
+.wf input[type=text], .wf input[type=email], .wf select, .wf textarea {
+  width: 100%;
+  padding: 11px 12px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  font: inherit;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 16px;
+  background: #fff;
+  color: var(--text);
+}
+.wf textarea { min-height: 150px; resize: vertical; }
+.wf input:focus, .wf select:focus, .wf textarea:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+.wf .check { display: flex; gap: 10px; align-items: flex-start; font-weight: 400; }
+.wf .check input { margin-top: 6px; width: 18px; height: 18px; flex: 0 0 auto; }
+.wf .hp { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
+.wf button {
+  justify-self: start;
+  padding: 12px 22px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #fff;
+  font: 600 16px system-ui, -apple-system, "Segoe UI", sans-serif;
+  cursor: pointer;
+}
+.wf button[disabled] { opacity: 0.6; cursor: default; }
+.wf-status { min-height: 1.5em; font-size: 15px; }
+.wf-status.ok { color: var(--ok); font-weight: 600; }
+.wf-status.err { color: var(--err); font-weight: 600; }
+
+@media (max-width: 720px) {
+  main { margin: 16px; padding: 20px; }
+  h1 { font-size: 24px; }
+}
+@media (prefers-color-scheme: dark) {
+  :root { --bg: #0f1717; --panel: #142020; --text: #e6eeee; --muted: #9fb0b0; --accent: #7fe3c0; --accent-soft: #1b2b2b; --border: #2a3a3a; --ok: #5fd3a6; --err: #ff8a80; }
+  body { background: #0f1717; }
+  .wf input[type=text], .wf input[type=email], .wf select, .wf textarea { background: #0f1717; color: var(--text); }
+  .wf button { color: #0a1f1f; }
+}

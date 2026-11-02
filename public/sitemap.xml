@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <url>
+    <loc>https://numeline.com/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://numeline.com/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://numeline.com/fr/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://numeline.com/" />
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://numeline.com/fr/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://numeline.com/fr/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://numeline.com/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://numeline.com/" />
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url><loc>https://numeline.com/pricing.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <!-- Blog EN -->
+  <url><loc>https://numeline.com/blog/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://numeline.com/blog/addall-supplement-dmaa-phenibut-recall</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://numeline.com/fr/blog/rappels-thc-cbd-shop-ardeche-septembre-2026</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://numeline.com/blog/greenwise-organic-blueberries-ecoli-recall</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://numeline.com/blog/taylor-farms-cyclospora-iceberg-recall</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://numeline.com/blog/taylor-farms-cyclospora-outbreak-grows-taco-bell</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://numeline.com/blog/usda-listeria-and-mislabeled-allergens-july-2026</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://numeline.com/blog/ddioses-fruit-pops-allergen-recall</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://numeline.com/blog/ajinomoto-frozen-meals-glass-recall</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://numeline.com/blog/gellert-artichoke-hearts-glass-recall</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://numeline.com/blog/maple-leaf-bacon-import-recall</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://numeline.com/blog/resers-pasta-salad-allergen-recall</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+
+  <!-- Blog FR -->
+  <url><loc>https://numeline.com/fr/download</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://numeline.com/fr/notre-histoire</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://numeline.com/fr/blog/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://numeline.com/fr/blog/steak-hache-leclerc-rappel-ecoli-stec</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://numeline.com/fr/blog/bouchee-a-la-reine-rappel-listeria</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://numeline.com/fr/blog/vague-listeria-traiteur-fromages-ete-2026</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://numeline.com/fr/blog/charcuterie-seche-rappel-salmonelle</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://numeline.com/fr/blog/chips-pural-corps-etranger-verre</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://numeline.com/fr/blog/prestige-de-la-sarthe-rappel-listeria</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://numeline.com/fr/blog/truite-fumee-bio-rappel-listeria</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+
+  <!-- Légal -->
+  <url><loc>https://numeline.com/privacy-policy.html</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://numeline.com/terms-of-service.html</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+
+  <url><loc>https://numeline.com/blog/cyclospora-outbreak-first-deaths-reported</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://numeline.com/blog/shell-eggs-salmonella-outbreak-recall</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://numeline.com/blog/fusia-kimbap-undeclared-fish-recall</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://numeline.com/fr/blog/bonne-maman-confiture-bris-de-verre</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://numeline.com/fr/blog/galettes-riz-lima-aflatoxine</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://numeline.com/fr/blog/vague-salmonelle-viande-fromage-aout-2026</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://numeline.com/blog/cyclospora-outbreak-6358-cases-15-states</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://numeline.com/blog/blank-slate-creamery-vegan-dessert-undeclared-egg</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://numeline.com/fr/blog/carrefour-baby-bio-allergene-lait-non-declare</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://numeline.com/fr/blog/histamine-sardines-maquereaux-rappel</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://numeline.com/fr/blog/rappels-vrac-rayon-traditionnel-sans-etiquette</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://numeline.com/fr/blog/piment-rouge-vrac-depassement-pesticides</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://numeline.com/fr/blog/steak-hache-mauvais-gaz-conditionnement</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://numeline.com/blog/jalapeno-salmonella-outbreak-multi-brand-recall</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://numeline.com/fr/blog/rupture-chaine-du-froid-50-rappels-aout-2026</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://numeline.com/fr/blog/listeria-jambon-fromage-crevettes-aout-2026</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://numeline.com/fr/blog/jambon-carrefour-reflets-de-france-listeria</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://numeline.com/fr/blog/vague-listeria-fromages-fin-aout-2026</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://numeline.com/blog/clover-hill-dairy-listeria-cheese-recall</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://numeline.com/blog/buffalo-chicken-false-inspection-mark-recall</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://numeline.com/fr/blog/salades-traiteur-corps-etrangers-septembre-2026</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://numeline.com/blog/kofinas-garlic-olive-oil-essential-oil-recall</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://numeline.com/blog/made-fresh-salads-deli-cream-cheese-listeria-recall</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://numeline.com/blog/guanciale-pork-jowl-listeria-recall</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://numeline.com/blog/taylor-farms-cyclospora-2013-2026-pattern</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://numeline.com/blog/cyclospora-michigan-exceeds-national-count</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://numeline.com/blog/lundberg-white-jasmine-rice-foreign-material-recall</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://numeline.com/blog/uninspected-meat-recalls-summer-2026</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://numeline.com/blog/broccoli-sprouts-salmonella-recall-evergreen</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://numeline.com/fr/blog/poulet-rappel-salmonelle-quatre-marques-meme-usine</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://numeline.com/fr/blog/rappel-poulet-salmonelle-deuxieme-vague-octobre-2026</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://numeline.com/fr/blog/persil-surgele-picard-thiriet-rappel-ecoli-stec</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://numeline.com/fr/blog/laits-infantiles-cereulide-rappels-2026</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://numeline.com/fr/blog/lait-croissance-bio-gout-poisson-rappel</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://numeline.com/fr/blog/paupiettes-vallegrain-rappel-listeria</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://numeline.com/fr/blog/mini-saucisson-parmesan-auchan-carrefour-salmonelle</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://numeline.com/fr/blog/tome-des-bauges-rappel-ecoli-leclerc-semnoz</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://numeline.com/fr/blog/rappels-coppa-ker-blavet-jus-pomme-octobre-2026</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://numeline.com/blog/so-delicious-salted-caramel-stones-repeat-recall</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://numeline.com/blog/bettergoods-walmart-two-recalls-two-months</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://numeline.com/blog/cyclospora-outbreak-over-season-not</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://numeline.com/blog/star-meat-delivery-uninspected-recall</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://numeline.com/blog/frozen-berries-ecoli-recall-great-value-trader-joes</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://numeline.com/blog/gatorade-recall-undeclared-yellow-dye-lot-codes</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://numeline.com/blog/rapture-preworkout-recall-dmaa</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://numeline.com/blog/donutful-donut-recall-undeclared-milk-class-i</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://numeline.com/blog/nerds-laffy-taffy-arsenic-florida-testing</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://numeline.com/blog/salata-jalapeno-avocado-dressing-salmonella-recall</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://numeline.com/blog/family-farmstead-raw-cheddar-ecoli-recall</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://numeline.com/blog/gallup-grocery-food-safety-confidence-record-low</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://numeline.com/blog/kayem-recall-hot-dogs-bacon-temperature-abuse</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://numeline.com/blog/great-value-fruit-cocktail-lead-recall-walmart</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://numeline.com/fr/blog/moules-coques-ecoli-rappel-octobre-2026</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://numeline.com/fr/blog/tenders-poulet-oumaty-antibiotiques-rappel</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://numeline.com/fr/blog/noix-saint-jacques-saint-brieuc-listeria-rappel</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://numeline.com/fr/blog/saucisses-volaille-corico-medina-salmonelle-rappel</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://numeline.com/fr/rappels-alimentaires</loc><lastmod>2026-11-02</lastmod><changefreq>daily</changefreq><priority>1.0</priority></url>
+  <url><loc>https://numeline.com/food-recalls</loc><lastmod>2026-11-02</lastmod><changefreq>daily</changefreq><priority>1.0</priority></url>
+  <url><loc>https://numeline.com/blog/cinnamon-lead-recall-list-21-brands</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://numeline.com/fr/blog/rappels-alimentaires-2026-listeria-salmonelle-hausse</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://numeline.com/blog/food-recalls-2026-salmonella-dyes-fda-data</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://numeline.com/blog/truly-aip-eat-gangster-gluten-recall-gf-blends</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+</urlset>

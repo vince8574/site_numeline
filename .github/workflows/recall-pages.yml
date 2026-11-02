@@ -1,0 +1,69 @@
+name: Recall pages
+
+# Régénère chaque jour les pages « rappels en cours » du site
+# (public/fr/rappels-alimentaires.html et public/food-recalls.html)
+# à partir des données officielles (RappelConso, FDA, USDA), puis pousse
+# le résultat : Vercel redéploie le site sur ce push.
+#
+# Le push est fait avec GITHUB_TOKEN : il ne déclenche aucun autre workflow,
+# donc jamais de build d'app (ces builds ignorent de toute façon public/**).
+
+on:
+  schedule:
+    # 06:15 UTC (8 h 15 à Paris en été) : les fiches RappelConso de la veille au
+    # soir et l'export FDA du jour sont disponibles.
+    - cron: '15 6 * * *'
+    # Deuxième passage en fin de journée : RappelConso publie aussi l'après-midi.
+    - cron: '15 18 * * *'
+  workflow_dispatch:
+  # Un changement du générateur relance aussitôt la génération.
+  push:
+    branches: [main]
+    paths:
+      - 'site-tools/**'
+      - '.github/workflows/recall-pages.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: recall-pages
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Generate recall pages
+        run: python site-tools/recall_pages.py
+
+      - name: Commit and push if changed
+        run: |
+          if git diff --quiet -- public site-tools/data && [ -z "$(git status --porcelain site-tools/data)" ]; then
+            echo "Aucun changement."
+            exit 0
+          fi
+          git config user.name "numeline-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/fr/rappels-alimentaires.html public/food-recalls.html public/sitemap.xml site-tools/data
+          git commit -m "site : mise à jour des rappels en cours ($(date -u +%Y-%m-%d))"
+          git pull --rebase --autostash origin main
+          git push origin HEAD:main
+          echo "pushed=1" >> "$GITHUB_OUTPUT"
+        id: push
+
+      # Prévient Bing (IndexNow) que les pages de rappels ont changé, une fois
+      # que Vercel a eu le temps de les redéployer.
+      - name: Notify search engines (IndexNow)
+        if: steps.push.outputs.pushed == '1'
+        continue-on-error: true
+        run: |
+          sleep 120
+          python site-tools/indexnow.py https://numeline.com/fr/rappels-alimentaires https://numeline.com/food-recalls

@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <script src="/favicon-anim.js" defer></script>
+  <script src="/nav-toggle.js" defer></script>
+  <title>Food Recalls Today: FDA &amp; USDA Recall List, Updated Daily</title>
+  <meta name="description" content="Every FDA and USDA food recall from the last 60 days: products, companies, lot codes, reasons and states. Updated daily from official data." />
+  <link rel="canonical" href="https://numeline.com/food-recalls" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Numeline" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:title" content="Food Recalls Today: FDA &amp; USDA Recall List, Updated Daily" />
+  <meta property="og:description" content="Every FDA and USDA food recall from the last 60 days: products, companies, lot codes, reasons and states. Updated daily from official data." />
+  <meta property="og:url" content="https://numeline.com/food-recalls" />
+  <meta property="og:image" content="https://numeline.com/feature-graphic-1024x500.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/blog/blog.css" />
+  <style>
+.rc-hero { margin: 8px 0 18px; }
+.rc-hero h1 { margin-bottom: 10px; }
+.rc-updated { font-size: 14px; color: var(--muted); margin: 0 0 6px; }
+.rc-intro { font-size: 16px; line-height: 1.65; margin: 0 0 16px; }
+.rc-filters { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 22px; }
+.rc-filters button {
+  font: inherit; font-size: 13px; font-weight: 600; cursor: pointer;
+  padding: 7px 12px; border-radius: 999px; border: 1px solid var(--line);
+  background: var(--surface); color: var(--accent-dark);
+}
+.rc-filters button[aria-pressed="true"] { background: var(--accent-dark); border-color: var(--accent-dark); color: #fff; }
+.rc-filters button .n { opacity: 0.7; font-weight: 500; margin-left: 4px; }
+.rc-day { font-family: "Fraunces", Georgia, serif; font-size: 20px; margin: 26px 0 10px; color: var(--accent-dark); }
+.rc-list { display: grid; gap: 10px; }
+.rc-item {
+  background: var(--surface); border: 1px solid var(--line); border-radius: 14px;
+  padding: 14px 16px; box-shadow: 0 4px 14px rgba(10, 31, 31, 0.05);
+}
+.rc-item.has-img { display: grid; grid-template-columns: 84px minmax(0, 1fr); gap: 14px; align-items: start; }
+.rc-fig { margin: 0; }
+.rc-thumb {
+  display: block; width: 84px; height: 84px; object-fit: contain; border-radius: 10px;
+  background: #fff; border: 1px solid var(--line);
+}
+.rc-fig figcaption { font-size: 10px; line-height: 1.3; color: var(--muted); text-align: center; margin-top: 4px; }
+@media (max-width: 520px) {
+  .rc-item.has-img { grid-template-columns: 60px minmax(0, 1fr); gap: 10px; }
+  .rc-thumb { width: 60px; height: 60px; }
+}
+.rc-item h3 { margin: 6px 0 4px; font-size: 16px; line-height: 1.35; color: var(--accent-dark); }
+.rc-brand { font-size: 14px; font-weight: 600; color: var(--ink-soft); }
+.rc-meta { font-size: 13.5px; color: var(--muted); line-height: 1.55; margin: 4px 0 0; overflow-wrap: anywhere; }
+.rc-meta strong { color: var(--ink-soft); font-weight: 600; }
+.rc-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.rc-tag { font-size: 11.5px; font-weight: 700; letter-spacing: 0.2px; padding: 3px 9px; border-radius: 999px; background: #e7f4f0; color: #0a5c47; }
+.rc-tag.hot { background: #fde8e6; color: #9b1c12; }
+.rc-tag.mid { background: #fff3dc; color: #7a4b00; }
+.rc-links { display: flex; flex-wrap: wrap; gap: 6px 16px; margin-top: 8px; font-size: 13.5px; font-weight: 600; }
+.rc-links a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+.rc-empty { display: none; color: var(--muted); }
+.rc-faq h2 { margin-top: 40px; }
+.rc-faq h3 { margin: 20px 0 6px; font-size: 17px; }
+.rc-faq p { margin: 0 0 10px; line-height: 1.65; }
+.rc-sources { font-size: 13px; color: var(--muted); margin-top: 26px; line-height: 1.6; }
+</style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Current food recalls",
+  "description": "Every FDA and USDA food recall from the last 60 days: products, companies, lot codes, reasons and states. Updated daily from official data.",
+  "url": "https://numeline.com/food-recalls",
+  "inLanguage": "en-US",
+  "dateModified": "2026-11-02",
+  "mainEntity": {
+    "@type": "ItemList",
+    "numberOfItems": 73,
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "ParaBien Al Grano with — Pan Pepin, Inc.",
+        "url": "https://numeline.com/food-recalls"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Riad's Oliva to Go Baba Ghanouj — Oliva on Main",
+        "url": "https://numeline.com/food-recalls"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Bulk packaged Seitan Cubes — House Foods America Corporation",
+        "url": "https://numeline.com/food-recalls"
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "name": "Sunny Sky Non-Dairy French Vanilla Creamer, 96oz , bag in box, 3 per case, refrigerate after opening — Sunny Sky Products, LLC",
+        "url": "https://numeline.com/food-recalls"
+      },
+      {
+        "@type": "ListItem",
+        "position": 5,
+        "name": "Boner Bears CHOCOLATE, 3 DOSES PER BAR — JXK Enterprises, Inc.",
+        "url": "https://numeline.com/food-recalls"
+      },
+      {
+        "@type": "ListItem",
+        "position": 6,
+        "name": "Gluten Free Truly AIP All Purpose Baking Mix Flour 15.3 oz — GF Blends Inc",
+        "url": "https://numeline.com/food-recalls"
+      },
+      {
+        "@type": "ListItem",
+        "position": 7,
+        "name": "Imperio Distribution LLC Recalls Beef Jerky Products Produced Without the Benefit of Inspection — Imperio Distribution LLC",
+        "url": "https://www.fsis.usda.gov/recalls-alerts/imperio-distribution-llc-recalls-beef-jerky-products-produced-without-benefit"
+      },
+      {
+        "@type": "ListItem",
+        "position": 8,
+        "name": "Miyoko's Creamery European Style Salted Plant Milk Butter — Prosperity Organic Foods Inc",
+        "url": "https://numeline.com/food-recalls"
+      },
+      {
+        "@type": "ListItem",
+        "position": 9,
+        "name": "Blue Bottle Coffee 4oz Sweet Blossom Simple Syrup in a glass boston round bottle with metal and plastisol… — Pink House Alchemy, LLC",
+        "url": "https://numeline.com/food-recalls"
+      },
+      {
+        "@type": "ListItem",
+        "position": 10,
+        "name": "ZestiGreens Broccoli Seeds for Sprouting & Microgreens — FORTUNA MARKETING, INC",
+        "url": "https://numeline.com/food-recalls"
+      },
+      {
+        "@type": "ListItem",
+        "position": 11,
+        "name": "EDEN BROTHERS Broccoli Seeds - Calabrese — EDEN BROTHERS",
+        "url": "https://numeline.com/food-recalls"
+      },
+      {
+        "@type": "ListItem",
+        "position": 12,
+        "name": "Kayem Foods Inc. Recalls Meat and Poultry Products Due to Possible Temperature Abuse — Kayem Foods Inc.",
+        "url": "https://www.fsis.usda.gov/recalls-alerts/kayem-foods-inc--recalls-meat-and-poultry-products-due-possible-temperature-abuse"
+      },
+      {
+        "@type": "ListItem",
+        "position": 13,
+        "name": "Stewarts Shops Vanilla Heavenly Medley 1/2 Gallon (1.89 L) — Stewart's Shops Corp.",
+        "url": "https://numeline.com/food-recalls"
+      },
+      {
+        "@type": "ListItem",
+        "position": 14,
+        "name": "Pur Aqua Sparkling Frost Cherry Limeade 17 oz — Refresco Beverages US Inc",
+        "url": "https://numeline.com/food-recalls"
+      },
+      {
+        "@type": "ListItem",
+        "position": 15,
+        "name": "Deano's Pasta — DEANO'S PASTA",
+        "url": "https://numeline.com/food-recalls"
+      },
+      {
+        "@type": "ListItem",
+        "position": 16,
+        "name": "Made From Plants — DARING FOODS INC",
+        "url": "https://numeline.com/food-recalls"
+      },
+      {
+        "@type": "ListItem",
+        "position": 17,
+        "name": "SIERRA NEVADA CHEESE GRAZIERS RAW MILK SHARP CHEDDAR — Sierra Nevada Cheese Company, Inc",
+        "url": "https://numeline.com/food-recalls"
+      },
+      {
+        "@type": "ListItem",
+        "position": 18,
+        "name": "J. HIGGS Loaded Bacon & Cheddar Potato Chips — Saratoga Potato Chips LLC",
+        "url": "https://numeline.com/food-recalls"
+      },
+      {
+        "@type": "ListItem",
+        "position": 19,
+        "name": "Made Fresh brand Black Bean and Corn Salad — Made Fresh Salads Inc",
+        "url": "https://numeline.com/food-recalls"
+      },
+      {
+        "@type": "ListItem",
+        "position": 20,
+        "name": "Holsum Spinach Flour Tortillas Large, 8 count (20 oz.) — Holsum De Puerto Rico, Inc.",
+        "url": "https://numeline.com/food-recalls"
+      },
+      {
+        "@type": "ListItem",
+        "position": 21,
+        "name": "Chocolate Chip Cookies packaged in a cardboard box — J K Patisserie & Bakery LLC",
+        "url": "https://numeline.com/food-recalls"
+      },
+      {
+        "@type": "ListItem",
+        "position": 22,
+        "name": "Saint Francis Apizza Frozen Pepperoni Pizza — Saint Francis Apizza LLC",
+        "url": "https://numeline.com/food-recalls"
+      },
+      {
+        "@type": "ListItem",
+        "position": 23,
+        "name": "Sweet Sensi Elevated Edibles Hybrid Gum Drops - Passion Guava Kush 140mg THC — SWEET SENSI",
+        "url": "https://numeline.com/food-recalls"
+      },
+      {
+        "@type": "ListItem",
+        "position": 24,
+        "name": "QUESO PALMITA. Generic Name: Pastel de Queso (Cheese Pie). Intended use: Human consumption. Condition:… — QUESO PALMITA GP LLC",
+        "url": "https://numeline.com/food-recalls"
+      },
+      {
+        "@type": "ListItem",
+        "position": 25,
+        "name": "X10 Natural Enhancement Supplement, 0.5 fl oz/sachet (15 mL), 7 sachets/box — A&P CREATIONS",
+        "url": "https://numeline.com/food-recalls"
+      },
+      {
+        "@type": "ListItem",
+        "position": 26,
+        "name": "Donutful Chocolate Dipped Vanilla Cake Donuts - 7.05oz/10ct.Case Configuration — The Better Bakehouse Snack Company",
+        "url": "https://numeline.com/food-recalls"
+      },
+      {
+        "@type": "ListItem",
+        "position": 27,
+        "name": "Lemon Alfredo Fettuccine packed in a yellow plastic sealed bag with pink and black lettering — GIAS FOOD INC.",
+        "url": "https://numeline.com/food-recalls"
+      },
+      {
+        "@type": "ListItem",
+        "position": 28,
+        "name": "Cranberry Chicken Salad Wedge 4.5 oz package in Wedge plastic and clear container with a plastic film sealing… — FRESHPOINT CENTRAL FLORIDA, INC.",
+        "url": "https://numeline.com/food-recalls"
+      },
+      {
+        "@type": "ListItem",
+        "position": 29,
+        "name": "Berlin Seeds Alfalfa Sprouting Seeds, packaged in 1/4 lb., 1/2 lb., 1 lb., and 5 lb. resealable bags and 50… — Berlin Seeds",
+        "url": "https://numeline.com/food-recalls"
+      },
+      {
+        "@type": "ListItem",
+        "position": 30,
+        "name": "FSIS Issues Public Health Alert for Ineligible Chicken Vienna-Style Sausage Products Illegally Imported From Jamaica — USDA FSIS",
+        "url": "https://www.fsis.usda.gov/recalls-alerts/fsis-issues-public-health-alert-ineligible-chicken-vienna-style-sausage-products"
+      }
+    ]
+  }
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://numeline.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Current food recalls"
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is a food recall?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A food recall removes a product from sale, and from homes, because it may be unsafe: bacteria such as Listeria, Salmonella or E. coli, an undeclared allergen, foreign material, a contaminant such as lead, or a processing problem. The FDA oversees most foods; the USDA Food Safety and Inspection Service (FSIS) oversees meat, poultry and egg products."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What do Class I, II and III mean?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Class I is the most serious: a reasonable probability that the product will cause serious health problems or death. Class II may cause temporary or medically reversible health problems. Class III is unlikely to cause adverse health consequences."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I know if my product is recalled?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Compare the brand, UPC, lot code and best-by date printed on the package with the recall notice. A product is only affected if its codes match. The Numeline app does this for you: scan the lot number and it checks it against official FDA and USDA recalls."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What should I do with a recalled food?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Do not eat it. Return it to the store for a refund or throw it away, as the notice says. If you ate it and feel sick, contact a healthcare provider and mention the product."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How often is this list updated?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Every day, automatically, from FDA enforcement data and USDA FSIS recall notices. It covers food recalls classified over the last 60 days. Our blog explains the most important ones."
+      }
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <div class="page">
+    <header class="topbar">
+      <a class="brand" href="/"><img class="brand-mark" src="/logo-mark.png" alt="" width="36" height="36" />Numeline</a>
+      <nav class="nav">
+        <a href="/">Home</a>
+        <a href="/blog/">Blog</a>
+        <a href="/food-recalls" aria-current="page">Food recalls</a>
+        <a href="/contact">Contact</a>
+        <a href="/fr/rappels-alimentaires" hreflang="fr">FR</a>
+      </nav>
+    </header>
+
+    <main class="article">
+      <section class="rc-hero">
+        <div class="eyebrow">Official FDA &amp; USDA data</div>
+        <h1>Current food recalls</h1>
+        <p class="rc-updated">Updated <time datetime="2026-11-02">November 2, 2026</time> · 73 recalls classified since September 3, 2026</p>
+        <p class="rc-intro">Every <strong>food recall</strong> classified by the <strong>FDA</strong> and the <strong>USDA</strong> over the last 60 days: 64 from the FDA and 9 from the USDA, including 6 for Listeria, 13 for Salmonella, 4 for E. coli. For each one: the product, the company, the lot codes or establishment number, and where it was sold.</p>
+      </section>
+      <div class="rc-filters" role="group" aria-label="Filter by reason">
+        <button type="button" data-f="all" aria-pressed="true">All<span class="n">73</span></button>
+        <button type="button" data-f="agency:FDA" aria-pressed="false">FDA<span class="n">64</span></button>
+        <button type="button" data-f="agency:USDA" aria-pressed="false">USDA (meat, poultry, eggs)<span class="n">9</span></button>
+        <button type="button" data-f="listeria" aria-pressed="false">Listeria<span class="n">6</span></button>
+        <button type="button" data-f="salmonella" aria-pressed="false">Salmonella<span class="n">13</span></button>
+        <button type="button" data-f="ecoli" aria-pressed="false">E. coli<span class="n">4</span></button>
+        <button type="button" data-f="allergens" aria-pressed="false">Undeclared allergens<span class="n">23</span></button>
+        <button type="button" data-f="foreign" aria-pressed="false">Foreign material<span class="n">4</span></button>
+        <button type="button" data-f="chemical" aria-pressed="false">Lead &amp; contaminants<span class="n">4</span></button>
+        <button type="button" data-f="uninspected" aria-pressed="false">Uninspected or ineligible imports<span class="n">6</span></button>
+        <button type="button" data-f="other" aria-pressed="false">Other reasons<span class="n">13</span></button>
+      </div>
+      <h2 class="rc-day">October 30, 2026</h2>
+      <div class="rc-list">
+        <article class="rc-item" data-cat="allergens" data-agency="FDA">
+          <div class="rc-tags"><span class="rc-tag mid">Undeclared allergens</span><span class="rc-tag">FDA</span><span class="rc-tag">Class I</span></div>
+          <h3>ParaBien Al Grano with</h3>
+          <div class="rc-brand">Pan Pepin, Inc.</div>
+          <p class="rc-meta"><strong>Reason:</strong> Contains undeclared sesame<br /><strong>Codes:</strong> Sell By Oct / 12 3B1 274; Exp. date: 10-12-26 Sell By Oct / 14 3B1 277 Exp. date 10-14-26 Sell by Oct / 15 3B1 278 Exp date 10-15-26 Sell By Oct / 17 3B1 280 Exp date 10-17-26 Sell By Oct / 18 3B1…<br /><strong>Distribution:</strong> All customers located in Puerto Rico<br /><strong>Recall:</strong> H-0187-2027</p>
+          <div class="rc-links"><a href="https://www.accessdata.fda.gov/scripts/ires/index.cfm" target="_blank" rel="noopener">FDA enforcement records</a></div>
+        </article>
+        <article class="rc-item" data-cat="allergens" data-agency="FDA">
+          <div class="rc-tags"><span class="rc-tag mid">Undeclared allergens</span><span class="rc-tag">FDA</span><span class="rc-tag">Class I</span></div>
+          <h3>Riad&#x27;s Oliva to Go Baba Ghanouj (+2 more products)</h3>
+          <div class="rc-brand">Oliva on Main</div>
+          <p class="rc-meta"><strong>Reason:</strong> contains undeclared sesame<br /><strong>Codes:</strong> best by dates 10/10/26 through 10/14/26 · best by dates 10/10-26 through 10/14/26 · best by dates 10/12/26 through 10/18/26<br /><strong>Distribution:</strong> MA, CT<br /><strong>Recall:</strong> H-0179-2027, H-0180-2027, H-0181-2027</p>
+          <div class="rc-links"><a href="https://www.accessdata.fda.gov/scripts/ires/index.cfm" target="_blank" rel="noopener">FDA enforcement records</a></div>
+        </article>
+        <article class="rc-item" data-cat="allergens" data-agency="FDA">
+          <div class="rc-tags"><span class="rc-tag mid">Undeclared allergens</span><span class="rc-tag">FDA</span><span class="rc-tag">Class I</span></div>
+          <h3>Bulk packaged Seitan Cubes</h3>
+          <div class="rc-brand">House Foods America Corporation</div>
+          <p class="rc-meta"><strong>Reason:</strong> Product label missing ingredient statement and allergen ingredient (wheat)<br /><strong>Codes:</strong> Code: D2026OCT26<br /><strong>Distribution:</strong> Product was distributed to 9 different distribution centers across the country.<br /><strong>Recall:</strong> H-0188-2027</p>
+          <div class="rc-links"><a href="https://www.accessdata.fda.gov/scripts/ires/index.cfm" target="_blank" rel="noopener">FDA enforcement records</a></div>
+        </article>
+      </div>
+      <h2 class="rc-day">October 28, 2026</h2>
+      <div class="rc-list">
+        <article class="rc-item" data-cat="other" data-agency="FDA">
+          <div class="rc-tags"><span class="rc-tag ">Other reasons</span><span class="rc-tag">FDA</span><span class="rc-tag">Class II</span></div>
+          <h3>Sunny Sky Non-Dairy French Vanilla Creamer, 96oz , bag in box, 3 per case, refrigerate after opening</h3>
+          <div class="rc-brand">Sunny Sky Products, LLC</div>
+          <p class="rc-meta"><strong>Reason:</strong> Product sterility was potentially compromised.<br /><strong>Codes:</strong> L0437F083101<br /><strong>Distribution:</strong> The adulterated product was distributed to the following States: GA, TX, UT, MN, NM, OH, NC, CA, KY, AR, NV<br /><strong>Recall:</strong> H-0182-2027</p>
+          <div class="rc-links"><a href="https://www.accessdata.fda.gov/scripts/ires/index.cfm" target="_blank" rel="noopener">FDA enforcement records</a></div>
+        </article>
+        <article class="rc-item" data-cat="chemical" data-agency="FDA">
+          <div class="rc-tags"><span class="rc-tag mid">Lead &amp; contaminants</span><span class="rc-tag">FDA</span><span class="rc-tag">Class I</span></div>
+          <h3>Boner Bears CHOCOLATE, 3 DOSES PER BAR</h3>
+          <div class="rc-brand">JXK Enterprises, Inc.</div>
+          <p class="rc-meta"><strong>Reason:</strong> JXK Enterprises, Inc is voluntarily recalling Boner Bears Chocolate, Lot #BB21125, after being notified that FDA laboratory analysis confirmed the presence of…<br /><strong>Codes:</strong> Lot #BB21125<br /><strong>Distribution:</strong> Boner Bears Chocolate is marketed as a sexual enhancement product and was distributed nationwide via online sales through www.elyxr.com.<br /><strong>Recall:</strong> H-0186-2027</p>
+          <div class="rc-links"><a href="https://www.accessdata.fda.gov/scripts/ires/index.cfm" target="_blank" rel="noopener">FDA enforcement records</a></div>
+        </article>
+        <article class="rc-item" data-cat="allergens" data-agency="FDA">
+          <div class="rc-tags"><span class="rc-tag mid">Undeclared allergens</span><span class="rc-tag">FDA</span><span class="rc-tag">Class I</span></div>
+          <h3>Gluten Free Truly AIP All Purpose Baking Mix Flour 15.3 oz (+2 more products)</h3>
+          <div class="rc-brand">GF Blends Inc</div>
+          <p class="rc-meta"><strong>Reason:</strong> Products are recalled due to potential undeclared wheat gluten<br /><strong>Codes:</strong> Lot 260225, Best By date 2-25-28 Lot 260610, Best By date 6-10-28 · Lot 260417, Best By date 4-17-28 Lot 260617, Best By date 12-17-27 · Lot 260327, Best by date 7-27-27 and 9-27-27 Lot 260803, Best…<br /><strong>Distribution:</strong> Sold nationwide online at eatgangster.com, trulyaip.com, and Amazon.com<br /><strong>Recall:</strong> H-0183-2027, H-0184-2027, H-0185-2027</p>
+          <div class="rc-links"><a href="https://www.accessdata.fda.gov/scripts/ires/index.cfm" target="_blank" rel="noopener">FDA enforcement records</a><a href="/blog/truly-aip-eat-gangster-gluten-recall-gf-blends">Our analysis</a></div>
+        </article>
+      </div>
+      <h2 class="rc-day">October 24, 2026</h2>
+      <div class="rc-list">
+        <article class="rc-item" data-cat="uninspected" data-agency="USDA">
+          <div class="rc-tags"><span class="rc-tag mid">Uninspected or ineligible imports</span><span class="rc-tag">USDA</span><span class="rc-tag">Class I</span></div>
+          <h3>Imperio Distribution LLC Recalls Beef Jerky Products Produced Without the Benefit of Inspection</h3>
+          <div class="rc-brand">Imperio Distribution LLC</div>
+          <p class="rc-meta"><strong>Reason:</strong> Produced Without Benefit of Inspection<br /><strong>Products:</strong> 2 oz. sealed bag of &quot;IMPERIO FUEGO BEEF JERKY (CARNE SECA).&quot;; 2 oz. sealed bag of &quot;IMPERIO ORIGINAL BEEF JERKY (CARNE SECA).&quot;; 2 oz. sealed bag of &quot;IMPERIO LIMÓN BEEF JERKY (CARNE SECA).&quot;<br /><strong>Distribution:</strong> Illinois; Indiana; Iowa; Michigan; Minnesota; Mississippi; Wisconsin<br /><strong>Recall:</strong> 027-2026</p>
+          <div class="rc-links"><a href="https://www.fsis.usda.gov/recalls-alerts/imperio-distribution-llc-recalls-beef-jerky-products-produced-without-benefit" target="_blank" rel="noopener">USDA FSIS notice</a></div>
+        </article>
+      </div>
+      <h2 class="rc-day">October 23, 2026</h2>
+      <div class="rc-list">
+        <article class="rc-item" data-cat="ecoli" data-agency="FDA">
+          <div class="rc-tags"><span class="rc-tag hot">E. coli</span><span class="rc-tag">FDA</span><span class="rc-tag">Class II</span></div>
+          <h3>Miyoko&#x27;s Creamery European Style Salted Plant Milk Butter</h3>
+          <div class="rc-brand">Prosperity Organic Foods Inc</div>
+          <p class="rc-meta"><strong>Reason:</strong> Product recalled due to yeast, mold, and E. coli.<br /><strong>Codes:</strong> Primary packaging on SBS carton: Lot 07871 Best by 11/5/26 09 Secondary packaging on corrugate case: 1007871 Best by 11/5/26 09:05<br /><strong>Distribution:</strong> Distributed in CT, FL, GA, IA, IL, IN, MD, NJ, NH, and WI.<br /><strong>Recall:</strong> H-0178-2027</p>
+          <div class="rc-links"><a href="https://www.accessdata.fda.gov/scripts/ires/index.cfm" target="_blank" rel="noopener">FDA enforcement records</a></div>
+        </article>
+        <article class="rc-item" data-cat="other" data-agency="FDA">
+          <div class="rc-tags"><span class="rc-tag ">Other reasons</span><span class="rc-tag">FDA</span><span class="rc-tag">Class II</span></div>
+          <h3>Blue Bottle Coffee 4oz Sweet Blossom Simple Syrup in a glass boston round bottle with metal and plastisol…</h3>
+          <div class="rc-brand">Pink House Alchemy, LLC</div>
+          <p class="rc-meta"><strong>Reason:</strong> Potential contamination with mold (Aspergillus niger)<br /><strong>Codes:</strong> UPC: 810123980659 Batch information: 4ozBBCSB261051, Expiration Date: 04/15/2028 4ozBBCSB261061, Expiration Date: 04/16/2028 4ozBBCSB261071, Expiration Date: 04/17/2028 4ozBBCSB261181, Expiration…<br /><strong>Distribution:</strong> Sole consignee: Blue Bottle Coffee LLC, 476 9th Steet Oakland, CA 94607<br /><strong>Recall:</strong> H-0175-2027</p>
+          <div class="rc-links"><a href="https://www.accessdata.fda.gov/scripts/ires/index.cfm" target="_blank" rel="noopener">FDA enforcement records</a></div>
+        </article>
+        <article class="rc-item" data-cat="salmonella" data-agency="FDA">
+          <div class="rc-tags"><span class="rc-tag hot">Salmonella</span><span class="rc-tag">FDA</span><span class="rc-tag">Class I</span></div>
+          <h3>ZestiGreens Broccoli Seeds for Sprouting &amp; Microgreens</h3>
+          <div class="rc-brand">FORTUNA MARKETING, INC</div>
+          <p class="rc-meta"><strong>Reason:</strong> Broccoli seeds potentially contaminated with Salmonella<br /><strong>Codes:</strong> no lot code<br /><strong>Distribution:</strong> Product was primarily distributed to Amazon fulfillment center. Customers were notified directly by the recalling firm. Amazon was notified and…<br /><strong>Recall:</strong> H-0176-2027</p>
+          <div class="rc-links"><a href="https://www.accessdata.fda.gov/scripts/ires/index.cfm" target="_blank" rel="noopener">FDA enforcement records</a></div>
+        </article>
+        <article class="rc-item" data-cat="salmonella" data-agency="FDA">
+          <div class="rc-tags"><span class="rc-tag hot">Salmonella</span><span class="rc-tag">FDA</span><span class="rc-tag">Class I</span></div>
+          <h3>EDEN BROTHERS Broccoli Seeds - Calabrese</h3>
+          <div class="rc-brand">EDEN BROTHERS</div>
+          <p class="rc-meta"><strong>Reason:</strong> Salmonella<br /><strong>Codes:</strong> Lot #1022067, Packed For: 2027; Lot #1022068, Packed For: 2027<br /><strong>Distribution:</strong> Product was distributed to the following states: AK, AL, AR, AZ, CA, CO, CT, DC, DE, FL, GA, HI, IA, ID, IL, IN, KS, KY, LA, MA, MD, ME, MI, MN, MO…<br /><strong>Recall:</strong> H-0177-2027</p>
+          <div class="rc-links"><a href="https://www.accessdata.fda.gov/scripts/ires/index.cfm" target="_blank" rel="noopener">FDA enforcement records</a></div>
+        </article>
+      </div>
+      <h2 class="rc-day">October 17, 2026</h2>
+      <div class="rc-list">
+        <article class="rc-item" data-cat="other" data-agency="USDA">
+          <div class="rc-tags"><span class="rc-tag ">Other reasons</span><span class="rc-tag">USDA</span><span class="rc-tag">Class I</span></div>
+          <h3>Kayem Foods Inc. Recalls Meat and Poultry Products Due to Possible Temperature Abuse</h3>
+          <div class="rc-brand">Kayem Foods Inc.</div>
+          <p class="rc-meta"><strong>Reason:</strong> Possible Temperature Abuse<br /><strong>Products:</strong> Full product list available in PDF format - Various RTE meat and poultry products bearing “EST. M/P 7839,” “EST. P 20935A” and “EST. M 9520” inside the USDA mark of inspection.<br /><strong>Establishment:</strong> EST. M 9520, EST. M/P 7839, EST. P 20935A<br /><strong>Distribution:</strong> Nationwide<br /><strong>Recall:</strong> 026-2026</p>
+          <div class="rc-links"><a href="https://www.fsis.usda.gov/recalls-alerts/kayem-foods-inc--recalls-meat-and-poultry-products-due-possible-temperature-abuse" target="_blank" rel="noopener">USDA FSIS notice</a><a href="/blog/kayem-recall-hot-dogs-bacon-temperature-abuse">Our analysis</a></div>
+        </article>
+      </div>
+      <h2 class="rc-day">October 15, 2026</h2>
+      <div class="rc-list">
+        <article class="rc-item" data-cat="foreign" data-agency="FDA">
+          <div class="rc-tags"><span class="rc-tag mid">Foreign material</span><span class="rc-tag">FDA</span><span class="rc-tag">Class II</span></div>
+          <h3>Stewarts Shops Vanilla Heavenly Medley 1/2 Gallon (1.89 L) (+1 more product)</h3>
+          <div class="rc-brand">Stewart&#x27;s Shops Corp.</div>
+          <p class="rc-meta"><strong>Reason:</strong> Foreign object: May contain pieces of metal<br /><strong>Codes:</strong> best by Feb.10.27 · best by Feb. 11. 27<br /><strong>Distribution:</strong> NY, VT, NH<br /><strong>Recall:</strong> H-0094-2027, H-0093-2027</p>
+          <div class="rc-links"><a href="https://www.accessdata.fda.gov/scripts/ires/index.cfm" target="_blank" rel="noopener">FDA enforcement records</a></div>
+        </article>
+        <article class="rc-item" data-cat="allergens" data-agency="FDA">
+          <div class="rc-tags"><span class="rc-tag mid">Undeclared allergens</span><span class="rc-tag">FDA</span><span class="rc-tag">Class III</span></div>
+          <h3>Pur Aqua Sparkling Frost Cherry Limeade 17 oz</h3>
+          <div class="rc-brand">Refresco Beverages US Inc</div>
+          <p class="rc-meta"><strong>Reason:</strong> May contain undeclared aspartame.<br /><strong>Codes:</strong> Best if use by: 032327 TA<br /><strong>Distribution:</strong> Florida with further downstream distribution to retail stores<br /><strong>Recall:</strong> H-0095-2027</p>
+          <div class="rc-links"><a href="https://www.accessdata.fda.gov/scripts/ires/index.cfm" target="_blank" rel="noopener">FDA enforcement records</a></div>
+        </article>
+        <article class="rc-item" data-cat="allergens" data-agency="FDA">
+          <div class="rc-tags"><span class="rc-tag mid">Undeclared allergens</span><span class="rc-tag">FDA</span><span class="rc-tag">Class I</span></div>
+          <h3>Deano&#x27;s Pasta</h3>
+          <div class="rc-brand">DEANO&#x27;S PASTA</div>
+          <p class="rc-meta"><strong>Reason:</strong> Undeclared Lobster<br /><strong>Codes:</strong> lot codes 090126126, 082526126,081826126, and 073126126<br /><strong>Distribution:</strong> MA, NH<br /><strong>Recall:</strong> H-0092-2027</p>
+          <div class="rc-links"><a href="https://www.accessdata.fda.gov/scripts/ires/index.cfm" target="_blank" rel="noopener">FDA enforcement records</a></div>
+        </article>
+        <article class="rc-item" data-cat="other" data-agency="FDA">
+          <div class="rc-tags"><span class="rc-tag ">Other reasons</span><span class="rc-tag">FDA</span><span class="rc-tag">Class II</span></div>
+          <h3>Made From Plants</h3>
+          <div class="rc-brand">DARING FOODS INC</div>
+          <p class="rc-meta"><strong>Reason:</strong> defective packaging; packaging can rupture/explode during cooking.<br /><strong>Codes:</strong> Best By Date: 2027 09 14 Lot # 2576<br /><strong>Distribution:</strong> Product was distributed to a single retail grocery chain customer with multiple locations in Florida and one location in North Carolina. A total of 6…<br /><strong>Recall:</strong> H-0091-2027</p>
+          <div class="rc-links"><a href="https://www.accessdata.fda.gov/scripts/ires/index.cfm" target="_blank" rel="noopener">FDA enforcement records</a></div>
+        </article>
+      </div>
+      <h2 class="rc-day">October 14, 2026</h2>
+      <div class="rc-list">
+        <article class="rc-item" data-cat="ecoli" data-agency="FDA">
+          <div class="rc-tags"><span class="rc-tag hot">E. coli</span><span class="rc-tag">FDA</span><span class="rc-tag">Not Yet Classified</span></div>
+          <h3>SIERRA NEVADA CHEESE GRAZIERS RAW MILK SHARP CHEDDAR</h3>
+          <div class="rc-brand">Sierra Nevada Cheese Company, Inc</div>
+          <p class="rc-meta"><strong>Reason:</strong> Potential contamination due to E. coli O26:H11.<br /><strong>Codes:</strong> Lot: 00116265; 00310265; 00317261; 00512264; 00923252; 00926251; 01002251; 01010252; 01021251; 01031254; 01107253; 01205254; 01230254.<br /><strong>Distribution:</strong> Domestic: AZ, CA, CO, FL, GA, IL, IN, MD, NJ, OR, TX, WA, WI. Foreign: Not applicable.<br /><strong>Recall:</strong> N/A</p>
+          <div class="rc-links"><a href="https://www.accessdata.fda.gov/scripts/ires/index.cfm" target="_blank" rel="noopener">FDA enforcement records</a></div>
+        </article>
+        <article class="rc-item" data-cat="allergens" data-agency="FDA">
+          <div class="rc-tags"><span class="rc-tag mid">Undeclared allergens</span><span class="rc-tag">FDA</span><span class="rc-tag">Class II</span></div>
+          <h3>J. HIGGS Loaded Bacon &amp; Cheddar Potato Chips</h3>
+          <div class="rc-brand">Saratoga Potato Chips LLC</div>
+          <p class="rc-meta"><strong>Reason:</strong> Undeclared soy.<br /><strong>Codes:</strong> Best if USED BY Dec 11 26 and Best if USED BY Dec 18 26<br /><strong>Distribution:</strong> The recalled J. HIGGS Loaded Bacon and Cheddar Potato Chips were distributed in the states of Florida, Indiana, Kentucky, Ohio, Tennessee, and…<br /><strong>Recall:</strong> H-0090-2027</p>
+          <div class="rc-links"><a href="https://www.accessdata.fda.gov/scripts/ires/index.cfm" target="_blank" rel="noopener">FDA enforcement records</a></div>
+        </article>
+        <article class="rc-item" data-cat="listeria" data-agency="FDA">
+          <div class="rc-tags"><span class="rc-tag hot">Listeria</span><span class="rc-tag">FDA</span><span class="rc-tag">Class I</span></div>
+          <h3>Made Fresh brand Black Bean and Corn Salad</h3>
+          <div class="rc-brand">Made Fresh Salads Inc</div>
+          <p class="rc-meta"><strong>Reason:</strong> Products may be contaminated with Listeria monocytogenes.<br /><strong>Codes:</strong> Expiration dates from 09/03/2026 to 09/18/2026<br /><strong>Distribution:</strong> NY<br /><strong>Recall:</strong> </p>
+          <div class="rc-links"><a href="https://www.accessdata.fda.gov/scripts/ires/index.cfm" target="_blank" rel="noopener">FDA enforcement records</a></div>
+        </article>
+        <article class="rc-item" data-cat="allergens" data-agency="FDA">
+          <div class="rc-tags"><span class="rc-tag mid">Undeclared allergens</span><span class="rc-tag">FDA</span><span class="rc-tag">Class II</span></div>
+          <h3>Holsum Spinach Flour Tortillas Large, 8 count (20 oz.)</h3>
+          <div class="rc-brand">Holsum De Puerto Rico, Inc.</div>
+          <p class="rc-meta"><strong>Reason:</strong> Undeclared colors (FD&amp;C Blue No. 1 and FD&amp;C Yellow No. 5)<br /><strong>Codes:</strong> codes: Lot 26187 expiration 10/04/26 Lot 26195 expiration 10/12/26 Lot 26210 Expiration 10/27/26 Lot 26216 Expiration 11/02/26 Lot 26224 expiration 11/10/26 Lot 26239 expiration 11/25/26 Lot 26250…<br /><strong>Distribution:</strong> PR, US Virgin Islands<br /><strong>Recall:</strong> H-0089-2027</p>
+          <div class="rc-links"><a href="https://www.accessdata.fda.gov/scripts/ires/index.cfm" target="_blank" rel="noopener">FDA enforcement records</a></div>
+        </article>
+      </div>
+      <h2 class="rc-day">October 8, 2026</h2>
+      <div class="rc-list">
+        <article class="rc-item" data-cat="other" data-agency="FDA">
+          <div class="rc-tags"><span class="rc-tag ">Other reasons</span><span class="rc-tag">FDA</span><span class="rc-tag">Class II</span></div>
+          <h3>Chocolate Chip Cookies packaged in a cardboard box (+2 more products)</h3>
+          <div class="rc-brand">J K Patisserie &amp; Bakery LLC</div>
+          <p class="rc-meta"><strong>Reason:</strong> Soy was not declared in the Contains statement.<br /><strong>Codes:</strong> no codes<br /><strong>Distribution:</strong> NY and NJ<br /><strong>Recall:</strong> H-0026-2027, H-0027-2027, H-0025-2027</p>
+          <div class="rc-links"><a href="https://www.accessdata.fda.gov/scripts/ires/index.cfm" target="_blank" rel="noopener">FDA enforcement records</a></div>
+        </article>
+      </div>
+      <h2 class="rc-day">October 7, 2026</h2>
+      <div class="rc-list">
+        <article class="rc-item" data-cat="allergens" data-agency="FDA">
+          <div class="rc-tags"><span class="rc-tag mid">Undeclared allergens</span><span class="rc-tag">FDA</span><span class="rc-tag">Class II</span></div>
+          <h3>Saint Francis Apizza Frozen Pepperoni Pizza (+3 more products)</h3>
+          <div class="rc-brand">Saint Francis Apizza LLC</div>
+          <p class="rc-meta"><strong>Reason:</strong> Undeclared soy allergen: soybean oil and soy lecithin<br /><strong>Codes:</strong> Best By: all dates through 3/30/2027<br /><strong>Distribution:</strong> KY, OH<br /><strong>Recall:</strong> H-0021-2027, H-0022-2027, H-0024-2027 +1</p>
+          <div class="rc-links"><a href="https://www.accessdata.fda.gov/scripts/ires/index.cfm" target="_blank" rel="noopener">FDA enforcement records</a></div>
+        </article>
+        <article class="rc-item" data-cat="other" data-agency="FDA">
+          <div class="rc-tags"><span class="rc-tag ">Other reasons</span><span class="rc-tag">FDA</span><span class="rc-tag">Class II</span></div>
+          <h3>Sweet Sensi Elevated Edibles Hybrid Gum Drops - Passion Guava Kush 140mg THC</h3>
+          <div class="rc-brand">SWEET SENSI</div>
+          <p class="rc-meta"><strong>Reason:</strong> Staphylococcus aureus detected in product.<br /><strong>Codes:</strong> Batch # 1811 UPC 850043378020<br /><strong>Distribution:</strong> Nationwide<br /><strong>Recall:</strong> H-0020-2027</p>
+          <div class="rc-links"><a href="https://www.accessdata.fda.gov/scripts/ires/index.cfm" target="_blank" rel="noopener">FDA enforcement records</a></div>
+        </article>
+        <article class="rc-item" data-cat="allergens" data-agency="FDA">
+          <div class="rc-tags"><span class="rc-tag mid">Undeclared allergens</span><span class="rc-tag">FDA</span><span class="rc-tag">Class II</span></div>
+          <h3>QUESO PALMITA. Generic Name: Pastel de Queso (Cheese Pie). Intended use: Human consumption. Condition:…</h3>
+          <div class="rc-brand">QUESO PALMITA GP LLC</div>
+          <p class="rc-meta"><strong>Reason:</strong> Undeclared milk, cheese declared<br /><strong>Codes:</strong> Manufacturing code: PQ02. Batch/lot code: PQ-1-0024. Manufacturing date: 04/22/2026. Packing date: 04/22/2026. Best By: 10/22/2026. Expiration date: 10/22/2026.<br /><strong>Distribution:</strong> Texas<br /><strong>Recall:</strong> H-0015-2027</p>
+          <div class="rc-links"><a href="https://www.accessdata.fda.gov/scripts/ires/index.cfm" target="_blank" rel="noopener">FDA enforcement records</a></div>
+        </article>
+        <article class="rc-item" data-cat="allergens" data-agency="FDA">
+          <div class="rc-tags"><span class="rc-tag mid">Undeclared allergens</span><span class="rc-tag">FDA</span><span class="rc-tag">Class I</span></div>
+          <h3>X10 Natural Enhancement Supplement, 0.5 fl oz/sachet (15 mL), 7 sachets/box (+1 more product)</h3>
+          <div class="rc-brand">A&amp;P CREATIONS</div>
+          <p class="rc-meta"><strong>Reason:</strong> Product contains undeclared Sildenafil and Tadalafil.<br /><strong>Codes:</strong> Lot # F090824LN16, Expiry: 8/2026; Lot # F170325LN19, Expiry: 03/2027; Lot # 300326LN28, Expiry: 03/2028. · Lot # biQ-f001-06-25, Expiry: 05/06/2027; Lot # biQ-003-01-26, Expiry: 01/01/28<br /><strong>Distribution:</strong> Distributed nationwide (US).<br /><strong>Recall:</strong> H-0016-2027, H-0017-2027</p>
+          <div class="rc-links"><a href="https://www.accessdata.fda.gov/scripts/ires/index.cfm" target="_blank" rel="noopener">FDA enforcement records</a></div>
+        </article>
+      </div>
+      <h2 class="rc-day">October 6, 2026</h2>
+      <div class="rc-list">
+        <article class="rc-item" data-cat="allergens" data-agency="FDA">
+          <div class="rc-tags"><span class="rc-tag mid">Undeclared allergens</span><span class="rc-tag">FDA</span><span class="rc-tag">Class I</span></div>
+          <h3>Donutful Chocolate Dipped Vanilla Cake Donuts - 7.05oz/10ct.Case Configuration</h3>
+          <div class="rc-brand">The Better Bakehouse Snack Company</div>
+          <p class="rc-meta"><strong>Reason:</strong> Undeclared Milk.<br /><strong>Codes:</strong> Lot # 26078 BEST BY: 09/15/2026<br /><strong>Distribution:</strong> Product was distributed nationwide.<br /><strong>Recall:</strong> H-0011-2027</p>
+          <div class="rc-links"><a href="https://www.accessdata.fda.gov/scripts/ires/index.cfm" target="_blank" rel="noopener">FDA enforcement records</a></div>
+        </article>
+        <article class="rc-item" data-cat="listeria" data-agency="FDA">
+          <div class="rc-tags"><span class="rc-tag hot">Listeria</span><span class="rc-tag">FDA</span><span class="rc-tag">Class I</span></div>
+          <h3>Lemon Alfredo Fettuccine packed in a yellow plastic sealed bag with pink and black lettering</h3>
+          <div class="rc-brand">GIAS FOOD INC.</div>
+          <p class="rc-meta"><strong>Reason:</strong> Contamination with Listeria monocytogenes<br /><strong>Codes:</strong> L6081A SEP 21 2027<br /><strong>Distribution:</strong> Retail locations nationwide<br /><strong>Recall:</strong> H-0014-2027</p>
+          <div class="rc-links"><a href="https://www.accessdata.fda.gov/scripts/ires/index.cfm" target="_blank" rel="noopener">FDA enforcement records</a></div>
+        </article>
+        <article class="rc-item" data-cat="allergens" data-agency="FDA">
+          <div class="rc-tags"><span class="rc-tag mid">Undeclared allergens</span><span class="rc-tag">FDA</span><span class="rc-tag">Class II</span></div>
+          <h3>Cranberry Chicken Salad Wedge 4.5 oz package in Wedge plastic and clear container with a plastic film sealing…</h3>
+          <div class="rc-brand">FRESHPOINT CENTRAL FLORIDA, INC.</div>
+          <p class="rc-meta"><strong>Reason:</strong> The chicken salad sandwich has an improperly declared allergen (egg). While egg is included in the ingredients list on the package label, it is not included in the…<br /><strong>Codes:</strong> Use By Dates from 9/3/2026 to 9/17/2026<br /><strong>Distribution:</strong> Florida and Georgia<br /><strong>Recall:</strong> H-0012-2027</p>
+          <div class="rc-links"><a href="https://www.accessdata.fda.gov/scripts/ires/index.cfm" target="_blank" rel="noopener">FDA enforcement records</a></div>
+        </article>
+        <article class="rc-item" data-cat="salmonella" data-agency="FDA">
+          <div class="rc-tags"><span class="rc-tag hot">Salmonella</span><span class="rc-tag">FDA</span><span class="rc-tag">Class I</span></div>
+          <h3>Berlin Seeds Alfalfa Sprouting Seeds, packaged in 1/4 lb., 1/2 lb., 1 lb., and 5 lb. resealable bags and 50…</h3>
+          <div class="rc-brand">Berlin Seeds</div>
+          <p class="rc-meta"><strong>Reason:</strong> Product contains alfalfa seed recalled by the supplier due to potential E. coli and/or Salmonella contamination.<br /><strong>Codes:</strong> Lot # SAL2-24JB (on 5 lb. and 50 lb. bags only)<br /><strong>Distribution:</strong> Through the firm&#x27;s retail store in Millersburg, OH and nationwide through the firm&#x27;s website<br /><strong>Recall:</strong> H-0013-2027</p>
+          <div class="rc-links"><a href="https://www.accessdata.fda.gov/scripts/ires/index.cfm" target="_blank" rel="noopener">FDA enforcement records</a></div>
+        </article>
+        <article class="rc-item" data-cat="uninspected" data-agency="USDA">
+          <div class="rc-tags"><span class="rc-tag mid">Uninspected or ineligible imports</span><span class="rc-tag">USDA</span><span class="rc-tag mid">Public health alert</span></div>
+          <h3>FSIS Issues Public Health Alert for Ineligible Chicken Vienna-Style Sausage Products Illegally Imported From Jamaica</h3>
+          <div class="rc-brand">USDA FSIS</div>
+          <p class="rc-meta"><strong>Reason:</strong> Import Violation<br /><strong>Products:</strong> • 140-g. cans of “GRACE READY TO EAT CHICKEN VIENNA SAUSAGES.” ; • 140-g. cans of “GRACE READY TO EAT CHICKEN VIENNA SAUSAGES HOT &amp; SPICY.”<br /><strong>Distribution:</strong> Alabama; Florida; Georgia; Maryland; Texas<br /><strong>Recall:</strong> PHA-10062026-01</p>
+          <div class="rc-links"><a href="https://www.fsis.usda.gov/recalls-alerts/fsis-issues-public-health-alert-ineligible-chicken-vienna-style-sausage-products" target="_blank" rel="noopener">USDA FSIS notice</a></div>
+        </article>
+      </div>
+      <h2 class="rc-day">October 2, 2026</h2>
+      <div class="rc-list">
+        <article class="rc-item" data-cat="other" data-agency="FDA">
+          <div class="rc-tags"><span class="rc-tag ">Other reasons</span><span class="rc-tag">FDA</span><span class="rc-tag">Class II</span></div>
+          <h3>WinCo Foods Salsa Bean Dip Express Tray is packaged in a foil bottom container with clear plastic lid</h3>
+          <div class="rc-brand">WinCo Foods LLC</div>
+          <p class="rc-meta"><strong>Reason:</strong> Bean Dip Trays contains recalled Peperoncini (pepper) which was recalled due to pest issue.<br /><strong>Codes:</strong> Best If Used By Dates from August 14th, 2026 to September 25th, 2026.<br /><strong>Distribution:</strong> Distributed in AZ, CA, ID, MT, NV, OR, UT, and WA.<br /><strong>Recall:</strong> H-0008-2027</p>
+          <div class="rc-links"><a href="https://www.accessdata.fda.gov/scripts/ires/index.cfm" target="_blank" rel="noopener">FDA enforcement records</a></div>
+        </article>
+        <article class="rc-item" data-cat="allergens" data-agency="FDA">
+          <div class="rc-tags"><span class="rc-tag mid">Undeclared allergens</span><span class="rc-tag">FDA</span><span class="rc-tag">Class II</span></div>
+          <h3>28 oz. Gatorade Lemon Lime, Gatorade Lemon Lime Zero, Gatorade Orange, and Gatorade Orange Zero</h3>
+          <div class="rc-brand">Pepsico Inc</div>
+          <p class="rc-meta"><strong>Reason:</strong> Undeclared Yellow No. 6 and/or Yellow No. 5<br /><strong>Codes:</strong> Lot 091026 DL - JUN 07 27; Lot 091126 DL - JUN 08 27; Lot 072226 DT - APR 18 27; Lot 072426 TL - APR 20 27; Lot 073126 TL - APR 27 27; Lot 072926 TL - APR 25 27; Lot 073026 TL - APR 25 27; Lot 081026…<br /><strong>Distribution:</strong> AK, AL, AR, AZ, CA, CO, FL, GA, HI, IA, ID, IL, IN, KS, KY, LA, MI, MN, MO, MS, NC, ND, NE, NJ, NM, NV, NY, OH, OK, PA, SC, SD, TN, TX, UT, WA, WI<br /><strong>Recall:</strong> H-0009-2027</p>
+          <div class="rc-links"><a href="https://www.accessdata.fda.gov/scripts/ires/index.cfm" target="_blank" rel="noopener">FDA enforcement records</a><a href="/blog/gatorade-recall-undeclared-yellow-dye-lot-codes">Our analysis</a></div>
+        </article>
+        <article class="rc-item" data-cat="ecoli" data-agency="FDA">
+          <div class="rc-tags"><span class="rc-tag hot">E. coli</span><span class="rc-tag">FDA</span><span class="rc-tag">Class I</span></div>
+          <h3>LEASA Alfalfa Sprouts (+1 more product)</h3>
+          <div class="rc-brand">LEASA Industries Co., Inc.</div>
+          <p class="rc-meta"><strong>Reason:</strong> Seeds may have been contaminated with E.coli<br /><strong>Codes:</strong> Expiration Date (s): 9/4/26, 9/8/26, 9/10/26, 9/15/26, 9/17/26, 9/18/26<br /><strong>Distribution:</strong> FL and NH<br /><strong>Recall:</strong> H-0003-2027, H-0002-2027</p>
+          <div class="rc-links"><a href="https://www.accessdata.fda.gov/scripts/ires/index.cfm" target="_blank" rel="noopener">FDA enforcement records</a></div>
+        </article>
+        <article class="rc-item" data-cat="foreign" data-agency="FDA">
+          <div class="rc-tags"><span class="rc-tag mid">Foreign material</span><span class="rc-tag">FDA</span><span class="rc-tag">Class II</span></div>
+          <h3>Mezzetta GOLDEN GREEK PEPERONCINI MEDIUM HEAT 32 FL OZ</h3>
+          <div class="rc-brand">G L Mezzetta Inc</div>
+          <p class="rc-meta"><strong>Reason:</strong> Potential contamination with foreign objects: mice.<br /><strong>Codes:</strong> Lots: 720106. Best if used by: July 2029.<br /><strong>Distribution:</strong> Domestic: AZ, CA, CO, GA, IA, ID, IL, IN, MI, MN, MO, NC, OH, OK, OR, PA, SD, TX, UT, VA, WA, WI. Foreign: Not applicable.<br /><strong>Recall:</strong> H-0007-2027</p>
+          <div class="rc-links"><a href="https://www.accessdata.fda.gov/scripts/ires/index.cfm" target="_blank" rel="noopener">FDA enforcement records</a></div>
+        </article>
+        <article class="rc-item" data-cat="uninspected" data-agency="USDA">
+          <div class="rc-tags"><span class="rc-tag mid">Uninspected or ineligible imports</span><span class="rc-tag">USDA</span><span class="rc-tag">Class I</span></div>
+          <h3>Inexport Logistics LLC Recalls Ineligible Pork Cracklings Products Imported From The Republic of Colombia</h3>
+          <div class="rc-brand">Inexport Logistics LLC</div>
+          <p class="rc-meta"><strong>Reason:</strong> Import Violation<br /><strong>Products:</strong> • 60-g. foil bags of “YUPI GOLPE CON TODO SABOR BBQ” mixed chips with “Clásicas,” “PLATANOS,” and “Chicharrón Fred.”<br /><strong>Distribution:</strong> Arizona; California; Colorado; Florida; Illinois; Kentucky; Minnesota; Texas<br /><strong>Recall:</strong> 025-2026</p>
+          <div class="rc-links"><a href="https://www.fsis.usda.gov/recalls-alerts/inexport-logistics-llc-recalls-ineligible-pork-cracklings-products-imported-republic" target="_blank" rel="noopener">USDA FSIS notice</a></div>
+        </article>
+      </div>
+      <h2 class="rc-day">October 1, 2026</h2>
+      <div class="rc-list">
+        <article class="rc-item" data-cat="allergens" data-agency="FDA">
+          <div class="rc-tags"><span class="rc-tag mid">Undeclared allergens</span><span class="rc-tag">FDA</span><span class="rc-tag">Class II</span></div>
+          <h3>Khazana</h3>
+          <div class="rc-brand">SLT Foods Inc.</div>
+          <p class="rc-meta"><strong>Reason:</strong> Undeclared Yellow 5 &amp; 6, Red 3, and Blue 1<br /><strong>Codes:</strong> SLT-11-015<br /><strong>Distribution:</strong> The product was distributed to: NY<br /><strong>Recall:</strong> H-0001-2027</p>
+          <div class="rc-links"><a href="https://www.accessdata.fda.gov/scripts/ires/index.cfm" target="_blank" rel="noopener">FDA enforcement records</a></div>
+        </article>
+      </div>
+      <h2 class="rc-day">September 30, 2026</h2>
+      <div class="rc-list">
+        <article class="rc-item" data-cat="salmonella" data-agency="FDA">
+          <div class="rc-tags"><span class="rc-tag hot">Salmonella</span><span class="rc-tag">FDA</span><span class="rc-tag">Class I</span></div>
+          <h3>Todd&#x27;s Seeds Salad Sprouting Mixture - Broccoli, Mustard, Alfalfa and Cabbage, packaged in heat-sealed… (+5 more products)</h3>
+          <div class="rc-brand">TODD&#x27;S SEEDS LLC</div>
+          <p class="rc-meta"><strong>Reason:</strong> Products contain alfalfa seed recalled by the supplier and may be contaminated with E. coli and/or Salmonella (downstream recall)<br /><strong>Codes:</strong> Lot No: TS-633-2 Use By: 12/31/2029 · Lot No: TS-245-MIX-13 Use By: 12/31/2029 · Lot No: TS-VARSPRT-1 Use By: 12/31/2029 · Lot No: TS-229-4-MK Use By: 12/31/2029 · Lot No: TS-111-MIX-13 Use By:…<br /><strong>Distribution:</strong> Nationwide; through Amazon or direct to consumer<br /><strong>Recall:</strong> H-1407-2026, H-1405-2026, H-1409-2026 +3</p>
+          <div class="rc-links"><a href="https://www.accessdata.fda.gov/scripts/ires/index.cfm" target="_blank" rel="noopener">FDA enforcement records</a></div>
+        </article>
+      </div>
+      <h2 class="rc-day">September 29, 2026</h2>
+      <div class="rc-list">
+        <article class="rc-item" data-cat="allergens" data-agency="FDA">
+          <div class="rc-tags"><span class="rc-tag mid">Undeclared allergens</span><span class="rc-tag">FDA</span><span class="rc-tag">Class II</span></div>
+          <h3>Cloud Cafe branded Collagen Milk</h3>
+          <div class="rc-brand">TOJI CO.</div>
+          <p class="rc-meta"><strong>Reason:</strong> Undeclared allergen ingredient (fish)<br /><strong>Codes:</strong> OB25001; Best By: 5/13/2028<br /><strong>Distribution:</strong> Product was sold to a single distributor located in Los Angeles.<br /><strong>Recall:</strong> H-1400-2026</p>
+          <div class="rc-links"><a href="https://www.accessdata.fda.gov/scripts/ires/index.cfm" target="_blank" rel="noopener">FDA enforcement records</a></div>
+        </article>
+        <article class="rc-item" data-cat="salmonella" data-agency="FDA">
+          <div class="rc-tags"><span class="rc-tag hot">Salmonella</span><span class="rc-tag">FDA</span><span class="rc-tag">Class I</span></div>
+          <h3>Salata Salad Kitchen Jalapen¿o Avocado Dressing</h3>
+          <div class="rc-brand">Salata Dressings, LLC</div>
+          <p class="rc-meta"><strong>Reason:</strong> This recall was initiated due to potential Salmonella contamination in diced jalape¿no received from the supplier<br /><strong>Codes:</strong> 1. Batch Number 2628-106/2628-111 EXP: 11/5/2026; Batch Number 2629-114 / 2629-118 EXP 11/13/2026; Batch Number 2630-039 / 2630-041 EXP 11/18/2026; Batch Number 2631-050 / 2631-056 EXP 11/25/2026. 2.…<br /><strong>Distribution:</strong> GA, NC, TX<br /><strong>Recall:</strong> H-1398-2026</p>
+          <div class="rc-links"><a href="https://www.accessdata.fda.gov/scripts/ires/index.cfm" target="_blank" rel="noopener">FDA enforcement records</a></div>
+        </article>
+        <article class="rc-item" data-cat="allergens" data-agency="FDA">
+          <div class="rc-tags"><span class="rc-tag mid">Undeclared allergens</span><span class="rc-tag">FDA</span><span class="rc-tag">Class II</span></div>
+          <h3>Organiccs Absolutely Pure, Type-1 Hydrolyzed Collagen Peptides, All-Natural Aid for Strengthening Hair, Skin…</h3>
+          <div class="rc-brand">Pacific Health Sciences Llc</div>
+          <p class="rc-meta"><strong>Reason:</strong> Undeclared shellfish (crab shell): source of ingredient Glucosamine sulfate<br /><strong>Codes:</strong> 25009CP<br /><strong>Distribution:</strong> Product is primarily distributed to private practice medical offices in California, Oregon, Washington, Kentucky, Massachusetts, and Hawaii<br /><strong>Recall:</strong> H-1401-2026</p>
+          <div class="rc-links"><a href="https://www.accessdata.fda.gov/scripts/ires/index.cfm" target="_blank" rel="noopener">FDA enforcement records</a></div>
+        </article>
+        <article class="rc-item" data-cat="other" data-agency="FDA">
+          <div class="rc-tags"><span class="rc-tag ">Other reasons</span><span class="rc-tag">FDA</span><span class="rc-tag">Class II</span></div>
+          <h3>Kofinas Garlic Mediterranean Infused Extra Virgin Olive Oil, packaged in 3.4 fl oz (100mL), 8.5 fl oz…</h3>
+          <div class="rc-brand">LMSI, LLC</div>
+          <p class="rc-meta"><strong>Reason:</strong> Product contains garlic essential oil not approved for culinary use<br /><strong>Codes:</strong> No codes applied<br /><strong>Distribution:</strong> Distributed directly to consumers in CA, FL, IL, KY, MO, NC, OH, OR, TN, TX, VA, WA, and WV<br /><strong>Recall:</strong> H-1399-2026</p>
+          <div class="rc-links"><a href="https://www.accessdata.fda.gov/scripts/ires/index.cfm" target="_blank" rel="noopener">FDA enforcement records</a></div>
+        </article>
+        <article class="rc-item" data-cat="chemical" data-agency="FDA">
+          <div class="rc-tags"><span class="rc-tag mid">Lead &amp; contaminants</span><span class="rc-tag">FDA</span><span class="rc-tag">Class II</span></div>
+          <h3>Lior brand Cinnamon Ground Seasoning</h3>
+          <div class="rc-brand">Galil Importing Corp</div>
+          <p class="rc-meta"><strong>Reason:</strong> Product contains elevated levels of lead.<br /><strong>Codes:</strong> GAP11304 printed on the side of the container under the ingredient line.<br /><strong>Distribution:</strong> NY, NJ, PA, TX, FL, IL<br /><strong>Recall:</strong> H-1402-2026</p>
+          <div class="rc-links"><a href="https://www.accessdata.fda.gov/scripts/ires/index.cfm" target="_blank" rel="noopener">FDA enforcement records</a></div>
+        </article>
+        <article class="rc-item" data-cat="salmonella" data-agency="FDA">
+          <div class="rc-tags"><span class="rc-tag hot">Salmonella</span><span class="rc-tag">FDA</span><span class="rc-tag">Class I</span></div>
+          <h3>Coco G&#x27;s Courmet Flaming Cheddar Hots, Spicy Cheddar Cheese Popcorn</h3>
+          <div class="rc-brand">Coco G&#x27;s Snack Foods, Inc.</div>
+          <p class="rc-meta"><strong>Reason:</strong> Potential Salmonella contamination.<br /><strong>Codes:</strong> Lot Numbers:007560 Best By June 10, 2026<br /><strong>Distribution:</strong> IL, WI<br /><strong>Recall:</strong> H-1403-2026</p>
+          <div class="rc-links"><a href="https://www.accessdata.fda.gov/scripts/ires/index.cfm" target="_blank" rel="noopener">FDA enforcement records</a></div>
+        </article>
+        <article class="rc-item" data-cat="allergens" data-agency="FDA">
+          <div class="rc-tags"><span class="rc-tag mid">Undeclared allergens</span><span class="rc-tag">FDA</span><span class="rc-tag">Class II</span></div>
+          <h3>7up Tropical beverage, shelf stable, 12oz can in a 12pk wrap, labeled as 7 up Tropical Beverage containing…</h3>
+          <div class="rc-brand">Admiral Beverage Corporation</div>
+          <p class="rc-meta"><strong>Reason:</strong> Product may contain undeclared sugar.<br /><strong>Codes:</strong> Lot Code/Batch Code: UT06176 Packing Code (Best By): March 17, 2027<br /><strong>Distribution:</strong> Product was distributed to Utah.<br /><strong>Recall:</strong> H-1397-2026</p>
+          <div class="rc-links"><a href="https://www.accessdata.fda.gov/scripts/ires/index.cfm" target="_blank" rel="noopener">FDA enforcement records</a></div>
+        </article>
+      </div>
+      <h2 class="rc-day">September 25, 2026</h2>
+      <div class="rc-list">
+        <article class="rc-item" data-cat="foreign" data-agency="USDA">
+          <div class="rc-tags"><span class="rc-tag mid">Foreign material</span><span class="rc-tag">USDA</span><span class="rc-tag">Class I</span></div>
+          <h3>Fontanini Foods LLC Recalls Raw, Frozen Pork Sausage Products Due to Possible Foreign Matter Contamination</h3>
+          <div class="rc-brand">Fontanini Foods, LLC</div>
+          <p class="rc-meta"><strong>Reason:</strong> Possible Foreign Matter Contamination<br /><strong>Products:</strong> 10-lb. cardboard box cases containing “Fontanini PORK SAUSAGE LINKS” with “ITEM 393” printed on the box and “PACKED ON 06/23/2026” printed on the shipping label.<br /><strong>Establishment:</strong> EST. 6944<br /><strong>Distribution:</strong> California; Florida; Michigan; Nevada<br /><strong>Recall:</strong> 023-2026</p>
+          <div class="rc-links"><a href="https://www.fsis.usda.gov/recalls-alerts/fontanini-foods-llc-recalls-raw-frozen-pork-sausage-products-due-possible-foreign" target="_blank" rel="noopener">USDA FSIS notice</a></div>
+        </article>
+        <article class="rc-item" data-cat="uninspected" data-agency="USDA">
+          <div class="rc-tags"><span class="rc-tag mid">Uninspected or ineligible imports</span><span class="rc-tag">USDA</span><span class="rc-tag">Class I</span></div>
+          <h3>Sempio Food Services Inc. Recalls Ready-To-Eat Chicken Stew Products Imported Without the Benefit of Import Reinspection</h3>
+          <div class="rc-brand">Sempio Food Services Inc.</div>
+          <p class="rc-meta"><strong>Reason:</strong> Import Violation<br /><strong>Products:</strong> Cardboard boxes containing pouches of 31.75-oz (900 g) “Sempio Korean Ginseng CHICKEN STEW CLASSIC” ; Cardboard boxes containing pouches of 31.75-oz (900 g) “Sempio Korean Ginseng CHICKEN STEW RICH”<br /><strong>Distribution:</strong> Florida; Georgia; Illinois; Maryland; New Jersey; New York; Pennsylvania; Virginia<br /><strong>Recall:</strong> 024-2026</p>
+          <div class="rc-links"><a href="https://www.fsis.usda.gov/recalls-alerts/sempio-food-services-inc--recalls-ready-eat-chicken-stew-products-imported-without" target="_blank" rel="noopener">USDA FSIS notice</a></div>
+        </article>
+      </div>
+      <h2 class="rc-day">September 24, 2026</h2>
+      <div class="rc-list">
+        <article class="rc-item" data-cat="listeria" data-agency="FDA">
+          <div class="rc-tags"><span class="rc-tag hot">Listeria</span><span class="rc-tag">FDA</span><span class="rc-tag">Class I</span></div>
+          <h3>Lemon Alfredo Fettuccine packed in a yellow plastic sealed bag with pink and black lettering</h3>
+          <div class="rc-brand">GIAS FOOD INC.</div>
+          <p class="rc-meta"><strong>Reason:</strong> Contamination with Listeria monocytogenes<br /><strong>Codes:</strong> L6080C SEP 20 2027 L6079C SEP 19 2027<br /><strong>Distribution:</strong> Walmart DCs and retail locations nationwide.<br /><strong>Recall:</strong> H-1396-2026</p>
+          <div class="rc-links"><a href="https://www.accessdata.fda.gov/scripts/ires/index.cfm" target="_blank" rel="noopener">FDA enforcement records</a></div>
+        </article>
+      </div>
+      <h2 class="rc-day">September 22, 2026</h2>
+      <div class="rc-list">
+        <article class="rc-item" data-cat="foreign" data-agency="FDA">
+          <div class="rc-tags"><span class="rc-tag mid">Foreign material</span><span class="rc-tag">FDA</span><span class="rc-tag">Class II</span></div>
+          <h3>So Delicious Dairy Free Salted Caramel Cluster Cashewmilk, Non-Dairy Frozen Dessert. 16 oz paper tub with an…</h3>
+          <div class="rc-brand">WWF Operating Company</div>
+          <p class="rc-meta"><strong>Reason:</strong> Product may contain foreign material: small stones and other hard objects.<br /><strong>Codes:</strong> BB: 28 Aug 2027 , BB: 29 Aug 2027 , BB: 9 Sep 2027 , BB: 10 Sept 2027 , BB: 16 Oct 2027 , BB: 17 Oct 2027 , BB: 18 Oct 2027 , BB: 22 Oct 2027 , BB: 23 Oct 2027 , BB: 24 Oct 2027 , BB: 25 Oct 2027…<br /><strong>Distribution:</strong> Product was distributed nationwide.<br /><strong>Recall:</strong> H-1394-2026</p>
+          <div class="rc-links"><a href="https://www.accessdata.fda.gov/scripts/ires/index.cfm" target="_blank" rel="noopener">FDA enforcement records</a></div>
+        </article>
+        <article class="rc-item" data-cat="allergens" data-agency="FDA">
+          <div class="rc-tags"><span class="rc-tag mid">Undeclared allergens</span><span class="rc-tag">FDA</span><span class="rc-tag">Class I</span></div>
+          <h3>Fromagerie Coop de Mean Cabricharme and Belgium Cabricharme Shelf life: 30 days, all dates through and…</h3>
+          <div class="rc-brand">WFM Purchasing, LP</div>
+          <p class="rc-meta"><strong>Reason:</strong> Undeclared Egg Allergen<br /><strong>Codes:</strong> Shelf life: 30 days, all dates through and including 10/7/2026<br /><strong>Distribution:</strong> CA, AZ, NJ, MA, RI, CT, NY<br /><strong>Recall:</strong> H-1395-2026</p>
+          <div class="rc-links"><a href="https://www.accessdata.fda.gov/scripts/ires/index.cfm" target="_blank" rel="noopener">FDA enforcement records</a></div>
+        </article>
+        <article class="rc-item" data-cat="chemical" data-agency="FDA">
+          <div class="rc-tags"><span class="rc-tag mid">Lead &amp; contaminants</span><span class="rc-tag">FDA</span><span class="rc-tag">Class III</span></div>
+          <h3>American Ginsengs</h3>
+          <div class="rc-brand">Kwok Shing, Inc.</div>
+          <p class="rc-meta"><strong>Reason:</strong> Potential contamination with pesticides.<br /><strong>Codes:</strong> 108-728-420<br /><strong>Distribution:</strong> Domestic: CA. Foreign: Not Applicable.<br /><strong>Recall:</strong> H-1393-2026</p>
+          <div class="rc-links"><a href="https://www.accessdata.fda.gov/scripts/ires/index.cfm" target="_blank" rel="noopener">FDA enforcement records</a></div>
+        </article>
+        <article class="rc-item" data-cat="uninspected" data-agency="USDA">
+          <div class="rc-tags"><span class="rc-tag mid">Uninspected or ineligible imports</span><span class="rc-tag">USDA</span><span class="rc-tag">Class I</span></div>
+          <h3>Star Meat Delivery Inc. Recalls Raw Pork, Beef, and Goat Products Produced Without the Benefit of Inspection</h3>
+          <div class="rc-brand">Star Meat Delivery Inc.</div>
+          <p class="rc-meta"><strong>Reason:</strong> Produced Without Benefit of Inspection<br /><strong>Products:</strong> • Various weight cardboard boxes containing individually vacuum-packed A&amp;D Foods “GOAT CUT 1-1/2&quot; 10.00 LBS”; • Various weight cardboard boxes containing individually vacuum-packed A&amp;D Foods “GOAT BURN SKIN ON CUT…<br /><strong>Establishment:</strong> EST. 1363<br /><strong>Distribution:</strong> Nationwide<br /><strong>Recall:</strong> 022-2026</p>
+          <div class="rc-links"><a href="https://www.fsis.usda.gov/recalls-alerts/star-meat-delivery-inc--recalls-raw-pork-beef-and-goat-products-produced-without" target="_blank" rel="noopener">USDA FSIS notice</a><a href="/blog/star-meat-delivery-uninspected-recall">Our analysis</a></div>
+        </article>
+      </div>
+      <h2 class="rc-day">September 21, 2026</h2>
+      <div class="rc-list">
+        <article class="rc-item" data-cat="other" data-agency="FDA">
+          <div class="rc-tags"><span class="rc-tag ">Other reasons</span><span class="rc-tag">FDA</span><span class="rc-tag">Class II</span></div>
+          <h3>Light Brown Sugar, Packaged in he follow configurations (+1 more product)</h3>
+          <div class="rc-brand">United Sugar Producers and Refiners</div>
+          <p class="rc-meta"><strong>Reason:</strong> Potential Wheat Kernel contamination.<br /><strong>Codes:</strong> 1. Batch Numbers: MHD26223, MHD26224, MHD26225, MHD26226, MHD26227, MHD26228, MHD26229, MHD26223, MHD26225, MHD26226, MHD26223, MHD26225, MHD26226. 2. Batch Numbers: MHD26223, MHD26224, MHD26225…<br /><strong>Distribution:</strong> IA, IL, IN, KS, MN, OH PA, TX<br /><strong>Recall:</strong> H-1391-2026, H-1392-2026</p>
+          <div class="rc-links"><a href="https://www.accessdata.fda.gov/scripts/ires/index.cfm" target="_blank" rel="noopener">FDA enforcement records</a></div>
+        </article>
+      </div>
+      <h2 class="rc-day">September 18, 2026</h2>
+      <div class="rc-list">
+        <article class="rc-item" data-cat="salmonella" data-agency="FDA">
+          <div class="rc-tags"><span class="rc-tag hot">Salmonella</span><span class="rc-tag">FDA</span><span class="rc-tag">Class I</span></div>
+          <h3>Evergreen Fresh Sprouts LLC, Broccoli Sprouts, packaged in clear plastic zip lock bag</h3>
+          <div class="rc-brand">Evergreen Fresh Sprouts LLC</div>
+          <p class="rc-meta"><strong>Reason:</strong> Salmonella<br /><strong>Codes:</strong> Use By Date (9/16/2026) Use By Date (9/14/2026) Use By Date (9/11/2026) Use By Date (9/09/2026) Use By Date (9/07/2026)<br /><strong>Distribution:</strong> Distributed in WA<br /><strong>Recall:</strong> H-1390-2026</p>
+          <div class="rc-links"><a href="https://www.accessdata.fda.gov/scripts/ires/index.cfm" target="_blank" rel="noopener">FDA enforcement records</a></div>
+        </article>
+        <article class="rc-item" data-cat="listeria" data-agency="FDA">
+          <div class="rc-tags"><span class="rc-tag hot">Listeria</span><span class="rc-tag">FDA</span><span class="rc-tag">Class II</span></div>
+          <h3>Pecorino Toscano D.O.P. STAGIONATO cheese wheels</h3>
+          <div class="rc-brand">Elegant Foods, LLC</div>
+          <p class="rc-meta"><strong>Reason:</strong> Potential Listeria contamination from dripping condensation in cooler.<br /><strong>Codes:</strong> Lot 093DPD<br /><strong>Distribution:</strong> WI<br /><strong>Recall:</strong> H-1389-2026</p>
+          <div class="rc-links"><a href="https://www.accessdata.fda.gov/scripts/ires/index.cfm" target="_blank" rel="noopener">FDA enforcement records</a></div>
+        </article>
+      </div>
+      <h2 class="rc-day">September 17, 2026</h2>
+      <div class="rc-list">
+        <article class="rc-item" data-cat="chemical" data-agency="FDA">
+          <div class="rc-tags"><span class="rc-tag mid">Lead &amp; contaminants</span><span class="rc-tag">FDA</span><span class="rc-tag">Class III</span></div>
+          <h3>Hexing Haw Balls candy</h3>
+          <div class="rc-brand">Tiffany Food Corp</div>
+          <p class="rc-meta"><strong>Reason:</strong> Unapproved dye Ponceau 4R<br /><strong>Codes:</strong> Best Before 10/01/2026<br /><strong>Distribution:</strong> AZ, NY, CA, FL, GA, IL, MA, MN, NC, NJ, OH, PA, NY, TN, TX, VA<br /><strong>Recall:</strong> H-1387-2026</p>
+          <div class="rc-links"><a href="https://www.accessdata.fda.gov/scripts/ires/index.cfm" target="_blank" rel="noopener">FDA enforcement records</a></div>
+        </article>
+        <article class="rc-item" data-cat="listeria" data-agency="FDA">
+          <div class="rc-tags"><span class="rc-tag hot">Listeria</span><span class="rc-tag">FDA</span><span class="rc-tag">Class I</span></div>
+          <h3>Mon Sire Brie, soft-ripened French cheese, 1 kg, packed in carboard carton and wrapped in plastic parchment…</h3>
+          <div class="rc-brand">Optimus Inc. d/b/a/ Markys Caviar</div>
+          <p class="rc-meta"><strong>Reason:</strong> The firm was notified by their Brie Cheese supplier that sample results revealed the presence of Listeria monocytogenes.<br /><strong>Codes:</strong> LOT 00000ZRAA1 EXP 08/15/2026 LOT 00000ZUAD2 EXP 08/18/2026<br /><strong>Distribution:</strong> Florida<br /><strong>Recall:</strong> H-1388-2026</p>
+          <div class="rc-links"><a href="https://www.accessdata.fda.gov/scripts/ires/index.cfm" target="_blank" rel="noopener">FDA enforcement records</a></div>
+        </article>
+      </div>
+      <h2 class="rc-day">September 16, 2026</h2>
+      <div class="rc-list">
+        <article class="rc-item" data-cat="salmonella" data-agency="FDA">
+          <div class="rc-tags"><span class="rc-tag hot">Salmonella</span><span class="rc-tag">FDA</span><span class="rc-tag">Class I</span></div>
+          <h3>PICO DE GALLO-HOT-6/9oz HEB-PICO-HOT-12/14oz (+7 more products)</h3>
+          <div class="rc-brand">NatureBest Pre-Cut &amp; Produce LLc</div>
+          <p class="rc-meta"><strong>Reason:</strong> Jalapenos have the potential to be contaminated with Salmonella<br /><strong>Codes:</strong> 190A26184 - 190A26216 · 400B26184, 400B26187, 400B26188, 400B26189, 400B26190, 400B26191, 400B26194, 400B26195, 400B26196, 400B26197, 400B26198, 400B26201, 400B26202, 400B26203, 400B26204, 400B26205…<br /><strong>Distribution:</strong> Texas and Louisiana<br /><strong>Recall:</strong> H-1379-2026, H-1378-2026, H-1376-2026 +5</p>
+          <div class="rc-links"><a href="https://www.accessdata.fda.gov/scripts/ires/index.cfm" target="_blank" rel="noopener">FDA enforcement records</a></div>
+        </article>
+        <article class="rc-item" data-cat="ecoli" data-agency="FDA">
+          <div class="rc-tags"><span class="rc-tag hot">E. coli</span><span class="rc-tag">FDA</span><span class="rc-tag">Class I</span></div>
+          <h3>Organic Triple Berry Blend Strawberries, Blackberries &amp; Blueberries</h3>
+          <div class="rc-brand">Frutas y Hortalizas del Sur S.A.</div>
+          <p class="rc-meta"><strong>Reason:</strong> Potential E. coli O145:H28 Contamination<br /><strong>Codes:</strong> Lot 6 040 01-6 Best by Date Feb 09 2028<br /><strong>Distribution:</strong> AR<br /><strong>Recall:</strong> H-1380-2026</p>
+          <div class="rc-links"><a href="https://www.accessdata.fda.gov/scripts/ires/index.cfm" target="_blank" rel="noopener">FDA enforcement records</a></div>
+        </article>
+        <article class="rc-item" data-cat="other" data-agency="FDA">
+          <div class="rc-tags"><span class="rc-tag ">Other reasons</span><span class="rc-tag">FDA</span><span class="rc-tag">Class II</span></div>
+          <h3>Elegant Foods Carrot Cake, 9&quot; (+2 more products)</h3>
+          <div class="rc-brand">Elegant Foods, LLC</div>
+          <p class="rc-meta"><strong>Reason:</strong> Carrot decoration contains Yellow #5 and Yellow #6 which is not listed on finished product label.<br /><strong>Codes:</strong> No code applied.<br /><strong>Distribution:</strong> WI<br /><strong>Recall:</strong> H-1385-2026, H-1384-2026, H-1383-2026</p>
+          <div class="rc-links"><a href="https://www.accessdata.fda.gov/scripts/ires/index.cfm" target="_blank" rel="noopener">FDA enforcement records</a></div>
+        </article>
+        <article class="rc-item" data-cat="other" data-agency="FDA">
+          <div class="rc-tags"><span class="rc-tag ">Other reasons</span><span class="rc-tag">FDA</span><span class="rc-tag">Class II</span></div>
+          <h3>Buckhead, Tuna, 10lb cs, 12lb cs, 15lb cs, 3-5lb cs , Styrofoam container, Keep Refrigerated</h3>
+          <div class="rc-brand">Buckhead Meat Company D.B.A. Trinity Seafood</div>
+          <p class="rc-meta"><strong>Reason:</strong> The Firm was notified by NJ Department of Health of two samples collected from tuna with reported high levels of scombrotoxin.<br /><strong>Codes:</strong> 0004255 Vat # 59-01915, 58-11212, 59-01914, 58-11210, 58-11213, 59-01930, 59-01570, 58-11210, 59-0<br /><strong>Distribution:</strong> The recall product was distributed to the following States: PA, MD, NY, CT, NJ<br /><strong>Recall:</strong> H-1382-2026</p>
+          <div class="rc-links"><a href="https://www.accessdata.fda.gov/scripts/ires/index.cfm" target="_blank" rel="noopener">FDA enforcement records</a></div>
+        </article>
+        <article class="rc-item" data-cat="other" data-agency="FDA">
+          <div class="rc-tags"><span class="rc-tag ">Other reasons</span><span class="rc-tag">FDA</span><span class="rc-tag">Class II</span></div>
+          <h3>PUMPKIN SPICE NO BAKE COOKIE</h3>
+          <div class="rc-brand">Best Friends Bakery, LLC</div>
+          <p class="rc-meta"><strong>Reason:</strong> Peanuts &amp; Eggs. The firm list peanuts in the ingredient statement but omitted them from the contain statement. They also have eggs listed in the contain statement but…<br /><strong>Codes:</strong> Lot 20326<br /><strong>Distribution:</strong> Product was shipped to the following states: AL, FL, GA, IN, KY, MI, OH, TN, VA &amp; WV.<br /><strong>Recall:</strong> H-1386-2026</p>
+          <div class="rc-links"><a href="https://www.accessdata.fda.gov/scripts/ires/index.cfm" target="_blank" rel="noopener">FDA enforcement records</a></div>
+        </article>
+      </div>
+      <h2 class="rc-day">September 15, 2026</h2>
+      <div class="rc-list">
+        <article class="rc-item" data-cat="salmonella" data-agency="FDA">
+          <div class="rc-tags"><span class="rc-tag hot">Salmonella</span><span class="rc-tag">FDA</span><span class="rc-tag">Class I</span></div>
+          <h3>Tomato Salsa Fresca (+24 more products)</h3>
+          <div class="rc-brand">Taylor Fresh Foods Inc</div>
+          <p class="rc-meta"><strong>Reason:</strong> Potential contamination with Salmonella.<br /><strong>Codes:</strong> Tennessee: TFTN2162, 8/19/2026. · Rhode Island: TFNE210A, 8/9/2026; TFNE212A, 8/11/2026; TFNE213A, 8/12/2026. · Illinois: TFIC211, 8/7/2026. Texas: TFTX209U11, 8/7/2026; TFTX211, 8/9/2026…<br /><strong>Distribution:</strong> Domestic: AL, AR, FL, GA, IL, IN, KS, KY, LA, MA, ME, MI, MN, MO, MS, NC, NE, NH, NY, OH, OK, SC, TN, TX, VT, WI, WV. Foreign: Not applicable.<br /><strong>Recall:</strong> H-1364-2026, H-1355-2026, H-1354-2026 +22</p>
+          <div class="rc-links"><a href="https://www.accessdata.fda.gov/scripts/ires/index.cfm" target="_blank" rel="noopener">FDA enforcement records</a></div>
+        </article>
+        <article class="rc-item" data-cat="allergens" data-agency="FDA">
+          <div class="rc-tags"><span class="rc-tag mid">Undeclared allergens</span><span class="rc-tag">FDA</span><span class="rc-tag">Class II</span></div>
+          <h3>Mercer&#x27;s brand 6 ICE CREAM SANDWICHES TO GO</h3>
+          <div class="rc-brand">Quality Dairy Farms Inc.</div>
+          <p class="rc-meta"><strong>Reason:</strong> Undeclared peanuts<br /><strong>Codes:</strong> Codes: 6197 and 6226<br /><strong>Distribution:</strong> NY<br /><strong>Recall:</strong> H-1343-2026</p>
+          <div class="rc-links"><a href="https://www.accessdata.fda.gov/scripts/ires/index.cfm" target="_blank" rel="noopener">FDA enforcement records</a></div>
+        </article>
+        <article class="rc-item" data-cat="salmonella" data-agency="FDA">
+          <div class="rc-tags"><span class="rc-tag hot">Salmonella</span><span class="rc-tag">FDA</span><span class="rc-tag">Class II</span></div>
+          <h3>Martina brand Fresh Whole Mangoes</h3>
+          <div class="rc-brand">Panorama Produce Sales Inc.</div>
+          <p class="rc-meta"><strong>Reason:</strong> Product may be contaminated with Salmonella<br /><strong>Codes:</strong> Lot 038, PLU 4584<br /><strong>Distribution:</strong> CT, NY, NJ, and PA<br /><strong>Recall:</strong> H-1342-2026</p>
+          <div class="rc-links"><a href="https://www.accessdata.fda.gov/scripts/ires/index.cfm" target="_blank" rel="noopener">FDA enforcement records</a></div>
+        </article>
+      </div>
+      <h2 class="rc-day">September 14, 2026</h2>
+      <div class="rc-list">
+        <article class="rc-item" data-cat="salmonella" data-agency="FDA">
+          <div class="rc-tags"><span class="rc-tag hot">Salmonella</span><span class="rc-tag">FDA</span><span class="rc-tag">Class I</span></div>
+          <h3>Alfalfa</h3>
+          <div class="rc-brand">International Sprout Holdings, Inc</div>
+          <p class="rc-meta"><strong>Reason:</strong> Potential E. coli and Salmonella contamination<br /><strong>Codes:</strong> ISS Lot # SAL2-24JB<br /><strong>Distribution:</strong> Wholesale consignees in 16 states: CA, FL, HI, IL, MA, MN, MO, MT, NY, OH, OR, PA, TN, SC, TX, UT; Puerto Rico; Canada, Mexico, Tahiti, and Venezuela<br /><strong>Recall:</strong> H-1341-2026</p>
+          <div class="rc-links"><a href="https://www.accessdata.fda.gov/scripts/ires/index.cfm" target="_blank" rel="noopener">FDA enforcement records</a></div>
+        </article>
+        <article class="rc-item" data-cat="salmonella" data-agency="FDA">
+          <div class="rc-tags"><span class="rc-tag hot">Salmonella</span><span class="rc-tag">FDA</span><span class="rc-tag">Class I</span></div>
+          <h3>Everything Sprouts Crunchy Protein Sprout Mix, containing Alfalfa Fenugreek, Cabbage, Mung, Adzuki, Lentils… (+3 more products)</h3>
+          <div class="rc-brand">Everything Sprouts, LLC</div>
+          <p class="rc-meta"><strong>Reason:</strong> Sprouts may be contaminated with STEC E. coli and/or Salmonella.<br /><strong>Codes:</strong> Lot# 222, 223, 226, 230 · Lot# 222, 223, 225, 226, 230. · Lot# 223, 226, 230, 233 · LOT #222, 223, 225, 226, 230<br /><strong>Distribution:</strong> MN, WI<br /><strong>Recall:</strong> H-1339-2026, H-1338-2026, H-1340-2026 +1</p>
+          <div class="rc-links"><a href="https://www.accessdata.fda.gov/scripts/ires/index.cfm" target="_blank" rel="noopener">FDA enforcement records</a><a href="/blog/broccoli-sprouts-salmonella-recall-evergreen">Our analysis</a></div>
+        </article>
+      </div>
+      <h2 class="rc-day">September 11, 2026</h2>
+      <div class="rc-list">
+        <article class="rc-item" data-cat="salmonella" data-agency="FDA">
+          <div class="rc-tags"><span class="rc-tag hot">Salmonella</span><span class="rc-tag">FDA</span><span class="rc-tag">Class I</span></div>
+          <h3>Foods Alive organic moringa leaf powder, 8oz pouch</h3>
+          <div class="rc-brand">FOODS ALIVE INC.</div>
+          <p class="rc-meta"><strong>Reason:</strong> Potential Salmonella contamination<br /><strong>Codes:</strong> Freshest by 110127<br /><strong>Distribution:</strong> Nationwide US and UAE. The recalled organic moringa leaf powder was distributed nationwide in retail stores and through online sellers including but…<br /><strong>Recall:</strong> H-1336-2026</p>
+          <div class="rc-links"><a href="https://www.accessdata.fda.gov/scripts/ires/index.cfm" target="_blank" rel="noopener">FDA enforcement records</a></div>
+        </article>
+      </div>
+      <h2 class="rc-day">September 10, 2026</h2>
+      <div class="rc-list">
+        <article class="rc-item" data-cat="allergens" data-agency="FDA">
+          <div class="rc-tags"><span class="rc-tag mid">Undeclared allergens</span><span class="rc-tag">FDA</span><span class="rc-tag">Class II</span></div>
+          <h3>Prolon Everyday Apulian Almond &amp; Cocoa Spread</h3>
+          <div class="rc-brand">L-Nutra Inc</div>
+          <p class="rc-meta"><strong>Reason:</strong> Undeclared allergen (tree nuts): hazelnut, cashew, and pistachio.<br /><strong>Codes:</strong> Lot code: L2755 Expiration: 02 Jan 2027<br /><strong>Distribution:</strong> Product is sold exclusively from the recalling firm&#x27;s online website nationwide.<br /><strong>Recall:</strong> H-1335-2026</p>
+          <div class="rc-links"><a href="https://www.accessdata.fda.gov/scripts/ires/index.cfm" target="_blank" rel="noopener">FDA enforcement records</a></div>
+        </article>
+      </div>
+      <h2 class="rc-day">September 9, 2026</h2>
+      <div class="rc-list">
+        <article class="rc-item" data-cat="allergens" data-agency="FDA">
+          <div class="rc-tags"><span class="rc-tag mid">Undeclared allergens</span><span class="rc-tag">FDA</span><span class="rc-tag">Class II</span></div>
+          <h3>Fannie May &amp; XO Marshmallow Pixie S&#x27;mores Collection, 4.47oz</h3>
+          <div class="rc-brand">Ferrero USA</div>
+          <p class="rc-meta"><strong>Reason:</strong> Undeclared milk and pecans<br /><strong>Codes:</strong> All best by codes that were sold 8/7/2026 to 8/14/2026<br /><strong>Distribution:</strong> IA, IL, IN, OH<br /><strong>Recall:</strong> H-1334-2026</p>
+          <div class="rc-links"><a href="https://www.accessdata.fda.gov/scripts/ires/index.cfm" target="_blank" rel="noopener">FDA enforcement records</a></div>
+        </article>
+        <article class="rc-item" data-cat="uninspected" data-agency="USDA">
+          <div class="rc-tags"><span class="rc-tag mid">Uninspected or ineligible imports</span><span class="rc-tag">USDA</span><span class="rc-tag">Class I</span></div>
+          <h3>El Eden Import Distributor Corp Recalls Ineligible Pork Cracklings Products Imported from The Republic of Colombia</h3>
+          <div class="rc-brand">El Eden Import Distributor Corp</div>
+          <p class="rc-meta"><strong>Reason:</strong> Import Violation<br /><strong>Products:</strong> • 45-g. foil bags of “De Todito NATURAL” mixed chips with “CHICHARRÓN AMERICANO JACKS,” “Margarita,” and “NATU CHIPS.”; • 45-g. foil bags of “De Todito BBQ” mixed chips with “CHICHARRÓN AMERICANO JACKS,” “Margarita,”…<br /><strong>Distribution:</strong> New Jersey; Utah; Massachusetts; New York; Connecticut; Illinois<br /><strong>Recall:</strong> 021-2026</p>
+          <div class="rc-links"><a href="https://www.fsis.usda.gov/recalls-alerts/el-eden-import-distributor-corp-recalls-ineligible-pork-cracklings-products-imported" target="_blank" rel="noopener">USDA FSIS notice</a></div>
+        </article>
+      </div>
+      <h2 class="rc-day">September 6, 2026</h2>
+      <div class="rc-list">
+        <article class="rc-item" data-cat="listeria" data-agency="USDA">
+          <div class="rc-tags"><span class="rc-tag hot">Listeria</span><span class="rc-tag">USDA</span><span class="rc-tag">Class I</span></div>
+          <h3>Prime Line Distributors, Inc. and Ferrarini USA, Inc. Recall Imported Ready-To-Eat Pork Guanciale Products Due to Possible Listeria…</h3>
+          <div class="rc-brand">Prime Line Distributors, Inc. and Ferrarini USA, Inc.</div>
+          <p class="rc-meta"><strong>Reason:</strong> Possible Listeria Contamination<br /><strong>Products:</strong> • Various weight cardboard cases containing two pieces of individually vacuumed packed “PRIME LINE DISTRIBUTORS, INC. GUANCIALE PORK JOWL PRODUCT OF ITALY” with “LOT: 263311US” and “BEST IF USE BY DATE: 05.16.27”…<br /><strong>Distribution:</strong> Texas; Idaho; New York; New Jersey; Florida; Texas; Illinois; Mississippi; California; Florida<br /><strong>Recall:</strong> 019-020-2026</p>
+          <div class="rc-links"><a href="https://www.fsis.usda.gov/recalls-alerts/prime-line-distributors-inc--and-ferrarini-usa-inc--recall-imported-ready-eat-pork" target="_blank" rel="noopener">USDA FSIS notice</a><a href="/blog/guanciale-pork-jowl-listeria-recall">Our analysis</a></div>
+        </article>
+      </div>
+      <h2 class="rc-day">September 4, 2026</h2>
+      <div class="rc-list">
+        <article class="rc-item" data-cat="allergens" data-agency="FDA">
+          <div class="rc-tags"><span class="rc-tag mid">Undeclared allergens</span><span class="rc-tag">FDA</span><span class="rc-tag">Class I</span></div>
+          <h3>Momchipz Gluten Free Veggie Chips Broccoli Florets &amp; Cauliflower</h3>
+          <div class="rc-brand">EXOTIQUE FOODS CANADA</div>
+          <p class="rc-meta"><strong>Reason:</strong> Undeclared Wheat.<br /><strong>Codes:</strong> Best Before: 2026 AUGUST 31<br /><strong>Distribution:</strong> Product was sold in the U.S.<br /><strong>Recall:</strong> H-1330-2026</p>
+          <div class="rc-links"><a href="https://www.accessdata.fda.gov/scripts/ires/index.cfm" target="_blank" rel="noopener">FDA enforcement records</a></div>
+        </article>
+        <article class="rc-item" data-cat="other" data-agency="FDA">
+          <div class="rc-tags"><span class="rc-tag ">Other reasons</span><span class="rc-tag">FDA</span><span class="rc-tag">Class I</span></div>
+          <h3>Crown Farms Dried Suri Cut, 200 gm, in plastic pack, 25 packages per box, keep frozen</h3>
+          <div class="rc-brand">EURO FOODS GROUP USA NJ INC</div>
+          <p class="rc-meta"><strong>Reason:</strong> The firm imported and distributed dried ribbon fish that was not properly eviscerated prior to drying.<br /><strong>Codes:</strong> BATCH NO: 130 EF, 146 EF SERIAL NUMBER: 5055192640140 PRODUCT CODE: 28DSUM<br /><strong>Distribution:</strong> The adulterated product was distributed to the following states: VA, NY, NJ, MI<br /><strong>Recall:</strong> H-1331-2026</p>
+          <div class="rc-links"><a href="https://www.accessdata.fda.gov/scripts/ires/index.cfm" target="_blank" rel="noopener">FDA enforcement records</a></div>
+        </article>
+      </div>
+      <section class="rc-faq">
+        <h2>Frequently asked questions</h2>
+        <h3>What is a food recall?</h3>
+        <p>A food recall removes a product from sale, and from homes, because it may be unsafe: bacteria such as Listeria, Salmonella or E. coli, an undeclared allergen, foreign material, a contaminant such as lead, or a processing problem. The FDA oversees most foods; the USDA Food Safety and Inspection Service (FSIS) oversees meat, poultry and egg products.</p>
+        <h3>What do Class I, II and III mean?</h3>
+        <p>Class I is the most serious: a reasonable probability that the product will cause serious health problems or death. Class II may cause temporary or medically reversible health problems. Class III is unlikely to cause adverse health consequences.</p>
+        <h3>How do I know if my product is recalled?</h3>
+        <p>Compare the brand, UPC, lot code and best-by date printed on the package with the recall notice. A product is only affected if its codes match. The <a href="/">Numeline app</a> does this for you: scan the lot number and it checks it against official FDA and USDA recalls.</p>
+        <h3>What should I do with a recalled food?</h3>
+        <p>Do not eat it. Return it to the store for a refund or throw it away, as the notice says. If you ate it and feel sick, contact a healthcare provider and mention the product.</p>
+        <h3>How often is this list updated?</h3>
+        <p>Every day, automatically, from FDA enforcement data and USDA FSIS recall notices. It covers food recalls classified over the last 60 days. Our <a href="/blog/">blog</a> explains the most important ones.</p>
+      </section>
+      <div class="cta-app">
+        <h3>Check a product in one scan</h3>
+        <p>Numeline reads the lot number on your food and checks it against official FDA and USDA recalls. Free on iOS and Android.</p>
+        <div class="cta-buttons">
+          <a class="cta-btn" href="https://apps.apple.com/us/app/numeline/id6758400953" target="_blank" rel="noopener"><span><span class="b-sub">Download on the</span><span class="b-main">App Store</span></span></a>
+          <a class="cta-btn" href="https://play.google.com/store/apps/details?id=com.eatsafe.app" target="_blank" rel="noopener"><span><span class="b-sub">Get it on</span><span class="b-main">Google Play</span></span></a>
+        </div>
+      </div>
+      <p class="rc-sources">Sources: <a href="https://open.fda.gov/apis/food/enforcement/" target="_blank" rel="noopener">openFDA food enforcement data</a>, the <a href="https://www.accessdata.fda.gov/scripts/ires/index.cfm" target="_blank" rel="noopener">FDA Enforcement Report</a> and <a href="https://www.fsis.usda.gov/recalls" target="_blank" rel="noopener">USDA FSIS recalls</a> (U.S. government works, public domain). FDA enforcement records can appear a few days after a company announces a recall. Numeline is an independent app, not affiliated with any agency; the official notice always prevails.</p>
+    </main>
+
+    <footer class="footer">
+      <div>Numeline — Food recall radar</div>
+      <div><a href="/blog/">More articles</a> · <a href="/privacy-policy">Privacy</a> · <a href="/contact">Contact</a></div>
+    </footer>
+  </div>
+  <script>
+(function () {
+  var btns = document.querySelectorAll('.rc-filters button');
+  var items = document.querySelectorAll('.rc-item');
+  var days = document.querySelectorAll('.rc-day');
+  Array.prototype.forEach.call(btns, function (b) {
+    b.addEventListener('click', function () {
+      var f = b.getAttribute('data-f');
+      Array.prototype.forEach.call(btns, function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+      Array.prototype.forEach.call(items, function (it) {
+        var ok = f === 'all' || it.getAttribute('data-cat') === f || (f.indexOf('agency:') === 0 && it.getAttribute('data-agency') === f.slice(7));
+        it.style.display = ok ? '' : 'none';
+        if (ok && it.classList.contains('has-img')) it.style.display = 'grid';
+      });
+      Array.prototype.forEach.call(days, function (d) {
+        var list = d.nextElementSibling, any = false;
+        Array.prototype.forEach.call(list.children, function (c) { if (c.style.display !== 'none') any = true; });
+        d.style.display = list.style.display = any ? '' : 'none';
+      });
+    });
+  });
+})();
+</script>
+</body>
+</html>
