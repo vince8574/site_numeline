@@ -616,7 +616,39 @@
       .press-card { padding: 14px 16px; }
       .press-text { font-size: 14px; }
     }
+
+    /* Passage TV mis en avant : vidéo 16:9 intégrée (youtube-nocookie, chargée au défilement). */
+    .press-card--video { display: block; }
+    .press-video {
+      position: relative; width: 100%; max-width: 720px; aspect-ratio: 16 / 9;
+      margin-top: 12px; border-radius: 16px; overflow: hidden; background: #0a1f1f;
+    }
+    .press-video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+    .tv-badge {
+      display: inline-flex; align-items: center; gap: 8px; margin: 0 0 14px;
+      padding: 7px 14px; border-radius: 999px; font-size: 13px; font-weight: 600;
+      background: #0a1f1f; color: #ffffff; text-decoration: none;
+    }
+    .tv-badge:hover { background: #0a7d62; }
+    .tv-badge .dot { width: 8px; height: 8px; border-radius: 50%; background: #0bae86; }
   </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "Numeline : l'appli qui accompagne les consommateurs",
+  "description": "Numeline présentée dans l'émission Le Pitch sur BFM Business : l'application qui vérifie les rappels alimentaires en lisant le numéro de lot.",
+  "thumbnailUrl": "https://i.ytimg.com/vi/w2ldJM3dtKk/hqdefault.jpg",
+  "uploadDate": "2026-11-06",
+  "embedUrl": "https://www.youtube-nocookie.com/embed/w2ldJM3dtKk",
+  "contentUrl": "https://www.youtube.com/watch?v=w2ldJM3dtKk",
+  "inLanguage": "fr-FR",
+  "publisher": {
+    "@type": "Organization",
+    "name": "BFM Business"
+  }
+}
+  </script>
 </head>
 <body>
   <div class="page">
@@ -652,6 +684,7 @@
     <main class="hero">
       <div class="hero-copy fade-up" style="--delay: 0.05s;">
         <div class="eyebrow">Application de rappels alimentaires · RappelConso</div>
+        <a class="tv-badge" href="#bfm"><span class="dot"></span>Vu dans « Le Pitch » sur BFM Business &mdash; voir la vidéo</a>
         <h1>Scannez. Vérifiez. Agissez.</h1>
         <p class="lead">
           Numeline est l'application de rappels alimentaires qui vous permet de scanner vos produits, de vérifier
@@ -688,6 +721,17 @@
 
     <section id="presse" class="section press-strip fade-up" style="--delay: 0.16s;">
       <h2>On parle de nous</h2>
+      <div class="press-card press-card--video" id="bfm">
+        <div class="press-body">
+          <span class="press-flag">Télévision</span>
+          <p class="press-text">
+            Numeline dans l&rsquo;émission <strong>Le Pitch</strong>, sur <strong>BFM Business</strong>&nbsp;: «&nbsp;Numeline, l&rsquo;appli qui accompagne les consommateurs&nbsp;».
+            <span class="press-note">Novembre 2026.</span>
+          </p>
+        </div>
+        <div class="press-video"><iframe src="https://www.youtube-nocookie.com/embed/w2ldJM3dtKk" title="Numeline dans Le Pitch, BFM Business" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+        <a class="press-link" href="https://www.bfmtv.com/economie/replay-emissions/le-pitch/video-numeline-l-appli-qui-accompagne-les-consommateurs_VN-202611060487.html" target="_blank" rel="noopener">Voir l&rsquo;émission sur bfmtv.com &rarr;</a>
+      </div>
       <div class="press-card">
         <div class="press-logo">
           <img src="/fr/media/europe2-logo.svg" alt="Europe 2" width="4546" height="2211" loading="lazy" />

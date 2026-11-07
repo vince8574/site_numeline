@@ -667,7 +667,39 @@
       .press-card { padding: 14px 16px; }
       .press-text { font-size: 14px; }
     }
+
+    /* Passage TV mis en avant : vidéo 16:9 intégrée (youtube-nocookie, chargée au défilement). */
+    .press-card--video { display: block; }
+    .press-video {
+      position: relative; width: 100%; max-width: 720px; aspect-ratio: 16 / 9;
+      margin-top: 12px; border-radius: 16px; overflow: hidden; background: #0a1f1f;
+    }
+    .press-video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+    .tv-badge {
+      display: inline-flex; align-items: center; gap: 8px; margin: 0 0 14px;
+      padding: 7px 14px; border-radius: 999px; font-size: 13px; font-weight: 600;
+      background: #0a1f1f; color: #ffffff; text-decoration: none;
+    }
+    .tv-badge:hover { background: #0a7d62; }
+    .tv-badge .dot { width: 8px; height: 8px; border-radius: 50%; background: #0bae86; }
   </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "Numeline : l'appli qui accompagne les consommateurs",
+  "description": "Numeline featured on Le Pitch, BFM Business (French TV): the app that checks food recalls by reading the lot number.",
+  "thumbnailUrl": "https://i.ytimg.com/vi/w2ldJM3dtKk/hqdefault.jpg",
+  "uploadDate": "2026-11-06",
+  "embedUrl": "https://www.youtube-nocookie.com/embed/w2ldJM3dtKk",
+  "contentUrl": "https://www.youtube.com/watch?v=w2ldJM3dtKk",
+  "inLanguage": "fr-FR",
+  "publisher": {
+    "@type": "Organization",
+    "name": "BFM Business"
+  }
+}
+  </script>
 </head>
 <body>
   <div class="page">
@@ -702,6 +734,7 @@
     <main class="hero">
       <div class="hero-copy fade-up" style="--delay: 0.05s;">
         <div class="eyebrow">Food recall radar</div>
+        <a class="tv-badge" href="#bfm"><span class="dot"></span>As seen on BFM Business (French TV) &mdash; watch the segment</a>
         <h1>Scan. Know. Act.</h1>
         <p class="lead">
           Numeline helps you scan food products, verify recall status, and receive alerts when a lot is flagged.
@@ -737,6 +770,17 @@
     </main>
 
     <div class="press-strip fade-up" style="--delay: 0.16s;">
+      <div class="press-card press-card--video" id="bfm">
+        <div class="press-body">
+          <span class="press-flag">Television</span>
+          <p class="press-text">
+            Numeline on <strong>Le Pitch</strong>, the startup segment of <strong>BFM Business</strong>, France&rsquo;s business news channel.
+            <span class="press-note">November 2026 &mdash; in French.</span>
+          </p>
+        </div>
+        <div class="press-video"><iframe src="https://www.youtube-nocookie.com/embed/w2ldJM3dtKk" title="Numeline on Le Pitch, BFM Business" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+        <a class="press-link" href="https://www.bfmtv.com/economie/replay-emissions/le-pitch/video-numeline-l-appli-qui-accompagne-les-consommateurs_VN-202611060487.html" target="_blank" rel="noopener">Watch on bfmtv.com &rarr;</a>
+      </div>
       <div class="press-card">
         <div class="press-body">
           <span class="press-flag">Television</span>
