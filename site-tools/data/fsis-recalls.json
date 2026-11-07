@@ -166,33 +166,5 @@
   "dist": "California",
   "code": "",
   "url": "https://www.fsis.usda.gov/recalls-alerts/asian-america-trading-inc--recalls-ineligible-siluriformes-fish-products-imported"
- },
- {
-  "num": "PHA-08082026-01",
-  "date": "2026-08-08",
-  "firm": "",
-  "title": "FSIS Issues Public Health Alert for Various Meat and Poultry Products Containing FDA-Regulated Jalapeños That Have Been Recalled Due To Possible Salmonella Contamination",
-  "product": "FSIS Issues Public Health Alert for Various Meat and Poultry Products Containing FDA-Regulated Jalapeños That Have Been Recalled Due To Possible Salmonella Contamination",
-  "reason": "Product Contamination FSIS Issues Public Health Alert for Various Meat and Poultry Products Containing FDA-Regulated Jalapeños That Have Been Recalled Due To Possible Salmonella Contamination WASHINGTON, Aug. 8, 2026 – The U.S. Department of Agriculture’s Food Safety and Inspection Service (FSIS) is issuing a public health alert for meat and poultry products containing FDA-regulated jalapeños that may be contaminated with Salmonella . FSIS expects additional downstream products will be identified as this ingredient recall progresses. As more information becomes available, FSIS will update this public health alert. Consumers should check back frequently. The list of products subject to the public health alert is available here , including information such as the product names, estab",
-  "reason_short": "Product Contamination",
-  "class": "Public Health Alert",
-  "type": "Public Health Alert",
-  "dist": "Nationwide",
-  "code": "",
-  "url": "https://www.fsis.usda.gov/recalls-alerts/fsis-issues-public-health-alert-various-meat-and-poultry-products-containing-fda-0"
- },
- {
-  "num": "015-2026",
-  "date": "2026-08-08",
-  "firm": "City Foods, Inc./Bea's Best Corned Beef",
-  "title": "City Foods, Inc. Recalls Ready-To-Eat Pastrami and Corned Beef Products Due To Possible Listeria Contamination",
-  "product": "10-lb. cardboard boxes containing 2- to 5-lb. pieces of “Midamar Premium Beef Pastrami” with case code “19410” printed on the box label.; Various weight 20- to 30-lb. cardboard boxes containing 2-3 pieces of “BEA’S BEST COOKED CORNED BEEF BRISKET” with case code “18919” printed on the box label.; Various weight 20- to 30-lb. cardboard boxes containing 2-3 pieces of “KIRSCH DELICATESSEN STYLE COOKED CORNED BEEF BRISKET” with case code “19751” printed on the box label.",
-  "reason": "Product Contamination City Foods, Inc. Recalls Ready-To-Eat Pastrami and Corned Beef Products Due To Possible Listeria Contamination Editor’s Note: August 13, 2026 – This release has been revised to reflect the correct Midamar product label, the accurate number of pieces contained in each box, and item number reflected on the label. The correct amount per box is four 2.5-lb. pieces, replacing the incorrect amount of 2- to 5-lb. pieces. WASHINGTON, Aug. 8, 2026 – City Foods, Inc., a Chicago, Ill., establishment, is recalling approximately 3,215 pounds of ready-to-eat (RTE) pastrami and corned beef productsthat may be adulterated with Listeria monocytogenes ( Lm ), the U.S. Department of Agriculture’s Food Safety and Inspecti",
-  "reason_short": "Product Contamination",
-  "class": "Class I",
-  "type": "Closed Recall",
-  "dist": "Nationwide",
-  "code": "EST. 1896",
-  "url": "https://www.fsis.usda.gov/recalls-alerts/city-foods-inc--recalls-ready-eat-pastrami-and-corned-beef-products-due-possible"
  }
 ]
