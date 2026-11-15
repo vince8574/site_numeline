@@ -1,5 +1,19 @@
 [
  {
+  "num": "PHA-11142026",
+  "date": "2026-11-14",
+  "firm": "Fresh & Ready Foods LLC",
+  "title": "FSIS Issues Public Health Alert for Ready-to-Eat Meat Products Containing Biscuits Recalled Due to Possible Listeria Contamination",
+  "product": "9.5 oz Biscuit & Sausage Gravy",
+  "reason": "Product Contamination FSIS Issues Public Health Alert for Ready-to-Eat Meat Products Containing Biscuits Recalled Due to Possible Listeria Contamination WASHINGTON, Nov. 14, 2026 – The U.S. Department of Agriculture’s Food Safety and Inspection Service (FSIS) is issuing a public health alert for ready-to-eat meat products containing FDA-regulated biscuits that may be contaminated with Listeria monocytogenes (Lm) . Additional downstream products may be identified as this ingredient recall progresses. As more information becomes available, FSIS will update this public health alert. Consumers should check back frequently. View the list of products subject to the public health alert , including information such as the establishment numbers and sta",
+  "reason_short": "Product Contamination",
+  "class": "Public Health Alert",
+  "type": "Public Health Alert",
+  "dist": "Arkansas; Louisiana; Mississippi; Oklahoma; Tennessee; Texas",
+  "code": "",
+  "url": "https://www.fsis.usda.gov/recalls-alerts/fsis-issues-public-health-alert-ready-eat-meat-products-containing-biscuits-recalled"
+ },
+ {
   "num": "PHA-11062026-01",
   "date": "2026-11-06",
   "firm": "BETTERBALLEN FOODS LLC",
