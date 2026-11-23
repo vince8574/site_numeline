@@ -221,6 +221,9 @@ def page(lang, canonical, title, description, h1, updated, intro, filters, group
   <title>%(title)s</title>
   <meta name="description" content="%(desc)s" />
   <link rel="canonical" href="%(canon)s" />
+  <link rel="alternate" hreflang="fr-FR" href="https://numeline.com/fr/rappels-alimentaires" />
+  <link rel="alternate" hreflang="en-US" href="https://numeline.com/food-recalls" />
+  <link rel="alternate" hreflang="x-default" href="https://numeline.com/food-recalls" />
   <meta name="robots" content="index, follow, max-image-preview:large" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Numeline" />
@@ -434,17 +437,17 @@ def build_fr():
             ('          <div class="rc-brand">%s</div>\n' % e(mq)) if mq else '', '<br />'.join(meta), links)
         if day != cur_day:
             if cur:
-                groups.append((fr_date(cur_day), cur))
+                groups.append(('Rappels alimentaires du ' + fr_date(cur_day), cur))
             cur_day, cur = day, []
         cur.append(item)
     if cur:
-        groups.append((fr_date(cur_day), cur))
+        groups.append(('Rappels alimentaires du ' + fr_date(cur_day), cur))
     filters = [('all', 'Tous', len(recs))] + [(k, l, counts[k]) for k, l, _ in FR_CATS if counts[k]]
     n = len(recs)
     top = ', '.join('%d pour %s' % (counts[k], l if k != 'autres' else 'autres motifs') for k, l, _ in FR_CATS[:3] if counts[k])
     nav = '\n'.join('        ' + x for x in [
         '<a href="/fr/">Accueil</a>', '<a href="/fr/blog/">Blog</a>',
-        '<a href="/fr/rappels-alimentaires" aria-current="page">Rappels en cours</a>',
+        '<a href="/fr/rappels-alimentaires" aria-current="page">Rappels alimentaires</a>',
         '<a href="/fr/contact">Contact</a>', '<a href="/food-recalls" hreflang="en">EN</a>'])
     faq = [
         ("Qu'est-ce qu'un rappel alimentaire ?",
@@ -468,9 +471,9 @@ def build_fr():
               '      <div><a href="/fr/blog/">Nos articles</a> · <a href="/fr/mentions-legales">Mentions légales</a> · <a href="/fr/contact">Contact</a></div>\n    </footer>')
     html_ = page(
         'fr', 'https://numeline.com/fr/rappels-alimentaires',
-        'Rappels alimentaires en cours : la liste mise à jour chaque jour',
+        'Rappel alimentaire : la liste des rappels en cours en France',
         'Tous les rappels alimentaires des %d derniers jours en France : produits, marques, lots, motifs et magasins. Mis à jour chaque jour depuis RappelConso.' % FR_DAYS,
-        'Rappels alimentaires en cours',
+        'Rappel alimentaire : les rappels en cours en France',
         'Mis à jour le <time datetime="%s">%s</time> · %d rappels publiés depuis le %s' % (
             TODAY.isoformat(), fr_date(TODAY), n, fr_date(TODAY - dt.timedelta(days=FR_DAYS))),
         "La liste de tous les <strong>rappels alimentaires</strong> publiés en France ces %d derniers jours, à partir des fiches officielles de <strong>RappelConso</strong>. Dont %s. Pour chaque produit : la marque, le motif, les numéros de lot et les magasins concernés." % (FR_DAYS, top),
