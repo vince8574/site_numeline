@@ -1,5 +1,19 @@
 [
  {
+  "num": "028-2026",
+  "date": "2026-11-22",
+  "firm": "Brett Anthony Foods",
+  "title": "Brett Anthony Foods Recalls Frozen Fully Cooked Cheeseburger Products Due to Misbranding And Undeclared Allergens",
+  "product": "10-oz. cardboard boxes containing four “WOW BAO CHEESEBURGER BAO BUNS PACKED WITH ALL-NATURAL BEEF” with “USE BY 10. 01. 27 LOT #26243 EST 40001” printed on the side of the box.",
+  "reason": "Unreported Allergens Brett Anthony Foods Recalls Frozen Fully Cooked Cheeseburger Products Due to Misbranding And Undeclared Allergens Nov. 22, 2026, EDITOR’S NOTE: Details of this release were updated to reflect that the subject of this release is a frozen fully cooked cheeseburger product, not a Chinese-style BBQ pork product. WASHINGTON, November 22, 2026 – Brett Anthony Foods, an Elk Grove Village, Ill. establishment, is recalling approximately 1,935 pounds of a frozen BBQ pork product labeled as a cheeseburger BAO bun due to misbranding and undeclared allergens, the U.S. Department of Agriculture’s Food Safety and Inspection Service (FSIS) announced today. The product labeled as cheeseburger BAO buns may actually contain",
+  "reason_short": "Unreported Allergens",
+  "class": "Class I",
+  "type": "Active Recall",
+  "dist": "Alabama; Colorado; Connecticut; Georgia; Iowa; Maine; Massachusetts; Michigan",
+  "code": "EST 40001",
+  "url": "https://www.fsis.usda.gov/recalls-alerts/brett-anthony-foods-recalls-frozen-fully-cooked-cheeseburger-products-due"
+ },
+ {
   "num": "PHA-11142026",
   "date": "2026-11-14",
   "firm": "Fresh & Ready Foods LLC",
